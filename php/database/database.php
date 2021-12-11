@@ -1,16 +1,23 @@
 <?php
+class Database
+{
 
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'wbmysql');
-define('DB_USERNAME', 'dobuy');
-define('DB_PASSWORD', 'dobuy');
-define('DB_NAME', 'dobuy');
+    private array $config;
+    private $mysqli;
 
-/* Attempt to connect to MySQL database */
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    function __construct()
+    {
+        $this->config = require "database_config.php";
+        $this->mysqli = new mysqli($this->config["host"], $this->config["user"], $this->config["password"], $this->config["db"]);
+        // Check connection
+        if ($this->mysqli === false) {
+            die("ERROR: Could not connect. " . $this->mysqli->connect_error);
+        }
+    }
 
-// Check connection
-if ($mysqli === false) {
-    die("ERROR: Could not connect. " . $mysqli->connect_error);
+
+    function query($sql)
+    {
+        return $this->mysqli->query($sql)->fetch_assoc();
+    }
 }
