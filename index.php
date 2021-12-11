@@ -5,7 +5,6 @@
 include './php/database/database.php';
 
 
-
 include "./php/templates/header.php";
 
 include "./php/views/content.php";

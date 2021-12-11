@@ -1,17 +1,37 @@
 <?php
 
-class UserRepository
-{
+include_once './php/models/usermodel.php';
 
-    private $database;
+
+class UserRepository extends Database
+{
 
     function __construct()
     {
-        $this->database = new Database();
+        parent::__construct();
     }
 
-    function getAdminUser()
+    function getUserByName($name)
     {
-        $this->database->query("SELECT * FROM user WHERE username='admin'");
+        $resultMySql = $this->mysqli->query("SELECT * FROM user WHERE username='$name'");
+        $result = $resultMySql->fetch_assoc();
+        return new UserModel($result);
+    }
+
+    function insertUser($username, $password, $firstname, $lastname, $email)
+    {
+        $stmt = $this->mysqli->prepare("INSERT INTO user (username,password,firstname, lastname, email,role) VALUES (?,?,?,?,?, 2)");
+        $stmt->bind_param("sssss", $username, $password, $firstname, $lastname, $email);
+
+        if (!$stmt->execute()) {
+            var_dump("FEHLER");
+        }
+
+        $stmt->close();
+    }
+
+    function getAllUsers()
+    {
+        return $this->mysqli->query("SELECT * FROM user");
     }
 }
