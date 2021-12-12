@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url("./OpenSans-Light.woff2") format("woff2"), url("./OpenSans-Light.woff") format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("./OpenSans-Regular.woff2") format("woff2"), url("./OpenSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("./OpenSans-SemiBold.woff2") format("woff2"), url("./OpenSans-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("./OpenSans-Bold.woff2") format("woff2"), url("./OpenSans-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("./OpenSans-ExtraBold.woff2") format("woff2"), url("./OpenSans-ExtraBold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+body {
+    margin: 0;
+    color: #3c3c3c;
+    font-family: 'Open Sans'
+}
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+.div_center {
+    width: 1410px;
+    max-width: 1410px;
+    margin: 0 auto;
+    position: relative
+}
+
+header {
+    width: 100%;
+    height: 110px;
+    background: #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc((100vw - 1410px) / 2) 0 50px;
+    box-sizing: border-box
+}
+
+.unsichtbar {
+    position: absolute;
+    font-size: 0;
+    left: 0
+}
+
+#logo {
+    height: 100%;
+    display: flex;
+    align-items: center
+}
+
+#logo img {
+    width: 300px;
+    height: auto
+}
+
+#header_right {
+    display: flex
+}
+
+#mainMenue {
+    padding-right: 50px;
+    display: flex;
+    align-items: center
+}
+
+#mainMenue ul {
+    list-style: none;
+    display: flex
+}
+
+#mainMenue ul li {
+    padding: 0 20px
+}
+
+#mainMenue ul li a {
+    text-decoration: none;
+    color: #3c3c3c;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+#button_wrap {
+    display: flex;
+    justify-content: space-between
+}
+
+#button_wrap .header_btn {
+    border: 2px solid #3c3c3c;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#button_wrap .header_btn:hover {
+    background: #3c3c3c
+}
+
+#button_wrap .header_btn::before {
+    content: '';
+    position: absolute
+}
+
+#button_wrap #ware_button {
+    margin-right: 30px
+}
+
+#button_wrap #ware_button:hover::before {
+    background: url(../img/icon_cart_hover.svg) no-repeat center top;
+    background-size: 100%
+}
+
+#button_wrap #ware_button::before {
+    background: url(../img/icon_cart.svg) no-repeat center top;
+    background-size: 100%;
+    width: 25px;
+    height: 26px
+}
+
+#button_wrap #acc_button:hover::before {
+    background: url(../img/icon_user_hover.svg) no-repeat center top;
+    background-size: 100%
+}
+
+#button_wrap #acc_button::before {
+    background: url(../img/icon_user.svg) no-repeat center center;
+    background-size: 100%;
+    width: 25px;
+    height: 35px
+}
+
+footer {
+    background: #3c3c3c;
+    color: #fff
+}
+
+footer #footer_inner {
+    display: flex;
+    justify-content: space-between
+}
+
+footer h2 {
+    color: #fff
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none
+}

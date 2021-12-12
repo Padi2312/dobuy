@@ -11,6 +11,10 @@ class Session
 
     function isLoggedIn()
     {
-        return $_SESSION[$this->isLoggedInKey] == 1;
+        if (isset($_SESSION[$this->isLoggedInKey])) {
+            return $_SESSION[$this->isLoggedInKey] == 1;
+        } else {
+            return false;
+        }
     }
 }

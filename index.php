@@ -6,6 +6,6 @@ include './php/database/database.php';
 include './php/common/session.php';
 
 
-include "./php/templates/header.php";
-include "./php/views/content.php";
-include "./php/templates/footer.php";
+include "php/templates/header.php";
+include "php/views/content.php";
+include "php/templates/footer.php";
