@@ -37,4 +37,9 @@ class UserModel
     {
         return $this->role;
     }
+
+    function getPassword()
+    {
+        return $this->password;
+    }
 }

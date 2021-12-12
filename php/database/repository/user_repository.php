@@ -11,7 +11,7 @@ class UserRepository extends Database
         parent::__construct();
     }
 
-    function getUserByName($name)
+    function getUserByName($name): UserModel
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM user WHERE username='$name'");
         $result = $resultMySql->fetch_assoc();

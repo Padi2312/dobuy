@@ -1,8 +1,8 @@
 <?php
 
 return [
-    "host" => "wbmysql",
-    "user" => "dobuy",
-    "password" => "dobuy",
-    "db" => "dobuy"
+    "host" => "localhost:3306",
+    "user" => "root",
+    "password" => "",
+    "db" => "mysql"
 ];
