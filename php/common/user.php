@@ -19,6 +19,9 @@ class User
     function login($username, $password): bool
     {
         $user = $this->userRepo->getUserByName($username);
+        if ($user === null) {
+            return false;
+        }
         $passwordCorrect = $this->verifyPassword($password, $user->getPassword());
         $this->session->setIsLoggedIn($passwordCorrect);
         return $passwordCorrect;

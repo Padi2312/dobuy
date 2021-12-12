@@ -79,6 +79,11 @@ class Database
         PRIMARY KEY (id))
         ENGINE = InnoDB;
 
+        INSERT INTO category (name) VALUES ('Kleidung');
+        INSERT INTO category (name) VALUES ('Spiele');
+        INSERT INTO category (name) VALUES ('Elektronik');
+        INSERT INTO category (name) VALUES ('Garten');
+
         CREATE TABLE IF NOT EXISTS product (
         id INT NOT NULL AUTO_INCREMENT,
         name VARCHAR(65) NULL,

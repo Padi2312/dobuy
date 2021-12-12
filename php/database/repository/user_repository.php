@@ -11,15 +11,34 @@ class UserRepository extends Database
         parent::__construct();
     }
 
-    function getUserByName($name): UserModel
+    /**
+     * Returns a user model if user was found  by username 
+     * otherwise returns null if no user was found
+     */
+    function getUserByName($name): UserModel|null
     {
+        $name = $this->mysqli->real_escape_string($name);
         $resultMySql = $this->mysqli->query("SELECT * FROM user WHERE username='$name'");
+        if ($resultMySql->num_rows == 0) {
+            return null;
+        }
+
         $result = $resultMySql->fetch_assoc();
         return new UserModel($result);
     }
 
+    /**
+     * Inserts a user into the database with username,password,firstname,
+     * lastname and email address
+     */
     function insertUser($username, $password, $firstname, $lastname, $email)
     {
+        $username = $this->mysqli->real_escape_string($username);
+        $password = $this->mysqli->real_escape_string($password);
+        $firstname = $this->mysqli->real_escape_string($firstname);
+        $lastname = $this->mysqli->real_escape_string($lastname);
+        $email = $this->mysqli->real_escape_string($email);
+
         $stmt = $this->mysqli->prepare("INSERT INTO user (username,password,firstname, lastname, email,role) VALUES (?,?,?,?,?, 2)");
         $stmt->bind_param("sssss", $username, $password, $firstname, $lastname, $email);
 
@@ -30,8 +49,11 @@ class UserRepository extends Database
         $stmt->close();
     }
 
+    /**
+     * Returns all users from the database
+     */
     function getAllUsers()
     {
-        return $this->mysqli->query("SELECT * FROM user");
+        return $this->mysqli->query("SELECT * FROM user")->fetch_all();
     }
 }
