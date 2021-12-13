@@ -122,10 +122,12 @@ class Database
             REFERENCES product (id))
         ENGINE = InnoDB;
 
-        CREATE TABLE IF NOT EXISTS sold (
+        CREATE TABLE IF NOT EXISTS order (
         id INT NOT NULL AUTO_INCREMENT,
         product_id INT NOT NULL,
         timestamp TIMESTAMP NULL,
+        quantity INT NOT NULL,
+        price DOUBLE NOT NULL,
         user VARCHAR(45) NOT NULL,
         PRIMARY KEY (id),
 
