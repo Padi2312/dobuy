@@ -1,14 +1,6 @@
-.back {
-    background: #e2e2e2;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-}
-
-.div-center {
-    width: 400px;
-    height: 400px;
+body {
+    width: 25%;
+    height: 25%;
     background-color: #fff;
     position: absolute;
     left: 0;
@@ -20,11 +12,43 @@
     max-height: 100%;
     overflow: auto;
     padding: 1em 2em;
-    border-bottom: 2px solid #ccc;
+    border: 2px solid #ccc;
     display: table;
 }
 
-div.content {
+body {
     display: table-cell;
  vertical-align: middle;
  }
+
+#formular {
+	display: table;
+	margin: auto;
+}
+#registrieren {
+	display: table;
+	margin: auto;
+}
+
+div {
+	text-align: center;
+}
+
+input {
+	height: 20px;
+	padding-top:5px;
+	padding-left: 10px;
+	font-size: 14px;
+	border: 1px solid #000;
+	background-color: #FFFFCC;
+}
+
+button {
+   font-size: 1.3em; padding: 5px 12px; 
+   font-family: Roboto, sans-serif;
+   font-weight: 300;
+   color: red;
+   border: 1px solid silver;
+   background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+   border-radius: 20px
+}
