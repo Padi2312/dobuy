@@ -22,13 +22,19 @@
             </nav>
 
             <div id="button_wrap">
-                <a href="###4" id="ware_button" class="header_btn" title="Zum Warenkorb - Link öffnet im aktuellen Fenser">
-                    <span class="unsichtbar">Zum Warenkorb</span>
-                </a>
+                <?php
+                if (Session::isLoggedIn()) {
+                    echo "<a href='###4' id='ware_button' class='header_btn' title='Zum Warenkorb - Link öffnet im aktuellen Fenser'>
+                        <span class='unsichtbar'>Zum Warenkorb</span>
+                    </a>
+                    <a href='php/pages/userprofile.php' id='acc_button' class='header_btn' title='Zum Account - Link öffnet im aktuellen Fenster'>
+                                <span class='unsichtbar'>Zum Account</span>
+                                </a>";
+                } else {
+                    echo "<a href='php/pages/login.php' id='login_btn' title='Zur Login Seite - Link öffnet im aktuellen Fenster'>Anmelden</a>";
+                }
+                ?>
 
-                <a href="php/userprofile.php" id="acc_button" class="header_btn" title="Zum Account - Link öffnet im aktuellen Fenser">
-                    <span class="unsichtbar">Zum Account</span>
-                </a>
 
             </div>
         </div>
