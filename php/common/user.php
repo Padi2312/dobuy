@@ -33,6 +33,11 @@ class User
         $this->userRepo->insertUser($username, $hashedPassword, $firstname, $lastname, $email);
     }
 
+    function existsUser($username): bool
+    {
+        return $this->userRepo->getUserByName($username) !== null;
+    }
+
     private function verifyPassword($password, $hashedPassword): bool
     {
         return password_verify($password, $hashedPassword);
