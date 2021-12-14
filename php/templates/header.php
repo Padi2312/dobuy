@@ -6,7 +6,7 @@
             <nav id="mainMenue">
                 <ul id="mainMenue_inner">
                     <li class="menuepoint menuepoint1">
-                        <a href="php/pages/produktsuche.php" title="Zu der Prdukt kaufen Seite - Link öffnet im aktuellen Fenser">Produkte kaufen</a>
+                        <a href="../../php/pages/productsearch.php" title="Zu der Prdukt kaufen Seite - Link öffnet im aktuellen Fenser">Produkte kaufen</a>
                     </li>
 
                     <li class="menuepoint menuepoint2">
