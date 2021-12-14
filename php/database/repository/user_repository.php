@@ -1,7 +1,7 @@
 <?php
 
-include_once './php/models/usermodel.php';
-
+include_once '../models/usermodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/database.php';
 
 class UserRepository extends Database
 {

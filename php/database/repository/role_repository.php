@@ -19,7 +19,7 @@ class RoleRepository extends Database
     function addRole($name)
     {
         $stmt = $this->mysqli->prepare("INSERT INTO role (name) VALUES (?)");
-        $stmt->bind_param('s',$name);
+        $stmt->bind_param('s', $name);
         if (!$stmt->execute()) {
             echo "SQL Statement Failed!";
         }
