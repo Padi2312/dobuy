@@ -1,4 +1,4 @@
-.produkttitel{
+.producttitel{
     text-align: center;
     margin-left: 80px;
     margin-right: 80px;
@@ -7,22 +7,22 @@
     padding-top: 25px;;
 }
 
-.produktabbildung{
-    grid-area: abbildung;
+.productpicture{
+    grid-area: picture;
     text-align: center;
     padding: 20px 0;
 }
 
-.produktbeschreibung{
-    grid-area: beschreibung;
+.productdescription{
+    grid-area: description;
     text-align: center;
     padding: 20px 0;
     font-size: 40px;
 }
 
-.preis{
-    grid-area: preis;
-    text-align: center;
+.price{
+    grid-area: price;
+    text-align: right;
     padding: 20px 0;
     font-size: 30px;
 }
@@ -34,44 +34,54 @@
     font-size: 30px;
 }
 
-.verkäufer{
-    grid-area: verkäufer;
+.retailer{
+    grid-area: retailer;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-#produkt{
+.rating{
+    padding: 12px 0;
+    font-size: 30px;
+    grid-area: rating;
+    text-align: center;
+}
+
+#product{
     width: 80%;
     padding: 12px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .grid-master{
     display: grid;
-    margin-left: 80px;
-    margin-right: 80px;
     grid-template-columns: auto auto auto auto;
     grid-template-areas: 
-        'abbildung abbildung beschreibung beschreibung'
-        'abbildung abbildung beschreibung beschreibung'
-        'abbildung abbildung beschreibung beschreibung'
-        'abbildung abbildung beschreibung beschreibung'
-        'verkäufer placeholder tags preis';
+        'picture picture description description'
+        'picture picture description description'
+        'picture picture description description'
+        'picture picture description description'
+        'retailer rating tags price';
 }
 
-#rating{
-    display: flex;
-    width: 80%;
+.rating{
     padding: 12px 0;
     font-size: 30px;
-    margin-left: 120px;
+    grid-area: rating;
+    text-align: center;
 }
 
-#kommentare{
-    margin-left: 80px;
-    margin-right: 80px;
+#comments{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
     width: 80%;
     padding: 12px 20px;
+    border: 1px solid grey;
+    border-radius: 25px;
 }
 
 .username{
@@ -82,7 +92,7 @@
     font-weight: bold;
 }
 
-.kommentartext{
+.commenttext{
     grid-area: kommentar;
     text-align: center;
     padding: 20px 0;
@@ -103,4 +113,13 @@
         'user placeholder placeholder rating'
         'kommentar kommentar kommentar kommentar'
         'kommentar kommentar kommentar kommentar';
+}
+
+hr{
+    width: 85%;
+    background-color: #FFE600;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3px;
+    border: 0 none;
 }
