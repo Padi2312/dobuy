@@ -165,6 +165,7 @@ class Database
     private function isInitalized(): bool
     {
         $result = $this->mysqli->query("SHOW DATABASES LIKE 'dobuy'");
+        error_log(print_r($result->num_rows, TRUE));
         return  $result->num_rows !== 0;
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-// Important do not include database and session in other files
-// it's included here for all files !
-include './php/common/session.php';
+include_once './php/common/session.php';
+include_once './php/database/database.php';
+new Database();
 
 include "php/templates/header.php";
 include "php/views/content.php";

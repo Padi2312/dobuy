@@ -33,11 +33,6 @@
     font-style: normal
 }
 
-body {
-    margin: 0;
-    color: #3c3c3c;
-    font-family: 'Open Sans'
-}
 
 * {
     padding: 0;
@@ -49,20 +44,6 @@ body {
     max-width: 1410px;
     margin: 0 auto;
     position: relative
-}
-
-header {
-    width: 100%;
-    height: 110px;
-    background: #f3f3f3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 calc((100vw - 1410px) / 2) 0 50px;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0
 }
 
 .unsichtbar {
@@ -82,26 +63,13 @@ header {
     height: auto
 }
 
-#header_right {
-    display: flex
+
+
+#navbarNav ul li {
+    margin-left: 2em;
 }
 
-#mainMenue {
-    padding-right: 50px;
-    display: flex;
-    align-items: center
-}
-
-#mainMenue ul {
-    list-style: none;
-    display: flex
-}
-
-#mainMenue ul li {
-    padding: 0 20px
-}
-
-#mainMenue ul li a {
+#navbarNav ul li a {
     text-decoration: none;
     color: #3c3c3c;
     font-weight: 600;
@@ -109,12 +77,12 @@ header {
     position: relative
 }
 
-#mainMenue ul li a:hover::before {
+#navbarNav ul li a:hover::before {
     left: 0;
     right: 0
 }
 
-#mainMenue ul li a::before {
+#navbarNav ul li a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -179,9 +147,6 @@ header {
     height: 35px
 }
 
-main {
-    margin-top: 110px
-}
 
 footer {
     background: #3c3c3c;
@@ -306,7 +271,6 @@ footer ul.box-3_inner_wrap li a::before {
 
 #login_btn::before {
     content: '';
-    position: absolute;
     bottom: 0;
     height: 2px;
     left: 50%;
