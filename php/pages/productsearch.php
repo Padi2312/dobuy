@@ -10,8 +10,8 @@
 
 <body>
 
-    <?php
-    include "../common/session.php";
+    <?php 
+    include_once "../common/session.php";
     include "../templates/header.php";
     ?>
 
