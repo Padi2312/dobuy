@@ -16,7 +16,7 @@ input{
 .produktbild{ 
     grid-area: produktbild;
     text-align: center;
-    padding: 20px 0
+    padding: 20px 0;
 }
 
 .produktname{ 

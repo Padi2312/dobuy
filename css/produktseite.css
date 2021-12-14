@@ -1,0 +1,106 @@
+.produkttitel{
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-size: 70px;
+    font-weight: bold;
+    padding-top: 25px;;
+}
+
+.produktabbildung{
+    grid-area: abbildung;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.produktbeschreibung{
+    grid-area: beschreibung;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+}
+
+.preis{
+    grid-area: preis;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.tags{
+    grid-area: tags;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.verkäufer{
+    grid-area: verkäufer;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+#produkt{
+    width: 80%;
+    padding: 12px 20px;
+}
+
+.grid-master{
+    display: grid;
+    margin-left: 80px;
+    margin-right: 80px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+        'abbildung abbildung beschreibung beschreibung'
+        'abbildung abbildung beschreibung beschreibung'
+        'abbildung abbildung beschreibung beschreibung'
+        'abbildung abbildung beschreibung beschreibung'
+        'verkäufer placeholder tags preis';
+}
+
+#rating{
+    display: flex;
+    width: 80%;
+    padding: 12px 0;
+    font-size: 30px;
+    margin-left: 120px;
+}
+
+#kommentare{
+    margin-left: 80px;
+    margin-right: 80px;
+    width: 80%;
+    padding: 12px 20px;
+}
+
+.username{
+    grid-area: user;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.kommentartext{
+    grid-area: kommentar;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.rating{
+    grid-area: rating;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+        'user placeholder placeholder rating'
+        'kommentar kommentar kommentar kommentar'
+        'kommentar kommentar kommentar kommentar';
+}
