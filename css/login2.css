@@ -1,54 +1,40 @@
-/*#formular {
+#formular {
 	display: table;
     margin: auto;
 }
 #registrieren {
 	display: table;
     margin: auto;
-}*/
+}
 
 #logintext {
 	text-align: center;
 }
 
-.inputtext {
+#password {
 	height: 20px;
-    width: 80%;
 	padding-top:5px;
-    padding-bottom: 5px;
 	padding-left: 10px;
-    margin: 5px;
 	font-size: 14px;
 	border: 1px solid #000;
 	background-color: #FFFFCC;
-    border-radius: 4px;
 }
 
+#name {
+	height: 20px;
+	padding-top:5px;
+	padding-left: 10px;
+	font-size: 14px;
+	border: 1px solid #000;
+	background-color: #FFFFCC;
+}
 
 button {
    font-size: 1.3em; padding: 5px 12px; 
    font-family: Roboto, sans-serif;
    font-weight: 300;
-   color: rgb(223, 64, 15);
+   color: rgb(207, 204, 34);
    border: 1px solid silver;
    background-image: linear-gradient(to top, gainsboro 0%, white 90%);
-   border-radius: 20px;
-   display: table;
-    margin: auto;
-    margin-top: 10px;
-}
-
-#border1 {
-    border: 2px solid #FFE600;
-    border-radius: 4px;
-    width: 400px;
-    display: table;
-    margin: auto;
-    text-align: center;
-}
-
-#logo2 {
-    width: 50px;
-    height: 20px;
-    padding-top: 5px;
+   border-radius: 20px
 }
