@@ -21,14 +21,14 @@
     <main>
     <div id="border1">
     <form id="registrieren" method="post" action="registeraction.php">
-        <div id="logintext">Wilkommen bei DoBuy! </br>
+        <div id="logintext"><img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY"> </br>
         Registrieren Sie sich um unsere Inhalte vollständig nutzen zu können.</div>
         <input name="username" type="text" id="username" class="inputtext" required placeholder="Username">
         <input name="firstname" type="text" id="firstname" class="inputtext" required  placeholder="Vorname">
         <input name="lastname" type="text" id="lastname" class="inputtext" required placeholder="Nachname">
         <input name="email" type="text" id="email" class="inputtext" required placeholder="E-Mail">
         <input name="password" type="password" id="password" class="inputtext" required placeholder="Password">
-        <button name="register" id="register">Registrieren</button>
+        <button name="register" id="reg">Registrieren</button>
 
     </form>
     </div>

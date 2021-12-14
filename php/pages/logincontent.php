@@ -26,9 +26,9 @@
     <?php //include "../templates/header.php"; ?>
     <main>
     <div id="border1">
-    <div id="logintext">Wilkommen bei
+    <div id="logintext">
             <img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY">
-    !</br>
+    </br>
         Melden Sie sich an, um zu Ihrer Kontoübersicht zu gelangen.</div>
     <?php
     if (isset($_GET["error"])) {

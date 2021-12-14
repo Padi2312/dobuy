@@ -29,13 +29,16 @@ button {
    font-size: 1.3em; padding: 5px 12px; 
    font-family: Roboto, sans-serif;
    font-weight: 300;
-   color: rgb(223, 64, 15);
-   border: 1px solid silver;
-   background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+   border: 1px solid #FFE600;
+   background-color: #FFE600;
    border-radius: 20px;
    display: table;
     margin: auto;
     margin-top: 10px;
+}
+
+#reg {
+    margin-bottom: 10px;
 }
 
 #border1 {
@@ -48,7 +51,7 @@ button {
 }
 
 #logo2 {
-    width: 50px;
-    height: 20px;
+    width: 200px;
+    height: 80px;
     padding-top: 5px;
 }
