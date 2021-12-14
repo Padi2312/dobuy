@@ -1,17 +1,20 @@
 <?php
-$user = $_POST['name'];
-$pw = $_POST['password'];
+include_once '../common/user.php';
+
+$username = $_POST['name'];
+$password = $_POST['password'];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
 
-$db = new UserRepository();
+$user = new User();
 
-if ($db->checkIfUserExists($user)){
+
+if ($user->existsUser($username)) {
     echo "Nutzer existiert bereits";
-    echo '<meta http-equiv="reresh" content="2; url=register.php"';
+    header("location: /php/pages/register.php?error=true");
+} else {
+    $user->signup($username, $password, $firstname, $lastname, $email);
 
-} else{
-    $db->insertUser($user, $pw, $firstname, $lastname, $email);
-    echo '<meta http-equiv="reresh" content="2; url=login.php"';
+    header("location: /php/pages/login.php");
 }

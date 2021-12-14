@@ -1,0 +1,58 @@
+input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 100px 100px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#response{
+    width: 80%;
+    padding: 12px 20px;
+}
+
+.produktbild{ 
+    grid-area: produktbild;
+    text-align: center;
+    padding: 20px 0
+}
+
+.produktname{ 
+    grid-area: produktname; 
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+}
+
+.tags{ 
+    grid-area: tags;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+.beschreibung{ 
+    grid-area: beschreibung;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.preis{ 
+    grid-area: preis;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+        'produktname produktname produktname produktname'
+        'produktbild beschreibung beschreibung preis'
+        'produktbild beschreibung beschreibung tags';
+    margin-right: 100px;
+    margin-left: 100px;
+}

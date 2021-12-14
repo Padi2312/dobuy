@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
+
 <body>
     <form id="registrieren" method="post" action="registeraction.php">
         <div>Wilkommen bei DoBuy!</div>
@@ -20,4 +22,5 @@
 
     </form>
 </body>
-</html>;
+
+</html>

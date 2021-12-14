@@ -1,18 +1,19 @@
 <?php
+session_start();
 class Session
 {
 
-    private $isLoggedInKey = "isLoggedIn";
+    static private $isLoggedInKey = "isLoggedIn";
 
-    function setIsLoggedIn($isLoggedIn)
+    public static function setIsLoggedIn($isLoggedIn)
     {
-        $_SESSION[$this->isLoggedInKey] = $isLoggedIn;
+        $_SESSION[self::$isLoggedInKey] = $isLoggedIn;
     }
 
-    function isLoggedIn()
+    public static function isLoggedIn()
     {
-        if (isset($_SESSION[$this->isLoggedInKey])) {
-            return $_SESSION[$this->isLoggedInKey] == 1;
+        if (isset($_SESSION[self::$isLoggedInKey])) {
+            return $_SESSION[self::$isLoggedInKey] == 1;
         } else {
             return false;
         }

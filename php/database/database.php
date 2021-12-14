@@ -44,7 +44,8 @@ class Database
      */
     private function initScript(): string
     {
-        $hashPassword = password_hash("admin", PASSWORD_BCRYPT);
+        $hashPasswordAdmin = password_hash("admin", PASSWORD_BCRYPT);
+        $hashPasswordUser = password_hash("user", PASSWORD_BCRYPT);
         return "CREATE DATABASE IF NOT EXISTS dobuy DEFAULT CHARACTER SET utf8;
         USE dobuy; 
         
@@ -71,10 +72,11 @@ class Database
             REFERENCES role (id))
         ENGINE = InnoDB;
 
-        INSERT INTO user (username, password, email, firstname, lastname, role) VALUES ('admin', '$hashPassword', 'admin@gmail.com', 'Admin', 'Admin', '1');
+        INSERT INTO user (username, password, email, firstname, lastname, role) VALUES ('admin', '$hashPasswordAdmin', 'admin@gmail.com', 'Admin', 'Admin', '1');
+        INSERT INTO user (username, password, email, firstname, lastname, role) VALUES ('user', '$hashPasswordUser', 'user@gmail.com', 'User', 'User', '2');
 
         CREATE TABLE IF NOT EXISTS category (
-        id INT NOT NULL,
+        id INT NOT NULL AUTO_INCREMENT,
         name VARCHAR(45) NULL,
         PRIMARY KEY (id))
         ENGINE = InnoDB;
@@ -122,10 +124,12 @@ class Database
             REFERENCES product (id))
         ENGINE = InnoDB;
 
-        CREATE TABLE IF NOT EXISTS sold (
+        CREATE TABLE IF NOT EXISTS ordering (
         id INT NOT NULL AUTO_INCREMENT,
         product_id INT NOT NULL,
         timestamp TIMESTAMP NULL,
+        quantity INT NOT NULL,
+        price DOUBLE NOT NULL,
         user VARCHAR(45) NOT NULL,
         PRIMARY KEY (id),
 
@@ -134,6 +138,21 @@ class Database
             REFERENCES product (id),
             
         CONSTRAINT fk_sold_user
+            FOREIGN KEY (user)
+            REFERENCES user (username))
+        ENGINE = InnoDB;
+
+        CREATE TABLE IF NOT EXISTS shopping_card (
+        id INT NOT NULL AUTO_INCREMENT,
+        product_id INT NOT NULL,
+        user VARCHAR(45) NOT NULL,
+        PRIMARY KEY (id,product_id,user),
+
+        CONSTRAINT fk_shopping_card_product
+            FOREIGN KEY (product_id)
+            REFERENCES product (id),
+            
+        CONSTRAINT fk_shopping_card_user
             FOREIGN KEY (user)
             REFERENCES user (username))
         ENGINE = InnoDB;";

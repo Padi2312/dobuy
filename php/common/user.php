@@ -1,18 +1,18 @@
 <?php
 
-include_once './php/models/usermodel.php';
-include_once './php/database/repository/user_repository.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/usermodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/user_repository.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/common/session.php';
+
 
 class User
 {
 
     private $userRepo;
-    private $session;
 
     function __construct()
     {
         $this->userRepo = new UserRepository();
-        $this->session = new Session();
     }
 
 
@@ -23,7 +23,6 @@ class User
             return false;
         }
         $passwordCorrect = $this->verifyPassword($password, $user->getPassword());
-        $this->session->setIsLoggedIn($passwordCorrect);
         return $passwordCorrect;
     }
 
@@ -32,6 +31,11 @@ class User
     {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $this->userRepo->insertUser($username, $hashedPassword, $firstname, $lastname, $email);
+    }
+
+    function existsUser($username): bool
+    {
+        return $this->userRepo->getUserByName($username) !== null;
     }
 
     private function verifyPassword($password, $hashedPassword): bool
