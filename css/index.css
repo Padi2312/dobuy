@@ -1,0 +1,128 @@
+.searchbar{
+    width: 80%;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+}
+
+input{
+    padding: 12px 20px;
+    width:100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.current{
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+    text-align: center;
+    display:inline-block;
+}
+
+#do{
+    color: #FFE600;
+}
+
+.news{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#popular{
+    width: 60%;
+    background-color: #FFE600;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3px;
+    border: 0 none;
+}
+
+#grid{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+        'pic1 pic2 pic3'
+        'pic4 pic5 pic6'
+        'pic7 pic8 pic9';
+}
+
+.item1{
+    grid-area: pic1;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item2{
+    grid-area: pic2;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item3{
+    grid-area: pic3;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item4{
+    grid-area: pic4;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item5{
+    grid-area: pic5;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item6{
+    grid-area: pic6;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item7{
+    grid-area: pic7;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item8{
+    grid-area: pic8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.item9{
+    grid-area: pic9;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+#productpicture{
+    width: 30%;
+    height: auto;
+    margin-top: 5px;
+}

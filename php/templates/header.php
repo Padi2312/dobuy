@@ -31,7 +31,7 @@
                                 <span class='unsichtbar'>Zum Account</span>
                                 </a>";
                 } else {
-                    echo "<a href='php/pages/logincontent.php' id='login_btn' title='Zur Login Seite - Link öffnet im aktuellen Fenster'>Anmelden</a>";
+                    echo "<a href='../../php/pages/logincontent.php' id='login_btn' title='Zur Login Seite - Link öffnet im aktuellen Fenster'>Anmelden</a>";
                 }
                 ?>
 
