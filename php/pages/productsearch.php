@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <hr />
+        <hr id="split"/>
 
         <div id="response" class="grid-container">
             <div class="productpicture">
