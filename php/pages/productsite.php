@@ -41,6 +41,9 @@
                 Rating: 4/5
             </div>
         </div>
+        <div>
+            <button type="submit" onclick="addToCart.php" id="cartbutton"><span id="buttontext">Zum Warenkorb hinzufügen</span></button>
+        </div>
         <hr />
         <div id="comments">
             <div class="grid-container">

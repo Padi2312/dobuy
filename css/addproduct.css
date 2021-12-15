@@ -1,0 +1,37 @@
+.submit-form {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 400px;
+}
+
+.form-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#submissionform {
+    text-align: center;
+}
+
+button {
+    font-size: 1.3em; padding: 5px 12px; 
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    border: 1px solid #FFE600;
+    background-color: #FFE600;
+    border-radius: 20px;
+    display: table;
+    margin: auto;
+    margin-top: 10px;
+    color: #000 !important;
+}
+
+.bar{
+    width: 100%;
+}
+.restricted{
+    max-width: 300px;
+}

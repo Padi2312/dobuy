@@ -1,18 +1,6 @@
-/*#formular {
-	display: table;
-    margin: auto;
-}
-#registrieren {
-	display: table;
-    margin: auto;
-}*/
-
 #logintext {
     text-align: center;
 }
-
-
-
 
 button {
     background-color: #FFE600 !important;
@@ -24,4 +12,26 @@ button {
     width: 200px;
     height: 80px;
     padding-top: 5px;
+}
+
+.login-form {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#buttonline{
+    display: flex;
+}
+
+#loginbutton{
+    margin-left: auto;
+    margin-right: 0px;
 }

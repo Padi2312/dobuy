@@ -39,6 +39,12 @@ input {
     font-size: 40px;
 }
 
+#productname:hover{
+    color: #FFE600;
+    text-decoration: underline;
+    text-decoration-color: #FFE600;
+}
+
 .tags{ 
     grid-area: tags;
     text-align: center;

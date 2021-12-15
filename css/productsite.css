@@ -128,3 +128,21 @@ hr{
     height: 3px;
     border: 0 none;
 }
+
+#cartbutton{
+    background-color: #FFE600;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    float: inline-block;
+    margin-left: 74%;
+    margin-right: 10%;
+}
+
+#buttontext{
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+}
+

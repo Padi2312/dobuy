@@ -16,6 +16,14 @@
     ?>
     
     <main>
+        <div id="userdaten">
+            
+                Username </br>
+                Name </br>
+                E-Mail </br>
+            
+        </div>
+
         <div id="tableheadline">Ihre bestellten Produkte</div>
             <table id="table">
                 <tr>
@@ -110,11 +118,15 @@
         //        }
         //    
         //    echo '</table>';
+        //} else {
+        //    echo '<button type="submit" id="dealer" action="">Produkte anbieten</button>';
         //}
         ?>
+        <button type="submit" id="dealer" action="">Produkte anbieten</button>
     </main>
     <?php
     include "../templates/footer.php";
+    include "../templates/scripts.php"
     ?>
 </body>
 

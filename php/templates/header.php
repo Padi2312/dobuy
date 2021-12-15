@@ -12,7 +12,7 @@
                     <a href="../../php/pages/productsearch.php" class="nav-link" title="Zu der Prdukt kaufen Seite">Produkte kaufen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="###2" title="Zu der Produkt anbieten Seite">Produkte anbieten</a>
+                    <a class="nav-link" href="../../php/pages/addproduct.php" title="Zu der Produkt anbieten Seite">Produkte anbieten</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="###3" title="Zur Kontakt Seite">Kontakt</a>
@@ -28,13 +28,18 @@
                             </a>
                             </li>
                             <li class='nav-item'>
-                            <a href='php/pages/userprofile.php'  class='header_btn' title='Zum Account'>
+                            <a href='../../php/pages/userprofile.php'  class='header_btn' title='Zum Account'>
                                         Zum Account
+                            </a>
+                            </li>
+                            <li class='nav-item'>
+                            <a href='../../php/pages/logoutaction.php'  class='header_btn' title='Zum Account'>
+                                        Logout
                             </a>
                             </li>";
                     } else {
                         echo "<li class='nav-item'>
-                                <a href='php/pages/login.php' class='nav-link' title='Zur Login Seite'>Anmelden</a>
+                                <a href='../../php/pages/login.php' class='nav-link' title='Zur Login Seite'>Anmelden</a>
                             </li>";
                     }
                     ?>

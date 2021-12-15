@@ -12,7 +12,7 @@
 
     <main>
         <div class="container-fluid ">
-            <form method="post" action="loginaction.php">
+            <form class="login-form" method="post" action="loginaction.php">
                 <div id="logintext">
                     <img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY">
                     </br>
@@ -36,9 +36,14 @@
                     <label for="password">Passwort</label>
                     <input type="password" name="password" class="form-control" id="password" placeholder="Passwort" required>
                 </div>
-                <button name="login" type="submit" class="btn">Anmelden</button>
-                <hr />
-                <button type="button" method="post" action="register.php" class="btn btn-link">Registrieren</button>
+                <div id="buttonline">
+                <a href="./register.php">
+                    <button type="button" class="btn btn-link">
+                        Registrieren
+                    </button>
+                </a>
+                <button name="login" type="submit" class="btn" id="loginbutton">Anmelden</button>
+                </div>
             </form>
 
         </div>
