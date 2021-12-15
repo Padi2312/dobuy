@@ -1,7 +1,8 @@
-<?php 
+<?php
 
-class CategoryModel {
-
+class CategoryModel
+{
+    
     private $id;
     private $name;
 
@@ -20,5 +21,4 @@ class CategoryModel {
     {
         return $this->name;
     }
-
 }

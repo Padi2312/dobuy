@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a href="../../php/pages/productsearch.php" class="nav-link" title="Zu der Prdukt kaufen Seite">Produkte kaufen</a>
+                    <a href="../pages/productsearch.php" class="nav-link" title="Zu der Prdukt kaufen Seite">Produkte kaufen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../php/pages/addproduct.php" title="Zu der Produkt anbieten Seite">Produkte anbieten</a>
+                    <a class="nav-link" href="../pages/addproduct.php" title="Zu der Produkt anbieten Seite">Produkte anbieten</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="###3" title="Zur Kontakt Seite">Kontakt</a>

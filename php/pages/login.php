@@ -37,12 +37,12 @@
                     <input type="password" name="password" class="form-control" id="password" placeholder="Passwort" required>
                 </div>
                 <div id="buttonline">
-                <a href="./register.php">
-                    <button type="button" class="btn btn-link">
-                        Registrieren
-                    </button>
-                </a>
-                <button name="login" type="submit" class="btn" id="loginbutton">Anmelden</button>
+                    <a href="./register.php">
+                        <button type="button" class="btn btn-link">
+                            Registrieren
+                        </button>
+                    </a>
+                    <button name="login" type="submit" class="btn" id="loginbutton">Anmelden</button>
                 </div>
             </form>
 

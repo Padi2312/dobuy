@@ -1,8 +1,8 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/database.php';
-include_once $_SERVER['DOCUMENT_ROOT'] .  '/php/models/productmodel.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/category_repository.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/models/productmodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/repository/category_repository.php';
 
 class ProductRepository extends Database
 {
@@ -48,6 +48,22 @@ class ProductRepository extends Database
 
     function getAllProducts()
     {
-        return $this->mysqli->query("SELECT * FROM product");
+        return $this->mysqli->query("SELECT * FROM product")->fetch_all();
     }
+
+    function getProductRating($productid) {
+        $result = $this->mysqli->query("SELECT AVG(rating) FROM rating WHERE product_id = '$productid'")->fetch_field();
+        return floor($result);
+    }
+
+    function getProducts($value)
+    {
+        $result = $this->mysqli->query("SELECT * FROM product LIMIT 10")->fetch_all();
+        for($i=0; $i < $value; $i++) {
+            
+        }
+    }
+
+
+
 }

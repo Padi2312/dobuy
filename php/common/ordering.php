@@ -1,9 +1,9 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/product_repository.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/order_repository.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/ordermodel.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/productmodel.php';
+include_once '../database/repository/product_repository.php';
+include_once '../database/repository/order_repository.php';
+include_once '../models/ordermodel.php';
+include_once '../models/productmodel.php';
 
 class Ordering
 {

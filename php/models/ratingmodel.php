@@ -1,8 +1,7 @@
 <?php
 
-include_once './php/models/usermodel.php';
-
-class RatingModel {
+class RatingModel
+{
 
     private $id;
     private $title;
@@ -43,12 +42,11 @@ class RatingModel {
 
     function getUser()
     {
-        return new UserModel($this->user);
+        return $this->user;
     }
 
     function getProdcutID()
     {
         return $this->productid;
     }
-
 }

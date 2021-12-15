@@ -1,8 +1,8 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/product_repository.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/common/session.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/common/filehandler.php';
 
+include_once '../database/repository/product_repository.php';
+include_once 'session.php';
+include_once 'filehandler.php';
 
 class Product
 {

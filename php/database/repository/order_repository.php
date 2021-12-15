@@ -1,8 +1,8 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/database.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/product_repository.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/ordermodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/models/ordermodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/repository/product_repository.php';
 
 class OrderRepository extends Database
 {

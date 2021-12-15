@@ -1,6 +1,7 @@
 <?php
 
-include_once './php/models/ratingmodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/models/ratingmodel.php';
 
 class RatingRepository extends Database
 {

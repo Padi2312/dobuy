@@ -19,7 +19,7 @@
     $productHandler = new Product();
     $product = $productHandler->getProductById($productId);
     if ($product === null) {
-        header("Location: /php/pages/notfound.php");
+        header("Location: notfound.php");
     }
     ?>
 

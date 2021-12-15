@@ -1,6 +1,8 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/categorymodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/models/categorymodel.php';
+
 
 class CategoryRepository extends Database
 {

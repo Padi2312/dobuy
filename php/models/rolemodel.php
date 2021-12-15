@@ -1,6 +1,7 @@
 <?php
 
-class RoleModel {
+class RoleModel
+{
 
     private $id;
     private $name;
@@ -20,5 +21,4 @@ class RoleModel {
     {
         return $this->name;
     }
-
 }
