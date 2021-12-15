@@ -27,35 +27,41 @@
                 <th>Beschreibung</th>
                 <th>Preis</th>
             </tr>
+            <tr>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+            </tr>
             <?php
-                foreach(product){
-                    echo '<tr><td>'.$product->getPicture().'</td>
-                    <td>'.$product->getName().'</td>
-                    <td>'.$product->getDescription().'</td>
-                    <td>'.$product->getPrice().'</td></tr>';
-                }
+                //foreach(product){
+                //    echo '<tr><td>'.$product->getPicture().'</td>
+                //    <td>'.$product->getName().'</td>
+                //   <td>'.$product->getDescription().'</td>
+                //    <td>'.$product->getPrice().'</td></tr>';
+                //}
             ?>
         </table>    
 
         <?php
-        if(user = händler){
-            echo '<h2>Ihre angebotenen Produkte</h2>
-            <table>
-            <tr>
-                <th>Bild</th>
-                <th>Name</th>
-                <th>Beschreibung</th>
-                <th>Preis</th>
-            </tr>';
-                foreach(product){
-                    echo '<tr><td>'.$product->getPicture().'</td>
-                    <td>'.$product->getName().'</td>
-                    <td>'.$product->getDescription().'</td>
-                    <td>'.$product->getPrice().'</td></tr>';
-                }
-            
-            echo '</table>';
-        }
+        //if(user = händler){
+        //    echo '<h2>Ihre angebotenen Produkte</h2>
+        //    <table>
+        //    <tr>
+        //        <th>Bild</th>
+        //        <th>Name</th>
+        //       <th>Beschreibung</th>
+        //        <th>Preis</th>
+        //    </tr>';
+        //       foreach(product){
+        //            echo '<tr><td>'.$product->getPicture().'</td>
+        //            <td>'.$product->getName().'</td>
+        //            <td>'.$product->getDescription().'</td>
+        //            <td>'.$product->getPrice().'</td></tr>';
+        //        }
+        //    
+        //    echo '</table>';
+        //}
         ?>
     </main>
 </body>
