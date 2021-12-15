@@ -1,72 +1,25 @@
-input{
-    padding: 12px 20px;
-    width:100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.test{
+    font-size: 50px;
 }
 
-#response{
+#table{
     width: 80%;
-    padding: 12px 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 10%;
 }
 
-.productpicture{ 
-    grid-area: picture;
-    align-content: center;
-    padding: 20px 0;
-    width: 80px;
-    height: auto;
+#tablestart{
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 10%;
 }
 
-.productname{ 
-    grid-area: productname; 
-    text-align: center;
-    padding: 20px 0;
-    font-size: 40px;
-}
-
-.tags{ 
-    grid-area: tags;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 20px;
-}
-
-.description{ 
-    grid-area: description;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.price{ 
-    grid-area: price;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-}
-
-.grid-container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-areas: 
-        'productname productname productname productname'
-        'picture description description price'
-        'picture description description tags';
-}
-
-hr{
-    width: 85%;
-    background-color: #FFE600;
-    margin-left: auto;
-    margin-right: auto;
-    height: 3px;
-    border: 0 none;
-}
-
-a{
-    color: black;
-    text-decoration: none;
+#table th{
+    padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }

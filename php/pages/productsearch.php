@@ -20,7 +20,7 @@
         <div class="searchbar">
             <form action="search.php" method="post">
                 <lable for="productsearch" class="form-lable">
-                    <input type="text" class="form-control" id="searchterm" placeholder="Search here" name="searchterm">
+                <input type="text" class="form-control" id="searchterm" placeholder="Search here" name="searchterm">
             </form>
         </div>
 
