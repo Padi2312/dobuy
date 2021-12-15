@@ -7,3 +7,4 @@ $shoppingCardRepo = new ShoppingCardRepository();
 $username = Session::getUsername();
 
 $shoppingCardRepo->addProductToShoppingCard($username, $id);
+header("location: productsite.php?id=$id");

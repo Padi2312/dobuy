@@ -25,11 +25,6 @@
 
     <main>
         <p>
-            <?php
-            if (isset($_GET["type"]) == "created") {
-                echo "Ihr neu erstelltes Produkt.";
-            }
-            ?>
         </p>
         <div class="producttitel">
             <p>
@@ -62,7 +57,7 @@
         <?php
         include_once '../common/session.php';
         $session = new Session();
-        $action;
+
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
             $action = "./shoppingcardaction.php?id=$id";
@@ -71,9 +66,9 @@
         }
 
         if ($session->isLoggedIn()) {
-            echo '<form action="$action" method="post">
-                    <button type="submit" id="cartbutton"><span id="buttontext">Zum Warenkorb hinzufügen</span></button>
-                </form>';
+            echo "<form action='$action' method='post'>
+                    <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
+                </form>";
         }
         ?>
 
