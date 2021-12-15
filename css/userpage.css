@@ -85,5 +85,45 @@ button {
     margin-left: 5%;
     margin-top: 50px;
     border: 2px solid black;
-    
+
+}
+
+#pictureatm {
+    width: 20%;
+    padding-left: 5px;
+}
+
+#nameatm {
+    width:15%;
+    padding-left: 5px;
+}
+
+#descriptionatm {
+    width:auto;
+    padding-left: 5px;
+}
+
+#priceatm {
+    width: 15%;
+    padding-left: 5px;
+}
+
+#useratm {
+    width:30%;
+    padding-left: 5px;
+}
+
+#usernamenatm {
+    width: 30%;
+    padding-left: 5px;
+}
+
+#emailatm {
+    width: 30%;
+    padding-left: 5px;
+}
+
+#edit {
+    width: 10%;
+    padding-left: 5px;
 }
