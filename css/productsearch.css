@@ -1,20 +1,17 @@
 .searchbar{
     width: 80%;
     display: inline-block;
-    margin-top: 100px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 50px;
 }
 
-input{
+input {
     padding: 12px 20px;
-    width:100%;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 #response{
     width: 80%;
     padding: 12px 20px;

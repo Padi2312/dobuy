@@ -8,47 +8,17 @@
 }*/
 
 #logintext {
-	text-align: center;
+    text-align: center;
 }
 
-.inputtext {
-	height: 20px;
-    width: 80%;
-	padding-top:5px;
-    padding-bottom: 5px;
-	padding-left: 10px;
-    margin: 5px;
-	font-size: 14px;
-	border: 1px solid #000;
-	background-color: #FFFFCC;
-    border-radius: 4px;
-}
+
 
 
 button {
-   font-size: 1.3em; padding: 5px 12px; 
-   font-family: Roboto, sans-serif;
-   font-weight: 300;
-   border: 1px solid #FFE600;
-   background-color: #FFE600;
-   border-radius: 20px;
-   display: table;
-    margin: auto;
-    margin-top: 10px;
+    background-color: #FFE600 !important;
+    color: #000 !important;
 }
 
-#reg {
-    margin-bottom: 10px;
-}
-
-#border1 {
-    border: 2px solid #FFE600;
-    border-radius: 4px;
-    width: 400px;
-    display: table;
-    margin: auto;
-    text-align: center;
-}
 
 #logo2 {
     width: 200px;

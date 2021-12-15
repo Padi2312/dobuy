@@ -1,5 +1,11 @@
 <footer>
-    <div class="div_center" id="footer_inner">
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
+    </footer>
+</footer>
+<!-- <div class="div_center" id="footer_inner">
         <div class="footer_box" id="footer_box-1">
             <h2>Kontaktinfos</h2>
             <div class="box-1_inner_wrap">
@@ -34,5 +40,4 @@
                 <li> <a href="###7" title="">Versand</a> </li>
             </ul>
         </div>
-    </div>
-</footer>
+    </div> -->
