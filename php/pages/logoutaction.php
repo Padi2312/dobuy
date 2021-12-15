@@ -2,4 +2,5 @@
 include_once '../common/session.php';
 $session = new Session();
 $session->setIsLoggedIn(false);
-header('location: /');
+$session->setUsername(null);
+header("location: ../../");

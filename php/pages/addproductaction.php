@@ -7,6 +7,9 @@ $price = $_POST['price'];
 $description = $_POST['description'];
 
 $productHandler = new Product();
-if ($productHandler->addProduct($name, $description, $price, "Elektronik & Computer")) {
-    //TODO: Redirect to Page maybe?
+$result = $productHandler->addProduct($name, $description, $price, "Elektronik & Computer");
+if ($result === null) {
+    //TODO: Redirect to error
+} else {
+    header("location: productsite.php?id=$result&type=created");
 }

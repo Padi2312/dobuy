@@ -1,8 +1,8 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/usermodel.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/user_repository.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/common/session.php';
+include_once '../models/usermodel.php';
+include_once '../database/repository/user_repository.php';
+include_once '../common/session.php';
 
 
 class User

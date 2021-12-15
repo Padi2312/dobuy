@@ -44,7 +44,7 @@ class ProductModel
         return $this->price;
     }
 
-    function getImagePath()
+    function getImagePath(): string
     {
         return $this->imagepath;
     }

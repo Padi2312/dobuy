@@ -1,7 +1,7 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/models/rolemodel.php';
+include_once '../database/database.php';
+include_once '../models/rolemodel.php';
 
 class RoleRepository extends Database
 {

@@ -21,10 +21,9 @@ class Product
         $session = new Session();
         $uploadResult = $this->fileHandler->uploadImage();
         if ($uploadResult !== null) {
-            $this->productRepo->addProduct($name, $description, $price, $quantity, $uploadResult, $session->getUsername(), $category);
-            return true;
+            return $this->productRepo->addProduct($name, $description, $price, $quantity, $uploadResult, $session->getUsername(), $category);
         } else {
-            return false;
+            return null;
         }
     }
 

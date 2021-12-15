@@ -1,6 +1,6 @@
 <?php
 
-include "../common/session.php";
+include_once "../common/session.php";
 include "../templates/header.php";
 include "../pages/registercontent.php";
 include "../templates/footer.php";

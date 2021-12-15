@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
+include_once '../database/database.php';
 
 class ShoppingCardRepository extends Database
 {
@@ -27,9 +27,17 @@ class ShoppingCardRepository extends Database
         $stmt->bind_param("is", $productid, $username);
 
         if (!$stmt->execute()) {
-            var_dump("FEHLER");
+            return false;
         }
 
         $stmt->close();
+        return true;
+    }
+
+    function getAmountOfUsersShoppingCard($username)
+    {
+        $resultMySql = $this->mysqli->query("SELECT COUNT(*) FROM shopping_card WHERE user='$username'");
+        $row = $resultMySql->fetch_row();
+        return $row[0];
     }
 }

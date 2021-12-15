@@ -24,7 +24,13 @@
     ?>
 
     <main>
-
+        <p>
+            <?php
+            if (isset($_GET["type"]) == "created") {
+                echo "Ihr neu erstelltes Produkt.";
+            }
+            ?>
+        </p>
         <div class="producttitel">
             <p>
                 <?php echo $product->getName(); ?>
@@ -33,7 +39,7 @@
 
         <div id="product" class="grid-master">
             <div class="productpicture">
-                <img id="productpicture" src="../../assets/images/icon_phone.png" title="Placeholder" alt="Placeholder">
+                <img id="productpicture" src="<?php echo $product->getImagePath(); ?>" title="Placeholder" alt="Placeholder">
             </div>
             <div class="productdescription">
                 <p id="productdescription">
@@ -53,9 +59,25 @@
                 Rating: 4/5
             </div>
         </div>
-        <div>
-            <button type="submit" onclick="addToCart.php" id="cartbutton"><span id="buttontext">Zum Warenkorb hinzufügen</span></button>
-        </div>
+        <?php
+        include_once '../common/session.php';
+        $session = new Session();
+        $action;
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+            $action = "./shoppingcardaction.php?id=$id";
+        } else {
+            $action = "./notfound.php";
+        }
+
+        if ($session->isLoggedIn()) {
+            echo '<form action="$action" method="post">
+                    <button type="submit" id="cartbutton"><span id="buttontext">Zum Warenkorb hinzufügen</span></button>
+                </form>';
+        }
+        ?>
+
+
         <hr />
         <div id="comments">
             <div class="grid-container">

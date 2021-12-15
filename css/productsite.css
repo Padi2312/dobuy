@@ -3,7 +3,7 @@
     margin: 0
 }
 
-.producttitel{
+.producttitel {
     text-align: center;
     margin-left: 80px;
     margin-right: 80px;
@@ -12,58 +12,62 @@
     padding-top: 25px;
 }
 
-.productpicture{
+.productpicture {
     grid-area: picture;
     text-align: center;
     padding: 20px 0;
 }
 
-.productdescription{
+#productpicture {
+    max-height: 400px;
+}
+
+.productdescription {
     grid-area: description;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-.price{
+.price {
     grid-area: price;
     text-align: right;
     padding: 20px 0;
     font-size: 30px;
 }
 
-.tags{
+.tags {
     grid-area: tags;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-.retailer{
+.retailer {
     grid-area: retailer;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-.rating{
+.rating {
     padding: 12px 0;
     font-size: 30px;
     grid-area: rating;
     text-align: center;
 }
 
-#product{
+#product {
     width: 80%;
     padding: 12px 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.grid-master{
+.grid-master {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-template-areas: 
+    grid-template-areas:
         'picture picture description description'
         'picture picture description description'
         'picture picture description description'
@@ -71,14 +75,14 @@
         'retailer rating tags price';
 }
 
-.rating{
+.rating {
     padding: 12px 0;
     font-size: 30px;
     grid-area: rating;
     text-align: center;
 }
 
-#comments{
+#comments {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -89,7 +93,7 @@
     border-radius: 25px;
 }
 
-.username{
+.username {
     grid-area: user;
     text-align: center;
     padding: 20px 0;
@@ -97,30 +101,30 @@
     font-weight: bold;
 }
 
-.commenttext{
+.commenttext {
     grid-area: kommentar;
     text-align: center;
     padding: 20px 0;
     font-size: 25px;
 }
 
-.rating{
+.rating {
     grid-area: rating;
     text-align: center;
     padding: 20px 0;
     font-size: 25px;
 }
 
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-template-areas: 
+    grid-template-areas:
         'user placeholder placeholder rating'
         'kommentar kommentar kommentar kommentar'
         'kommentar kommentar kommentar kommentar';
 }
 
-hr{
+hr {
     width: 85%;
     background-color: #FFE600;
     margin-left: auto;
@@ -129,7 +133,7 @@ hr{
     border: 0 none;
 }
 
-#cartbutton{
+#cartbutton {
     background-color: #FFE600;
     border-radius: 30px;
     border: none;
@@ -140,9 +144,8 @@ hr{
     margin-right: 10%;
 }
 
-#buttontext{
+#buttontext {
     color: #000000;
     font-weight: bold;
     font-size: 16px;
 }
-

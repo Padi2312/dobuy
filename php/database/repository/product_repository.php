@@ -1,8 +1,8 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/database.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/models/productmodel.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dobuy/php/database/repository/category_repository.php';
+include_once '../database/database.php';
+include_once '../models/productmodel.php';
+include_once '../database/repository/category_repository.php';
 
 class ProductRepository extends Database
 {
@@ -12,7 +12,7 @@ class ProductRepository extends Database
         parent::__construct();
     }
 
-    function getProductById($productid)
+    function getProductById($productid): ProductModel|null
     {
         $result = $this->mysqli->query("SELECT * FROM product WHERE id ='$productid'")->fetch_assoc();
         if (!$result) {
@@ -32,8 +32,11 @@ class ProductRepository extends Database
         $stmt->bind_param('ssdissd', $name, $description, $price, $quantity, $imagepath, $provider, $categoryId);
         if (!$stmt->execute()) {
             error_log(print_r($this->mysqli->errno, TRUE));
+            return null;
         }
+        $insertedId = $this->mysqli->insert_id;
         $stmt->close();
+        return $insertedId;
     }
 
     function updateProduct($productid, $name, $description, $price, $imagepath, $quantity, $provider, $category)
@@ -51,7 +54,8 @@ class ProductRepository extends Database
         return $this->mysqli->query("SELECT * FROM product")->fetch_all();
     }
 
-    function getProductRating($productid) {
+    function getProductRating($productid)
+    {
         $result = $this->mysqli->query("SELECT AVG(rating) FROM rating WHERE product_id = '$productid'")->fetch_field();
         return floor($result);
     }
@@ -59,11 +63,7 @@ class ProductRepository extends Database
     function getProducts($value)
     {
         $result = $this->mysqli->query("SELECT * FROM product LIMIT 10")->fetch_all();
-        for($i=0; $i < $value; $i++) {
-            
+        for ($i = 0; $i < $value; $i++) {
         }
     }
-
-
-
 }

@@ -1,17 +1,19 @@
 <?php
 
 include_once '../common/user.php';
+include_once '../common/session.php';
 
 $username = $_POST['name'];
 $password = $_POST['password'];
-
+$session = new Session();
 $user = new User();
 if ($user->login($username, $password)) {
-    header("location: /");
-    Session::setIsLoggedIn(true);
-    Session::setUsername($username);
+    echo '<script>window.history.go(-2);</script>';
+    //header("location: ../../");
+    $session->setIsLoggedIn(true);
+    $session->setUsername($username);
 } else {
     header("location: /php/pages/login.php?error=true");
-    Session::setIsLoggedIn(false);
-    Session::setUsername(null);
+    $session->setIsLoggedIn(false);
+    $session->setUsername(null);
 }

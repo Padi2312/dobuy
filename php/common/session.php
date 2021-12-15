@@ -7,6 +7,7 @@ class Session
     static private $usernameKey = "username";
 
 
+
     public static function setIsLoggedIn($isLoggedIn)
     {
         $_SESSION[self::$isLoggedInKey] = $isLoggedIn;
