@@ -1,25 +1,69 @@
+#tableheadline{
+    width: 100%;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
 .test{
     font-size: 50px;
 }
 
 #table{
-    width: 80%;
+    width: 90%;
     margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 10%;
-}
-
-#tablestart{
-    width: 80%;
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #table th{
     padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FFE600;
+    color: black;
+    border: 2px solid #FFFFFF;
+    font-weight: bold;
+
+}
+
+td {
+    border-right: 2px solid #FFE600;
+    border-top: 2px solid #FFE600;
+    padding-left: 5px;
+}
+
+.outer{
+    border-right: none;
+}
+
+#picture {
+    width: 20%;
+    padding-left: 5px;
+}
+
+#name {
+    width:15%;
+    padding-left: 5px;
+}
+
+#description {
+    width:auto;
+    padding-left: 5px;
+}
+
+#price {
+    width: 15%;
+    padding-left: 5px;
+}
+
+#descriptionexpanded{
+    width:auto;
+    padding-left: 5px;
+}
+
+#profit{
+    width: 15%;
+    padding-left: 5px;
 }
