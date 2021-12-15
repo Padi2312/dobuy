@@ -10,32 +10,32 @@
 <body>
     <main>
 
-    <?php 
-    include_once "../common/session.php";
-    include "../templates/header.php";
-    ?>
+        <?php
+        include_once "../common/session.php";
+        include "../templates/header.php";
+        ?>
 
-    <div class="submit-form">
-        <div class="form-container">
-            <form action="fileuploadaction.php" method="post" enctype="multipart/form-data">
-                <label for="fileToUpload">Bild auswählen:</label></br>
-                <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"></br>
-                <label for="productname">Wie soll das Produkt heißen?</label></br>
-                <input type="text" name="productname" id="productname" class="bar"></br>
-                <label for="price">Wie viel soll Ihr Produkt kosten?</label></br>
-                <input type="text" name="price" id="price" class="bar"></br>
-                <label for="description">Beschreiben Sie Ihr Produkt</label></br>
-                <textarea name="description" id="description" class="bar"></textarea></br>
-                <button id="addproduct1">Produkt hinzufügen</button>
-            </form>
+        <div class="submit-form">
+            <div class="form-container">
+                <form action="addproductaction.php" method="post" enctype="multipart/form-data">
+                    <label for="fileToUpload">Bild auswählen:</label></br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"></br>
+                    <label for="productname">Wie soll das Produkt heißen?</label></br>
+                    <input type="text" name="productname" id="productname" class="bar"></br>
+                    <label for="price">Wie viel soll Ihr Produkt kosten?</label></br>
+                    <input type="number" step=".01" name="price" id="price" class="bar"></br>
+                    <label for="description">Beschreiben Sie Ihr Produkt</label></br>
+                    <textarea name="description" id="description" class="bar"></textarea></br>
+                    <button id="addproduct1">Produkt hinzufügen</button>
+                </form>
+            </div>
         </div>
-    </div>
-        
 
-    <?php
-    include "../templates/footer.php";
-    include "../templates/scripts.php";
-    ?>
+
+        <?php
+        include "../templates/footer.php";
+        include "../templates/scripts.php";
+        ?>
     </main>
 </body>
 

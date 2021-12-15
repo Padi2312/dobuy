@@ -1,8 +1,10 @@
 <?php
 
-include_once './php/models/usermodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/usermodel.php';
 
-class ProductModel {
+
+class ProductModel
+{
 
     private $id;
     private $name;
@@ -22,7 +24,7 @@ class ProductModel {
         $this->imagepath = $productRow["imagepath"];
         $this->quantity = $productRow["quantity"];
         $this->provider = $productRow["provider"];
-        $this->category = $productRow["category"];
+        $this->category = $productRow["category_id"];
     }
 
     function getID()
@@ -57,14 +59,11 @@ class ProductModel {
 
     function getProvider()
     {
-        return new UserModel($this->provider);
+        return $this->provider;
     }
 
     function getCategory()
     {
         return $this->category;
     }
-
 }
-
-    

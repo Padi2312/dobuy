@@ -1,9 +1,7 @@
 <?php
 
-include_once './php/models/usermodel.php';
-include_once './php/models/productmodel.php';
-
-class OrderModel {
+class OrderModel
+{
 
     private $id;
     private $productid;
@@ -27,9 +25,9 @@ class OrderModel {
         return $this->id;
     }
 
-    function getProduct()
+    function getProductId()
     {
-        return new ProductModel($this->productid);
+        return $this->productid;
     }
 
     function getTimestamp()
@@ -49,8 +47,6 @@ class OrderModel {
 
     function getUser()
     {
-        return new UserModel($this->user);
+        return $this->user;
     }
-
-
 }

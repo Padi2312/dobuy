@@ -10,16 +10,20 @@ class FileHandler
         }
     }
 
-    function uploadImage()
+    /**
+     * Uploads a file picked by user to product_images folder
+     * Returns null if upload failed otherwise returns the path to image
+     */
+    function uploadImage(): string|null
     {
         $target_file = $this->productImagePath . time() . "_" . basename($_FILES["fileToUpload"]["name"]);
         if (!$this->checkIfFileIsImage($target_file)) {
-            return false;
+            return null;
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                return true;
+                return $target_file;
             } else {
-                return false;
+                return null;
             }
         }
     }

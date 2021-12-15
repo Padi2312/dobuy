@@ -81,10 +81,13 @@ class Database
         PRIMARY KEY (id))
         ENGINE = InnoDB;
 
+        INSERT INTO category (name) VALUES ('Bücher');
+        INSERT INTO category (name) VALUES ('Filme,Serien,Musik & Games');
+        INSERT INTO category (name) VALUES ('Elektronik & Computer');
+        INSERT INTO category (name) VALUES ('Haushalt, Garten, Tier & Baumarkt');
+        INSERT INTO category (name) VALUES ('Spielzeug & Baby');
         INSERT INTO category (name) VALUES ('Kleidung');
-        INSERT INTO category (name) VALUES ('Spiele');
-        INSERT INTO category (name) VALUES ('Elektronik');
-        INSERT INTO category (name) VALUES ('Garten');
+        INSERT INTO category (name) VALUES ('Auto & Motorrad');
 
         CREATE TABLE IF NOT EXISTS product (
         id INT NOT NULL AUTO_INCREMENT,
@@ -165,7 +168,6 @@ class Database
     private function isInitalized(): bool
     {
         $result = $this->mysqli->query("SHOW DATABASES LIKE 'dobuy'");
-        error_log(print_r($result->num_rows, TRUE));
         return  $result->num_rows !== 0;
     }
 }

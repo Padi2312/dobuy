@@ -1,6 +1,8 @@
 <?php
 
-include_once './php/models/productmodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] .  '/php/models/productmodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/category_repository.php';
 
 class ProductRepository extends Database
 {
@@ -10,18 +12,26 @@ class ProductRepository extends Database
         parent::__construct();
     }
 
-    function getProduct($productid)
+    function getProductById($productid)
     {
         $result = $this->mysqli->query("SELECT * FROM product WHERE id ='$productid'")->fetch_assoc();
-        return new ProductModel($result);
+        if (!$result) {
+            return null;
+        } else {
+            return new ProductModel($result);
+        }
     }
 
     function addProduct($name, $description, $price, $quantity, $imagepath, $provider, $category)
     {
+        $catRepo = new CategoryRepository();
+        $categoryModel = $catRepo->getCategoryIdByName($category);
+        $categoryId = $categoryModel->getID();
+
         $stmt = $this->mysqli->prepare("INSERT INTO product (name, description, price, quantity, imagepath, provider, category_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('ssdissi', $name, $description, $price, $quantity, $imagepath, $provider, $category);
+        $stmt->bind_param('ssdissd', $name, $description, $price, $quantity, $imagepath, $provider, $categoryId);
         if (!$stmt->execute()) {
-            echo "SQL Statement Failed!";
+            error_log(print_r($this->mysqli->errno, TRUE));
         }
         $stmt->close();
     }

@@ -13,9 +13,11 @@
 
     <?php
     include_once './php/common/session.php';
-    include "php/templates/header.php";
     include_once './php/database/database.php';
+    //Important init database once here!
     new Database();
+
+    include "php/templates/header.php";
     ?>
 
     <main>
@@ -23,7 +25,7 @@
         <div class="searchbar">
             <form action="search.php" method="post">
                 <lable for="productsearch" class="form-lable">
-                <input type="text" class="form-control" id="searchterm" placeholder="Search here" name="searchterm">
+                    <input type="text" class="form-control" id="searchterm" placeholder="Search here" name="searchterm">
             </form>
         </div>
 

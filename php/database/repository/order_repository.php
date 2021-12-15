@@ -1,12 +1,31 @@
 <?php
 
-include_once './php/models/ordermodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/database/repository/product_repository.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/ordermodel.php';
 
-class OrderRepository extends Database {
+class OrderRepository extends Database
+{
 
-    function __construct() 
+    function __construct()
     {
         parent::__construct();
+    }
+
+    function getOrdersByUsername($username)
+    {
+        $resultMySql = $this->mysqli->query("SELECT * FROM ordering WHERE user ='$username'");
+
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $orders = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($orders, new OrderModel($item));
+            }
+            return $orders;
+        }
     }
 
     function getOrder($orderid)
@@ -17,7 +36,7 @@ class OrderRepository extends Database {
 
     function addOrder($productid, $quantity, $price, $user)
     {
-        $stmt = $this->mysqli->prepare("INSERT INTO order (product_id, timestamp, quantity, price, user) VALUES (?, NOW(), ?, ?, ?)");
+        $stmt = $this->mysqli->prepare("INSERT INTO ordering (product_id,quantity, price, user,timestamp) VALUES (?, ?, ?, ?,NOW())");
         $stmt->bind_param('iids', $productid, $quantity, $price, $user);
         if (!$stmt->execute()) {
             echo "SQL Statement Failed!";
@@ -34,6 +53,4 @@ class OrderRepository extends Database {
     {
         return $this->mysqli->query("SELECT * FROM order");
     }
-
 }
-

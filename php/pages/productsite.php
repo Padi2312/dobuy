@@ -11,14 +11,24 @@
 <body>
 
     <?php
-    include_once "../common/session.php"; 
+    include_once "../common/session.php";
+    include_once "../common/product.php";
     include "../templates/header.php";
+    $productId = $_GET["id"];
+
+    $productHandler = new Product();
+    $product = $productHandler->getProductById($productId);
+    if ($product === null) {
+        header("Location: /php/pages/notfound.php");
+    }
     ?>
 
     <main>
 
         <div class="producttitel">
-            <p>Beispielitem</p>
+            <p>
+                <?php echo $product->getName(); ?>
+            </p>
         </div>
 
         <div id="product" class="grid-master">
@@ -26,16 +36,18 @@
                 <img id="productpicture" src="../../assets/images/icon_phone.png" title="Placeholder" alt="Placeholder">
             </div>
             <div class="productdescription">
-                <p id="productdescription">This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder This is a placeholder</p>
+                <p id="productdescription">
+                    <?php echo $product->getDescription(); ?>
+                </p>
             </div>
             <div class="price">
-                <p id="price">125€</p>
+                <p id="price"><?php echo $product->getPrice(); ?> €</p>
             </div>
-            <div class="tags">
+            <!-- <div class="tags">
                 <p id="tags">Placeholder,Placeholder,Placeholder</p>
-            </div>
+            </div> -->
             <div class="retailer">
-                <p id="retailer">Max Mustermann</p>
+                <p id="retailer"><?php echo $product->getProvider(); ?></p>
             </div>
             <div class="rating">
                 Rating: 4/5

@@ -1,6 +1,6 @@
 <?php
 
-include_once './php/models/categorymodel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/models/categorymodel.php';
 
 class CategoryRepository extends Database
 {
@@ -13,6 +13,17 @@ class CategoryRepository extends Database
     function getCategory($categoryid)
     {
         $result = $this->mysqli->query("SELECT * FROM category WHERE id ='$categoryid'")->fetch_assoc();
+        return new CategoryModel($result);
+    }
+
+    function getCategoryIdByName($name)
+    {
+        $resultMySql = $this->mysqli->query("SELECT * FROM category WHERE name ='$name'");
+        if ($resultMySql->num_rows == 0) {
+            return null;
+        }
+
+        $result = $resultMySql->fetch_assoc();
         return new CategoryModel($result);
     }
 
