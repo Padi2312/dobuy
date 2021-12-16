@@ -36,7 +36,7 @@
                             </li>
                             <li class='nav-item'>
                             <a href='../../php/pages/logoutaction.php'  class='header_btn' title='Zum Account'>
-                                        Logout
+                                        Abmelden
                             </a>
                             </li>";
                     } else {
