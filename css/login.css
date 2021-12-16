@@ -20,13 +20,20 @@ button {
     margin-right: auto;
 }
 
-#register {
+.register-form {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.register {
     width: 100%;
     height: 100vh;
     display: flex;
