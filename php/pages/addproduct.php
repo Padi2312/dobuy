@@ -8,12 +8,15 @@
 </head>
 
 <body>
-    <main>
 
-        <?php
+    <?php
         include_once "../common/session.php";
         include "../templates/header.php";
-        ?>
+    ?>
+
+    <main>
+
+        
 
         <div class="submit-form">
             <div class="form-container">
@@ -31,12 +34,11 @@
             </div>
         </div>
 
-
-        <?php
+    </main>
+    <?php
         include "../templates/footer.php";
         include "../templates/scripts.php";
-        ?>
-    </main>
+    ?>
 </body>
 
 </html>
