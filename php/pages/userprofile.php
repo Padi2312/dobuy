@@ -126,7 +126,7 @@
                 $products = $product1->getAllProducts();
                 foreach ($products as $product){
                     echo '<tr>
-                    <td><img src='.$product->getImagePath().'></td>
+                    <td><img id="productimg" src='.$product->getImagePath().'></td>
                     <td>'.$product->getName().'</td>
                     <td>'.$product->getDescription().'</td>
                     <td>'.$product->getPrice().'</td>

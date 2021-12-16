@@ -35,11 +35,6 @@ class Database
             if (!$this->mysqli->multi_query($initScript)) {
                 throw new Exception("Failed to create database dobuy.");
             }
-            $initData = $this->initalData();
-            //var_dump($initData);
-            //if (!$this->mysqli->multi_query($initData)) {
-            //    throw new Exception("Failed to init Data.");
-            //}
         }
     }
 
@@ -167,15 +162,19 @@ class Database
         
         INSERT INTO product VALUES (1,'Schaukelpferd','Zum Schaukeln',50.00,'../../assets/images/product_images/schaukelpferd.jpg',13,'admin',5);
         INSERT INTO product VALUES (2,'Schaukel','Schaukelgestell mit eins Schaukel',150.00,'../../assets/images/product_images/schaukel.jpg',133,'admin',5);
-        INSERT INTO product VALUES (3,'Pferd','Zum Schaukeln',500.00,'../../assets/images/product_images/pferd.jpg',13,'admin',4);";
-    }
-
-    private function initalData(): string
-    {
-        return 
-        "INSERT INTO product VALUES (1,'Schaukelpferd','Zum Schaukeln',50.00,'../assets/images/product_images/schaukelpferd.jpg',13,'admin',5);
-        INSERT INTO product VALUES (2,'Schaukel','Schaukelgestell mit eins Schaukel',150.00,'../assets/images/product_images/schaukel.jpg',133,'admin',5);
-        INSERT INTO product VALUES (3,'Pferd','Zum Schaukeln',500.00,'../assets/images/product_images/pferd.jpg',13,'admin',4);";
+        INSERT INTO product VALUES (3,'Freyling','Warm Mountain Frey-venture Winterstiefel',35.49,'../../assets/images/product_images/winterstiefel1.jpg',10,'admin',3);
+        INSERT INTO product VALUES (4,'ambellis','Winterstiefel',29.99,'../../assets/images/product_images/winterstiefel2.jpg',13,'admin',6);
+        INSERT INTO product VALUES (5,'Tom Tailor','Winterstiefel',43.99,'../../assets/images/product_images/winterstiefel3.jpg',23,'admin',6);
+        INSERT INTO product VALUES (6,'Superdry','TWILL LITE - Hemd - lagoon blue stripe',50.00,'../../assets/images/product_images/hemd1.jpg',17,'admin',6);
+        INSERT INTO product VALUES (7,'Pferd','Zum Schaukeln',500.00,'../../assets/images/product_images/pferd.jpg',13,'admin',4);
+        INSERT INTO product VALUES (8,'Apple iPhone 11','Betriebssystemfamilie: Apple iOS, Display-Diagonale: 6.1, Kameraauflösung: 12 MP, Arbeitsspeicher: 4 GB',500.00,'../../assets/images/product_images/iphone11.webp',33,'admin',3);
+        INSERT INTO product VALUES (9,'Apple iPhone 12','Betriebssystemfamilie: Apple iOS, Display-Diagonale: 6.1, SIM-Kartenleser: Dual-SIM, Produktlinie: Apple iPhone',650.00,'../../assets/images/product_images/iphone12.webp',12,'admin',3);
+        INSERT INTO product VALUES (10,'Apple iPhone 13 Pro Max','Betriebssystemfamilie: Apple iOS, Display-Diagonale: 6.7, Kameraauflösung: 12 MP, Arbeitsspeicher: 8 GB',1250.00,'../../assets/images/product_images/iphone13.webp',3,'admin',3);
+        INSERT INTO product VALUES (11,'Samsung Galaxy A12','Betriebssystemfamilie: Android, Display-Diagonale: 6.5, Kameraauflösung: 48 MP, Auflösung Frontkamera: 8 MP',129.00,'../../assets/images/product_images/galaxya12.png',9,'admin',3);
+        INSERT INTO product VALUES (12,'Samsung Galaxy A52s 5G','Betriebssystemfamilie: Android, Display-Diagonale: 6.5, Kameraauflösung: 64 MP, Auflösung Frontkamera: 32 MP',359.00,'../../assets/images/product_images/galaxya52.webp',2,'admin',3);
+        INSERT INTO product VALUES (13,'Samsung Q60A','Display-Typ: QLED, HD-Standard: 4K Ultra HD, Funktionen: Smart TV, Farbe: schwarz',449.00,'../../assets/images/product_images/saf1.webp',4,'admin',3);
+        INSERT INTO product VALUES (14,'Samsung QN95A','Display-Typ: HDR, Mini-LED, QLED, HD-Standard: 4K Ultra HD, TV-Tuner: 2x DVB-C, 2x DVB-S2, 2x DVB-T2, Triple-Tuner, Twin-Tuner, analog, Funktionen: 4K-Upscaling, ALLM, Ambient-Modus, Bild-in-Bild (PiP), Bluetooth, Browser, DLNA, EPG, Film-Modus, Game-Modus, HDCP 2.3, HDMI-ARC, HDMI-CEC, HDR, HDR10, HDR10+, HLG, HbbTV, Media-Player',1300.00,'../../assets/images/product_images/saf2.webp',1,'admin',3);
+        INSERT INTO product VALUES (15,'Dyson V11','Produkttyp: Akkusauger, Staubauffang: Zyklon-Technologie, Einsatzbereich: Auto, Fliesen, Fugen, Laminat, Parkett, Teppich, Funktionen: Schnellentleerung',550.00,'../../assets/images/product_images/dyson.webp',3,'admin',3);";
     }
 
     /**
@@ -186,5 +185,5 @@ class Database
     {
         $result = $this->mysqli->query("SHOW DATABASES LIKE 'dobuy'");
         return  $result->num_rows !== 0;
-    }
+    } 
 }
