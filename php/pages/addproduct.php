@@ -18,7 +18,7 @@
 
         
 
-        <div class="submit-form">
+        <div class="submit-form container">
             <form action="addproductaction.php" method="post" enctype="multipart/form-data">
                 <label for="fileToUpload">Bild auswählen:</label></br>
                 <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"></br>
