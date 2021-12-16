@@ -100,6 +100,22 @@
                 </div>
             </div>
         </div>
+        <div id="rating-form">
+            <form class="postrating" method="post" action="postRating">
+                <input type="radio" id="one" name="ratingpoints" value=1>
+                <label for="one">1 Stern</label>
+                <input type="radio" id="two" name="ratingpoints" value=2>
+                <label for="two">2 Sterne</label>
+                <input type="radio" id="three" name="ratingpoints" value=3>
+                <label for="three">3 Sterne</label>
+                <input type="radio" id="four" name="ratingpoints" value=4>
+                <label for="four">4 Sterne</label>
+                <input type="radio" id="five" name="ratingpoints" value=5>
+                <label for="five">5 Sterne</label></br>
+                <label for="comment">Schreib einen Kommentar</label>
+                <textarea name="comment" id="comment">
+            </form>
+        </div>
 
     </main>
 
