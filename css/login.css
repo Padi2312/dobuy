@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-button {
+.btn {
     background-color: #FFE600 !important;
     color: #000 !important;
 }
@@ -45,6 +45,20 @@ button {
 }
 
 #loginbutton{
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+#seperator{
+    width: 100%;
+    background-color: #FFE600;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    border: 0 none;
+}
+
+#reg{
     margin-left: auto;
     margin-right: 0px;
 }
