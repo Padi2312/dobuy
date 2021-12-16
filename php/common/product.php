@@ -33,13 +33,8 @@ class Product
         return $this->productRepo->getProductById($productId);
     }
 
-    public function getAllProducts()
+    public function getAllProducts(): array
     {
         return $this->productRepo->getAllProducts();
-    }
-
-    public function getImagePath()
-    {
-    
     }
 }

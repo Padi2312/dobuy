@@ -49,9 +49,20 @@ class ProductRepository extends Database
         $this->mysqli->query("DELETE FROM product WHERE id = '$productid'");
     }
 
-    function getAllProducts()
+    function getAllProducts(): array
     {
-        return $this->mysqli->query("SELECT * FROM product")->fetch_all();
+
+    $resultMySql = $this->mysqli->query("SELECT * FROM product");
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $products = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($products, new ProductModel($item));
+            }
+            return $products;
+        };
     }
 
     function getProductRating($productid)

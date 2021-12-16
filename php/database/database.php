@@ -35,10 +35,11 @@ class Database
             if (!$this->mysqli->multi_query($initScript)) {
                 throw new Exception("Failed to create database dobuy.");
             }
-            $initProducts = $this->initalProducts();
-            if (!$this->mysqli->multi_query($initProducts)) {
-                throw new Exception("Failed to init Products.");
-            }
+            $initData = $this->initalData();
+            //var_dump($initData);
+            //if (!$this->mysqli->multi_query($initData)) {
+            //    throw new Exception("Failed to init Data.");
+            //}
         }
     }
 
@@ -162,15 +163,19 @@ class Database
         CONSTRAINT fk_shopping_card_user
             FOREIGN KEY (user)
             REFERENCES user (username))
-        ENGINE = InnoDB;";
+        ENGINE = InnoDB;
+        
+        INSERT INTO product VALUES (1,'Schaukelpferd','Zum Schaukeln',50.00,'../../assets/images/product_images/schaukelpferd.jpg',13,'admin',5);
+        INSERT INTO product VALUES (2,'Schaukel','Schaukelgestell mit eins Schaukel',150.00,'../../assets/images/product_images/schaukel.jpg',133,'admin',5);
+        INSERT INTO product VALUES (3,'Pferd','Zum Schaukeln',500.00,'../../assets/images/product_images/pferd.jpg',13,'admin',4);";
     }
 
-    private function initalProducts(): string
+    private function initalData(): string
     {
         return 
-        'USE dobuy;
-        INSERT INTO product VALUES ("Samsung Galaxy A12","Das 16,55 cm / 6,5-Zoll Infinity-V Display des Galaxy A12 bietet dir eine große Displayfläche für beeindruckende Entertainment-Erlebnisse. Genieße dank der HD+-Technologie Inhalte in klarer Schärfe und mit satten Kontrasten",129.99,"../assets/images/product_images/galaxya12.png",12,"dobuy",3);
-        ';
+        "INSERT INTO product VALUES (1,'Schaukelpferd','Zum Schaukeln',50.00,'../assets/images/product_images/schaukelpferd.jpg',13,'admin',5);
+        INSERT INTO product VALUES (2,'Schaukel','Schaukelgestell mit eins Schaukel',150.00,'../assets/images/product_images/schaukel.jpg',133,'admin',5);
+        INSERT INTO product VALUES (3,'Pferd','Zum Schaukeln',500.00,'../assets/images/product_images/pferd.jpg',13,'admin',4);";
     }
 
     /**

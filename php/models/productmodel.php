@@ -24,17 +24,17 @@ class ProductModel
         $this->category = $productRow["category_id"];
     }
 
-    function getID()
+    function getID(): int
     {
         return $this->id;
     }
 
-    function getName()
+    function getName(): string
     {
         return $this->name;
     }
 
-    function getDescription()
+    function getDescription(): string
     {
         return $this->description;
     }
@@ -49,17 +49,17 @@ class ProductModel
         return $this->imagepath;
     }
 
-    function getQuantity()
+    function getQuantity(): int
     {
         return $this->quantity;
     }
 
-    function getProvider()
+    function getProvider(): string
     {
         return $this->provider;
     }
 
-    function getCategory()
+    function getCategory(): int
     {
         return $this->category;
     }
