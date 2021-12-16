@@ -2,7 +2,9 @@
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
     min-width: 400px;
+    height: auto;
 }
 
 .form-container {
@@ -26,6 +28,7 @@ button {
     display: table;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 50px;
     color: #000 !important;
 }
 
