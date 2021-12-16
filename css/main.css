@@ -281,56 +281,27 @@ footer ul.box-3_inner_wrap li a::before {
 
 .container-footer-wrapper {
     background-color: lightgrey;
-    height: 66px;
-    padding-top: 12px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
 }
 
-.container-footer {
-    background-color: lightgrey;
-    display: inline-flex;
-    width: 100%;
-}
-
-.footer-link{
-    color: black;
-    text-decoration: none;
+#footer-link-div{
     text-align: center;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    font-size:24px;
 }
 
-#left{
-    
-    margin-left: 10%;
-    margin-right: auto;
-    text-align: center;
-    width:auto;
-}
-
-#mid{
-    margin-right: auto;
-    margin-left:auto;    
-    text-align: center;
-    width:auto;
-}
-
-#right{
-    text-align: center;
-    margin-left: auto;
-    margin-right: 10%;
-    width:auto;
-}
-
-.footer-option{
-    font-size: 20px;
-}
-
-.container-footer a:hover{
+#footer-link-div a:hover{
     text-decoration: none;
     color: #000000;
 }
 
 
-.container-footer a {
+#footer-link-div a {
     display: inline-block;
     position: relative;
     color: #000000;
@@ -339,7 +310,7 @@ footer ul.box-3_inner_wrap li a::before {
     font-weight: 600;
 }
   
-.container-footer a:after {
+#footer-link-div a:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -352,7 +323,7 @@ footer ul.box-3_inner_wrap li a::before {
     transition: transform 0.25s ease-out;
 }
 
-.container-footer a:hover:after {
+#footer-link-div a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
