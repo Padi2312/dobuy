@@ -35,6 +35,10 @@ class Database
             if (!$this->mysqli->multi_query($initScript)) {
                 throw new Exception("Failed to create database dobuy.");
             }
+            $initProducts = $this->initalProducts();
+            if (!$this->mysqli->multi_query($initProducts)) {
+                throw new Exception("Failed to init Products.");
+            }
         }
     }
 
@@ -159,6 +163,14 @@ class Database
             FOREIGN KEY (user)
             REFERENCES user (username))
         ENGINE = InnoDB;";
+    }
+
+    private function initalProducts(): string
+    {
+        return 
+        'USE dobuy;
+        INSERT INTO product VALUES ("Samsung Galaxy A12","Das 16,55 cm / 6,5-Zoll Infinity-V Display des Galaxy A12 bietet dir eine große Displayfläche für beeindruckende Entertainment-Erlebnisse. Genieße dank der HD+-Technologie Inhalte in klarer Schärfe und mit satten Kontrasten",129.99,"../assets/images/product_images/galaxya12.png",12,"dobuy",3);
+        ';
     }
 
     /**

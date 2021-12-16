@@ -14,6 +14,7 @@
     include_once "../common/session.php";
     include "../templates/header.php";
     include "../common/ordering.php";
+    include "../common/product.php";
     ?>
     
     <main>
@@ -109,7 +110,9 @@
         //}
         ?>
         <button type="submit" id="dealer" action="">Produkte anbieten</button>
-        <h1>Für Adminseite oberes mit if-Bedingung nicht einblenden.</h1>
+        <?php
+        if ($session->isAdmin()){
+        echo '<h1>Adminbereich</h1>
         <div id="tableheadline">Übersicht aller Produkte</div>
             <table id="table">
                 <tr>
@@ -118,30 +121,20 @@
                     <th id="descriptionadm">Beschreibung</th>
                     <th id="priceadm">Preis</th>
                     <th id="edit">Bearbeiten</th>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/logo.svg"></td>
-                    <td>Schuhe</td>
-                    <td>Schuhe halt</td>
-                    <td>187.69</td>
+                </tr>';
+                $product1 = new Product();
+                $products = $product1->getAllProducts();
+                foreach ($products as $product){
+                    echo '<tr>
+                    <td>'.$product->getImagePath().'</td>
+                    <td>'.$product->getName().'</td>
+                    <td>'.$product->getDescription().'</td>
+                    <td>'.$product->getPrice().'</td>
                     <td class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/logo.svg"></td>
-                    <td>Schuhe</td>
-                    <td>Schuhe halt</td>
-                    <td>187.69</td>
-                    <td class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/logo.svg"></td>
-                    <td>Schuhe</td>
-                    <td>Schuhe halt</td>
-                    <td>187.69</td>
-                    <td class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
-                </tr>
-            </table>
-        <button type="submit" id="addproduct" action="">Produkte hinzufügen</button>
+                    </tr>';
+                }
+                echo '</table>';
+        '<button type="submit" id="addproduct" action="">Produkte hinzufügen</button>
             
         <div id="tableheadline">Übersicht aller User</div>
             <table id="table">
@@ -169,7 +162,9 @@
                     <td>simon@lattin.de</td>
                     <td class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
                 </tr>
-            </table>  
+            </table>'; 
+        } 
+    ?>
     </main>
     <?php
     include "../templates/footer.php";

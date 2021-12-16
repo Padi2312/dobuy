@@ -35,4 +35,13 @@ class Session
             return null;
         }
     }
+
+    public static function isAdmin(): bool
+    {
+        if ($_SESSION[self::$usernameKey] == 'admin'){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

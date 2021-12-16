@@ -3,6 +3,7 @@
 include_once '../database/repository/product_repository.php';
 include_once 'session.php';
 include_once 'filehandler.php';
+include_once '../models/productmodel.php';
 
 class Product
 {
@@ -30,5 +31,15 @@ class Product
     function getProductById($productId)
     {
         return $this->productRepo->getProductById($productId);
+    }
+
+    public function getAllProducts()
+    {
+        return $this->productRepo->getAllProducts();
+    }
+
+    public function getImagePath()
+    {
+    
     }
 }
