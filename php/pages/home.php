@@ -31,7 +31,7 @@
 
         <div class="current">
             <span class="news">
-                Das sind die beliebtesten Produkte auf <span id="do">DO</span>BUY!
+                These are the most popular items on <span id="do">DO</span>BUY!
             </span>
         </div>
 
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-</main>
+    </main>
 
     <?php
     include "../templates/scripts.php";

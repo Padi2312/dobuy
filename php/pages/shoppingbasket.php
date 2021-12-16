@@ -49,10 +49,38 @@
                     <td>187.69</td>
                     <td class="outer"><a href=""><img src="../../assets/images/delete.svg" id="deletepic"></a></td>
                 </tr>
-                
+                <tr>
+                    <td><img src="../../assets/images/logo.svg"></td>
+                    <td>Schuhe</td>
+                    <td>Schuhe halt</td>
+                    <td>187.69</td>
+                    <td class="outer"><a href=""><img src="../../assets/images/delete.svg" id="deletepic"></a></td>
+                </tr>
+                <tr>
+                    <td><img src="../../assets/images/logo.svg"></td>
+                    <td>Schuhe</td>
+                    <td>Schuhe halt</td>
+                    <td>187.69</td>
+                    <td class="outer"><a href=""><img src="../../assets/images/delete.svg" id="deletepic"></a></td>
+                </tr>
+                <tr>
+                    <td><img src="../../assets/images/logo.svg"></td>
+                    <td>Schuhe</td>
+                    <td>Schuhe halt</td>
+                    <td>187.69</td>
+                    <td class="outer"><a href=""><img src="../../assets/images/delete.svg" id="deletepic"></a></td>
+                </tr>
+                <tr>
+                    <td><img src="../../assets/images/logo.svg"></td>
+                    <td>Schuhe</td>
+                    <td>Schuhe halt</td>
+                    <td>187.69</td>
+                    <td class="outer"><a href=""><img src="../../assets/images/delete.svg" id="deletepic"></a></td>
+                </tr>
         </table>
-    
-        <button type="submit" id="buy">Kaufen</button>
+        <div class="buttonline">
+            <button type="submit" id="buy" class="btn">Kaufen</button>
+        </div>
 
     </main>
     <?php
