@@ -1,4 +1,4 @@
-#tableheadline{
+#tableheadline {
     width: 100%;
     margin-top: 50px;
     font-weight: bold;
@@ -6,18 +6,18 @@
     text-align: center;
 }
 
-.test{
+.test {
     font-size: 50px;
 }
 
-#table{
+#table {
     width: 90%;
     margin-top: 50px;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-#table th{
+#table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -34,7 +34,7 @@ td {
     padding-left: 5px;
 }
 
-.outer{
+.outer {
     border-right: none;
 }
 
@@ -50,12 +50,12 @@ td {
 }
 
 #name {
-    width:15%;
+    width: 15%;
     padding-left: 5px;
 }
 
 #description {
-    width:auto;
+    width: auto;
     padding-left: 5px;
 }
 
@@ -69,9 +69,15 @@ td {
     padding-left: 5px;
 }
 
-#buy{
+img {
+    max-width: 20vh;
+    height: auto;
+}
+
+#buy {
     margin-bottom: 30px;
-    font-size: 1.3em; padding: 5px 12px; 
+    font-size: 1.3em;
+    padding: 5px 12px;
     font-weight: 600;
     border: 1px solid #FFE600;
     background-color: #FFE600;
@@ -81,7 +87,7 @@ td {
     justify-self: center;
 }
 
-.buttonline{
+.buttonline {
     justify-content: center;
     display: flex;
     align-items: center;

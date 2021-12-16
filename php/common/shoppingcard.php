@@ -21,6 +21,12 @@ class ShoppingCard
         $this->shoppingCardRepo->addProductToShoppingCard($username, $productId);
     }
 
+    function getShoppingCardByUser()
+    {
+        $username = $this->session->getUsername();
+        return $this->shoppingCardRepo->getUsersShoppingCardProducts($username);
+    }
+
     function getAmountOfShoppingCard()
     {
         $username = $this->session->getUsername();

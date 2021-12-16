@@ -1,6 +1,7 @@
 <?php
 
 include_once '../database/database.php';
+include_once '../models/productmodel.php';
 
 class ShoppingCardRepository extends Database
 {
@@ -10,15 +11,20 @@ class ShoppingCardRepository extends Database
         parent::__construct();
     }
 
-    function getUsersShoppingCard($username)
+    function getUsersShoppingCardProducts($username)
     {
-        $resultMySql = $this->mysqli->query("SELECT * FROM shopping_card INNER JOIN product ON product.id = shopping_card.product_id WHERE user='$username'");
-        if ($resultMySql->num_rows == 0) {
-            return null;
-        }
+        $resultMySql = $this->mysqli->query("SELECT product.* FROM shopping_card INNER JOIN product ON product.id = shopping_card.product_id WHERE user='$username'");
 
-        $result = $resultMySql->fetch_all();
-        return new UserModel($result);
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $productsOfShoppingBasket = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($productsOfShoppingBasket, new ProductModel($item));
+            }
+            return $productsOfShoppingBasket;
+        }
     }
 
     function addProductToShoppingCard($username, $productid)
@@ -37,7 +43,7 @@ class ShoppingCardRepository extends Database
     function getAmountOfUsersShoppingCard($username): int
     {
         $resultMySql = $this->mysqli->query("SELECT COUNT(*) FROM shopping_card WHERE user='$username'");
-        if ($resultMySql->num_rows > 0) {
+        if ($resultMySql && $resultMySql->num_rows > 0) {
             $row = $resultMySql->fetch_row();
             return $row[0];
         } else {
