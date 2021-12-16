@@ -18,19 +18,24 @@
                     </div>
                     <hr id="seperator"/>
                     <div class="form-group">
-                        <input name="username" type="text" id="username" class="form-control" required placeholder="Username">
+                        <label for="username">Benutzername</label>
+                        <input name="username" type="text" id="username" class="form-control" required placeholder="Benutzername">
                     </div>
-                    <div class="form-group">               
+                    <div class="form-group">
+                        <label for="firstname">Vorname</label>               
                         <input name="firstname" type="text" id="firstname" class="form-control" required placeholder="Vorname">
                     </div>
                     <div class="form-group">
+                        <label for="lastname">Nachname</label>
                         <input name="lastname" type="text" id="lastname" class="form-control" required placeholder="Nachname">
                     </div>
                     <div class="form-group">
+                        <label for="email">E-Mail</label>
                         <input name="email" type="text" id="email" class="form-control" required placeholder="E-Mail">
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" id="password" class="form-control" required placeholder="Password">
+                        <label for="password">Passwort</label>
+                        <input name="password" type="password" id="password" class="form-control" required placeholder="Passwort">
                     </div>
                     <div id="buttonline">
                         <button type="submit" name="register" id="reg" class="btn">Registrieren</button>
