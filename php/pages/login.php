@@ -18,7 +18,7 @@
                     </br>
                     Melden Sie sich an, um zu Ihrer Kontoübersicht zu gelangen.
                 </div>
-                <hr />
+                <hr id="seperator"/>
 
                 <?php
                 if (isset($_GET["error"])) {

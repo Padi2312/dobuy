@@ -31,7 +31,7 @@
 
         <div class="current">
             <span class="news">
-                These are the most popular items on <span id="do">DO</span>BUY!
+                Das sind die beliebtesten Produkte auf <span id="do">DO</span>BUY!
             </span>
         </div>
 
