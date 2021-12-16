@@ -278,3 +278,46 @@ footer ul.box-3_inner_wrap li a::before {
     background: #3c3c3c;
     transition: left 250ms linear, right 250ms linear
 }
+
+.container-footer {
+    background-color: #a5a5a5;
+    height: 80px;
+    margin-bottom: 0;
+}
+
+.footer-link{
+    color: black;
+    text-decoration: none;
+}
+
+.footer-link:hover{
+    color: #FFE600;
+}
+
+.link-list-footer{
+    display: inline-flex;
+    width: 90%;
+    margin-left: 5%;
+    list-style-type: none;
+}
+
+#left{
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+#right{
+    margin-right: 5%;
+    margin-left: auto;
+}
+
+.footer-option{
+    font-size: 20px;
+}
+
+.container-footer ul li a{
+    text-decoration: none;
+    color: #3c3c3c;
+    font-weight: 600;
+    text-transform: uppercase;
+}

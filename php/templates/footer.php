@@ -1,9 +1,17 @@
-<footer>
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-    </footer>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container-footer">
+        <ul class="link-list-footer">
+            <li id="left" class="footer-option">
+                <a href="#9" class="footer-link">Impressum</a>
+            </li>
+            <li id="mid" class="footer-option">
+                <a href="#9" class="footer-link">Datenschutz</a>
+            </li>
+            <li id="right" class="footer-option">
+                <a href="#9" class="footer-link">Kontakt</a>
+            </li>
+        </ul>
+    </div>
 </footer>
 <!-- <div class="div_center" id="footer_inner">
         <div class="footer_box" id="footer_box-1">
