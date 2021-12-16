@@ -37,7 +37,11 @@ class ShoppingCardRepository extends Database
     function getAmountOfUsersShoppingCard($username): int
     {
         $resultMySql = $this->mysqli->query("SELECT COUNT(*) FROM shopping_card WHERE user='$username'");
-        $row = $resultMySql->fetch_row();
-        return $row[0];
+        if ($resultMySql->num_rows > 0) {
+            $row = $resultMySql->fetch_row();
+            return $row[0];
+        } else {
+            return 0;
+        }
     }
 }
