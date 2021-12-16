@@ -25,13 +25,13 @@
         <div class="searchbar">
             <form action="search.php" method="post">
                 <lable for="productsearch" class="form-lable">
-                    <input type="text" class="form-control" id="searchterm" placeholder="Search here" name="searchterm">
+                    <input type="text" class="form-control" id="searchterm" placeholder="Suchbegriff eingeben" name="searchterm">
             </form>
         </div>
 
         <div class="current">
             <span class="news">
-                These are the most popular items on <span id="do">DO</span>BUY!
+                Das sind die beliebtesten Produkte auf <span id="do">DO</span>BUY!
             </span>
         </div>
 
