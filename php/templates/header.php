@@ -28,7 +28,7 @@
                         $shoppingCard = new ShoppingCard();
                         $amount = $shoppingCard->getAmountOfShoppingCard();
                         echo "<li class='nav-item'>
-                            <a href='###4'  class='nav-item' title='Zum Warenkorb'>
+                            <a href='../../php/pages/shoppingbasket.php'  class='nav-item' title='Zum Warenkorb'>
                                 Zum Warenkorb ($amount)
                             </a>
                             </li>
