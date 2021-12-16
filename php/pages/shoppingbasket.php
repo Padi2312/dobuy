@@ -41,8 +41,9 @@
             }
             ?>
         </table>
-
-        <button type="submit" id="buy">Kaufen</button>
+        <div class="buttonline">
+            <button type="submit" id="buy">Kaufen</button>
+        </div>
 
     </main>
     <?php
