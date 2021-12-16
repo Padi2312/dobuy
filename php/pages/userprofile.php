@@ -5,7 +5,7 @@
     <?php
     include "../templates/head.php";
     ?>
-    <link rel="stylesheet" href="../../css/userpage.css">
+    <link rel="stylesheet" href="../../css/userprofile.css">
 </head>
 
 <body>
@@ -18,12 +18,12 @@
     ?>
     
     <main>
-        <div id="userdaten">
+        <div id="userdata">
             
-                Username </br>
-                Name </br>
-                E-Mail </br>
-            
+            <span class="kind">Benutzername</span>: Hubli1
+            <span class="kind">Name</span>: Markus Hub
+            <span class="kind">E-Mail</span>: MarkusderGeilste@Hub.de
+                   
         </div>
 
         <div id="tableheadline">Ihre bestellten Produkte</div>
@@ -39,7 +39,7 @@
                 $orderList = $orders->getOrdersOfUser('user');
                 foreach ($orderList as $product) {
                     echo '<tr>
-                            <td>' . $product->getImagePath() . '</td>
+                            <td id="picture">' . $product->getImagePath() . '</td>
                            <td>' . $product->getName() . '</td>
                           <td>' . $product->getDescription() . '</td>
                            <td class="outer">' . $product->getPrice() . '</td></tr>';
@@ -112,8 +112,7 @@
         <button type="submit" id="dealer" action="">Produkte anbieten</button>
         <?php
         if ($session->isAdmin()){
-        echo '<h1>Adminbereich</h1>
-        <div id="tableheadline">Übersicht aller Produkte</div>
+        echo '<div id="tableheadline">Übersicht aller Produkte</div>
             <table id="table">
                 <tr>
                     <th id="pictureadm">Bild</th>
@@ -126,11 +125,19 @@
                 $products = $product1->getAllProducts();
                 foreach ($products as $product){
                     echo '<tr>
+<<<<<<< HEAD
                     <td><img id="productimg" src='.$product->getImagePath().'></td>
                     <td>'.$product->getName().'</td>
                     <td>'.$product->getDescription().'</td>
                     <td>'.$product->getPrice().'</td>
                     <td class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
+=======
+                    <td id="display"><img src='.$product->getImagePath().'></td>
+                    <td id="display">'.$product->getName().'</td>
+                    <td id="display">'.$product->getDescription().'</td>
+                    <td id="display">'.$product->getPrice().'</td>
+                    <td  id="display"class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
+>>>>>>> 1d2418157417c2a6b98b8dd74a938f0687549aa3
                     </tr>';
                 }
                 echo '</table>';
