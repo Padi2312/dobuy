@@ -14,9 +14,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../pages/addproduct.php" title="Zu der Produkt anbieten Seite">Produkte anbieten</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="###3" title="Zur Kontakt Seite">Kontakt</a>
-                </li>
             </ul>
             <div class="navbar-collapse collapse order-3" id="navbarNavTwo">
                 <ul class="navbar-nav ml-auto">
