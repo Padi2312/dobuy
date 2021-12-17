@@ -67,13 +67,15 @@
 
         if ($session->isLoggedIn()) {
             echo "<form action='$action' method='post'>
-                    <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
+                    <div class='shoppingcart-buttonline'>
+                        <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
+                    </div>
                 </form>";
         }
         ?>
 
 
-        <hr />
+        <hr id="seperator"/>
         <div id="comments">
             <div class="grid-container">
                 <div class="username">
@@ -100,20 +102,45 @@
                 </div>
             </div>
         </div>
-        <div id="rating-form">
-            <form class="postrating" method="post" action="postRating">
-                <input type="radio" id="one" name="ratingpoints" value=1>
-                <label for="one">1 Stern</label>
-                <input type="radio" id="two" name="ratingpoints" value=2>
-                <label for="two">2 Sterne</label>
-                <input type="radio" id="three" name="ratingpoints" value=3>
-                <label for="three">3 Sterne</label>
-                <input type="radio" id="four" name="ratingpoints" value=4>
-                <label for="four">4 Sterne</label>
-                <input type="radio" id="five" name="ratingpoints" value=5>
-                <label for="five">5 Sterne</label></br>
-                <label for="comment">Schreib einen Kommentar</label>
-                <textarea name="comment" id="comment">
+        <hr id="seperator"/>
+        <div id="rating-infobox">
+            <span class="rating-info">Geben Sie eine Bewertung zum Produkt ab</span>
+        </div>
+        <div class="rating-form container">
+            <form class="postrating" method="post" action="postRating" id="rating-comment">
+                <div class="star-rating container">
+                    <div class="row">
+                        <div class="starrating col">
+                        <input type="radio" id="one" name="ratingpoints" value=1>
+                        <label for="one" class="star-option-label">1 Stern</label>
+                        </div>
+                        <div class="starrating col">
+                        <input type="radio" id="two" name="ratingpoints" value=2>
+                        <label for="two" class="star-option-label">2 Sterne</label>
+                        </div>
+                        <div class="starrating col">
+                        <input type="radio" id="three" name="ratingpoints" value=3>
+                        <label for="three" class="star-option-label">3 Sterne</label>
+                        </div>
+                        <div class="starrating col">
+                        <input type="radio" id="four" name="ratingpoints" value=4>
+                        <label for="four" class="star-option-label">4 Sterne</label>
+                        </div>
+                        <div class="starrating col">
+                        <input type="radio" id="five" name="ratingpoints" value=5>
+                        <label for="five" class="star-option-label">5 Sterne</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="comment-wrapper container">
+                    <div class="row">
+                        <div class="col">
+                            <label for="comment">Schreibe einen Kommentar</label></br>
+                            <textarea name="comment" id="comment"class="bar"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn"><span id="ratingbutton">Bewertung abgeben</span></button>
             </form>
         </div>
 
