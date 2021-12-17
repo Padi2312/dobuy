@@ -33,13 +33,21 @@
     font-weight: bold;
 }
 
+.part col-md{
+    width: 20%;
+}
+
 #popular {
-    width: 60%;
+    width: 80%;
     background-color: #FFE600;
     margin-left: auto;
     margin-right: auto;
     height: 3px;
     border: 0 none;
+}
+
+#productpicture{
+    width: 100%;
 }
 
 .product-item {

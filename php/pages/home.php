@@ -13,7 +13,7 @@ new Database();
     <title>DOBUY - Ihr Onlineshop</title>
     <?php include '../templates/head.php' ?>
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/home.css">
 </head>
 
 <body>
@@ -50,10 +50,10 @@ new Database();
                     $name = $randomProducts[$index]->getName();
                     $id = $randomProducts[$index]->getID();
                     $imagePath = $randomProducts[$index]->getImagePath();
-                    echo "<div class='col-md'>
+                    echo "<div class='part col-md'>
                             <a class='link-product' href='productsite.php?id=$id'>
                              <div class='product-item'>
-                                 <span>$name</span>
+                                 <span id='title'>$name</span>
                                 <hr id='popular'>
                                  <img id='productpicture' src='$imagePath' title='$name' alt='$name'>
                             </div>
