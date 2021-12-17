@@ -50,7 +50,7 @@ new Database();
                     $name = $randomProducts[$index]->getName();
                     $id = $randomProducts[$index]->getID();
                     $imagePath = $randomProducts[$index]->getImagePath();
-                    echo "<div class='part col-md'>
+                    echo "<div class='part col-md-3'>
                             <a class='link-product' href='productsite.php?id=$id'>
                              <div class='product-item'>
                                  <span id='title'>$name</span>
