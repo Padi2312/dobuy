@@ -11,15 +11,13 @@
 }
 
 #table {
-    width: 90%;
+    width: 100%;
     margin-top: 50px;
-    margin-left: 5%;
-    margin-right: 5%;
     margin-bottom: 50px;
 }
 
 .img {
-    max-width: 250px;
+    max-width: 50%;
     height: auto;
 }
 
@@ -31,13 +29,17 @@
     color: black;
     border: 2px solid #FFFFFF;
     font-weight: bold;
+    word-wrap: break-word;
+}
 
+#table td{
+    word-wrap: break-word;
 }
 
 td {
     border-right: 2px solid #FFE600;
     border-top: 2px solid #FFE600;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 .outer {
@@ -46,40 +48,40 @@ td {
 
 #picture {
     max-width: 20%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 .picture {
     max-height: 150px;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #name {
     width: 15%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #description {
     width: auto;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #price {
     width: 15%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #descriptionexpanded {
     width: auto;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #profit {
     width: 15%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
-button {
+.btn {
     font-size: 1.3em;
     padding: 5px 12px;
     font-family: Roboto, sans-serif;
@@ -100,44 +102,45 @@ button {
 
 }
 
-#pictureatm {
-    width: 20%;
-    padding-left: 5px;
+#pictureadm {
+    max-width: 50%;
+    padding-left: 3px;
 }
 
 #nameatm {
     width: 15%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #descriptionatm {
     width: auto;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 #priceatm {
     width: 15%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
-#useratm {
+#useradm {
     width: 30%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
-#usernamenatm {
+#usernamenadm {
     width: 30%;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
-#emailatm {
+#emailadm {
     width: 30%;
-    padding-left: 5px;
+    padding-left: 3px;
+    word-wrap: break-word;
 }
 
 #edit {
-    width: 10%;
-    padding-left: 5px;
+    width: 5%;
+    padding-left: 3px;
 }
 
 .kind {
@@ -150,5 +153,5 @@ button {
 }
 
 #display {
-    padding: 5px;
+    padding: 3px;
 }

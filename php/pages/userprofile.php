@@ -59,7 +59,7 @@ include_once "../common/session.php";
                     <th id="name">Name</th>
                     <th id="descriptionexpanded">Beschreibung</th>
                     <th id="price">Preis</th>
-                    <th id="profit">Anz/Profit</th>
+                    <th id="profit">Profit</th>
                 </tr>
                 <tr>
                     <td><img src="../../assets/images/logo.svg"></td>
@@ -112,10 +112,10 @@ include_once "../common/session.php";
             //    
             //    echo '</table>';
             //} else {
-            //    echo '<button type="submit" id="dealer" action="">Produkte anbieten</button>';
+            //    echo '<button type="submit" class="btn" id="dealer" action="">Produkte anbieten</button>';
             //}
             ?>
-            <button type="submit" id="dealer" action="">Produkte anbieten</button>
+            <button type="submit" class="btn" id="dealer" action="">Produkte anbieten</button>
             <?php
             if ($session->isAdmin()) {
                 echo '<div id="tableheadline">Übersicht aller Produkte</div>
@@ -124,33 +124,33 @@ include_once "../common/session.php";
                     <th id="pictureadm">Bild</th>
                     <th id="nameadm">Name</th>
                     <th id="priceadm">Preis</th>
-                    <th id="edit">Bearbeiten</th>
+                    <th id="edit">Ändern</th>
                 </tr>';
                 $product1 = new Product();
                 $products = $product1->getAllProducts();
                 foreach ($products as $product) {
                     echo '<tr>
-                    <td id="display"><img class="img" src=' . $product->getImagePath() . '></td>
-                    <td id="display">' . $product->getName() . '</td>
-                    <td id="display">' . $product->getPrice() . '</td>
-                    <td  id="display"class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
+                    <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
+                    <td id="nameadm">' . $product->getName() . '</td>
+                    <td id="priceadm">' . $product->getPrice() . '</td>
+                    <td  id="edit"class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
                     </tr>';
                 }
                 echo '</table>
-            <button type="submit" id="addproduct" action="">Produkte hinzufügen</button>
+            <button type="submit" class="btn" id="addproduct" action="">Produkte hinzufügen</button>
                 
             <div id="tableheadline">Übersicht aller User</div>
                 <table id="table">
                     <tr>
                         <th id="useradm">Username</th>
                         <th id="usernameadm">Name</th>
-                        <th id="emailadm">E-Mail-Adresse</th>
-                        <th id="edit">Bearbeiten</th>
+                        <th id="emailadm">E-Mail</th>
+                        <th id="edit">Ändern</th>
                     </tr>
                     <tr>
                         <td>Gertalod</td>
                         <td>Simon Lattin</td>
-                        <td>simon@lattin.de</td>
+                        <td id="emailadm">simon@lattin.de</td>
                         <td class="outer"><a href=""><img src="../../assets/images/edit.svg"></a></td>
                     </tr>
                     <tr>
