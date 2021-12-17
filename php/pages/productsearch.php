@@ -25,25 +25,27 @@
           <div  class="filterbar container">
             <div class="row">
               <div class="col">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Sortierung</option>
-                  <option selected>Preis</option>
-                  <option selected>Name</option>
-                  <option selected>Beliebtheit</option>
+                <lable for="sorting">Sortierung</span></br>
+                <select class="form-select" aria-label="Default select example" id="sorting">
+                  <option selected>Sortierung wählen</option>
+                  <option >Preis</option>
+                  <option >Name</option>
+                  <option >Beliebtheit</option>
                 </select>
               </div>
               <div class="col">
-              <select class="form-select" aria-label="Default select example">
-                  <option selected>Kategorie</option>
-                  <option selected>Elektronik</option>
-                  <option selected>Bücher</option>
-                  <option selected>Kleidung</option>
-                </select>
+                <lable for="category">Kategorie</span></br>
+                <select class="form-select" aria-label="Default select example" id="category">
+                    <option selected>Kategorie wählen</option>
+                    <option >Elektronik</option>
+                    <option >Bücher</option>
+                    <option >Kleidung</option>
+                  </select>
               </div>
               <div class="col">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="availablecheck">
-                  <label class="form-check-label" for="availablecheck">Verfügbarkeit</label>
+                  <label class="form-check-label" for="availablecheck">Nur verfügbare anzeigen</label>
                 </div>
               </div>
             </div>
