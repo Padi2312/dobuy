@@ -52,7 +52,7 @@ class ProductRepository extends Database
     function getAllProducts(): array
     {
 
-    $resultMySql = $this->mysqli->query("SELECT * FROM product");
+        $resultMySql = $this->mysqli->query("SELECT * FROM product");
         if ($resultMySql->num_rows === 0) {
             return array();
         } else {
@@ -71,10 +71,33 @@ class ProductRepository extends Database
         return floor($result);
     }
 
-    function getProducts($value)
+    function getProducts($amount)
     {
-        $result = $this->mysqli->query("SELECT * FROM product LIMIT 10")->fetch_all();
-        for ($i = 0; $i < $value; $i++) {
-        }
+        $resultMySql = $this->mysqli->query("SELECT * FROM product LIMIT $amount");
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $products = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($products, new ProductModel($item));
+            }
+            return $products;
+        };
+    }
+
+    function getRandomProducts($amount = 10)
+    {
+        $resultMySql = $this->mysqli->query("SELECT * FROM product ORDER BY RAND() LIMIT $amount");
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $products = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($products, new ProductModel($item));
+            }
+            return $products;
+        };
     }
 }

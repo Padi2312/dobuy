@@ -1,3 +1,9 @@
+<?php
+include_once '../common/shoppingcard.php';
+include_once '../common/session.php';
+$session = new Session();
+
+?>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #dddddd;">
         <a class="navbar-brand" href="../../">
@@ -12,15 +18,20 @@
                     <a href="../pages/productsearch.php" class="nav-link" title="Zu der Prdukt kaufen Seite">Produkte kaufen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/addproduct.php" title="Zu der Produkt anbieten Seite">Produkte anbieten</a>
+                    <?php
+                    if (!$session->isLoggedIn()) {
+                        echo "<a class='nav-link' href='../pages/login.php?type=sell' title='Zu der Produkt anbieten Seite'>Produkte anbieten</a>";
+                    } else {
+                        echo "<a class='nav-link' href='../pages/addproduct.php' title='Zu der Produkt anbieten Seite'>Produkte anbieten</a>";
+                    }
+                    ?>
+
                 </li>
             </ul>
             <div class="navbar-collapse collapse order-3" id="navbarNavTwo">
                 <ul class="navbar-nav ml-auto">
                     <?php
-                    include_once '../common/shoppingcard.php';
-                    include_once '../common/session.php';
-                    $session = new Session();
+
                     if ($session->isLoggedIn()) {
                         $shoppingCard = new ShoppingCard();
                         $amount = $shoppingCard->getAmountOfShoppingCard();

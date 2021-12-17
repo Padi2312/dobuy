@@ -1,3 +1,6 @@
+<?php
+include_once '../common/notloggedin.php';
+?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -10,13 +13,13 @@
 <body>
 
     <?php
-        include_once "../common/session.php";
-        include "../templates/header.php";
+    include_once "../common/session.php";
+    include "../templates/header.php";
     ?>
 
     <main>
 
-        
+
 
         <div class="submit-form container">
             <form action="addproductaction.php" method="post" enctype="multipart/form-data">
@@ -34,8 +37,8 @@
 
     </main>
     <?php
-        include "../templates/footer.php";
-        include "../templates/scripts.php";
+    include "../templates/footer.php";
+    include "../templates/scripts.php";
     ?>
 </body>
 

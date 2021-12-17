@@ -33,8 +33,13 @@ class Product
         return $this->productRepo->getProductById($productId);
     }
 
-    public function getAllProducts(): array
+    function getAllProducts(): array
     {
         return $this->productRepo->getAllProducts();
+    }
+
+    function getRandomProducts($amount): array 
+    {
+        return $this->productRepo->getRandomProducts($amount);
     }
 }

@@ -11,40 +11,49 @@
     <link rel="stylesheet" href="../../css/login.css">
 
     <main>
-        <div class="container-fluid ">
-            <form class="login-form" method="post" action="loginaction.php">
-                <div id="logintext">
-                    <img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY">
-                    </br>
-                    Melden Sie sich an, um zu Ihrer Kontoübersicht zu gelangen.
-                </div>
-                <hr id="seperator"/>
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center">
 
-                <?php
-                if (isset($_GET["error"])) {
-                    echo '<div class="alert alert-danger" role="alert">
+                <form class="login-form " method="post" action="loginaction.php">
+                    <div id="logintext">
+                        <img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY">
+                        </br>
+                        Melden Sie sich an, um zu Ihrer Kontoübersicht zu gelangen.
+                    </div>
+                    <hr id="seperator" />
+
+                    <?php
+                    if (isset($_GET["error"])) {
+                        echo '<div class="alert alert-danger" role="alert">
                     Benutzername und passwort falsch
                     </div>';
-                }
-                ?>
+                    }
 
-                <div class=" form-group">
-                    <label for="name">Benutzername</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Benutzername" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Passwort</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Passwort" required>
-                </div>
-                <div id="buttonline">
-                    <a href="./register.php">
-                        <button type="button" class="btn btn-link">
-                            Registrieren
-                        </button>
-                    </a>
-                    <button name="login" type="submit" class="btn" id="loginbutton">Anmelden</button>
-                </div>
-            </form>
+                    if (isset($_GET["type"]) && $_GET["type"] === "sell") {
+                        echo '<div class="alert alert-info" role="alert">
+                    Um auf DoBuy Produkte anbieten zu können, müssen sie registriert sein.
+                    </div>';
+                    }
+                    ?>
+
+                    <div class=" form-group">
+                        <label for="name">Benutzername</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Benutzername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Passwort</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Passwort" required>
+                    </div>
+                    <div id="buttonline">
+                        <a href="./register.php">
+                            <button type="button" class="btn btn-link">
+                                Registrieren
+                            </button>
+                        </a>
+                        <button name="login" type="submit" class="btn" id="loginbutton">Anmelden</button>
+                    </div>
+                </form>
+            </div>
 
         </div>
 

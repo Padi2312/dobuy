@@ -1,3 +1,10 @@
+<?php
+include_once '../common/session.php';
+include_once '../database/database.php';
+include_once '../common/product.php';
+//Important init database once here!
+new Database();
+?>
 <!DOCTYPE html>
 <html lang="">
 
@@ -12,11 +19,6 @@
 <body>
 
     <?php
-    include_once '../common/session.php';
-    include_once '../database/database.php';
-    //Important init database once here!
-    new Database();
-
     include "../templates/header.php";
     ?>
 
@@ -30,59 +32,41 @@
         </div>
 
         <div class="current">
-            <span class="news">
-                Das sind die beliebtesten Produkte auf <span id="do">DO</span>BUY!
+            <span class="news h1">
+                Unsere Produkte auf <span id="do">DO</span>BUY!
             </span>
         </div>
 
-        <div id="grid" class="grid-container">
-            <div class="item1">
-                <span>Item 1</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item2">
-                <span>Item 2</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item3">
-                <span>Item 3</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item4">
-                <span>Item 4</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item5">
-                <span>Item 5</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item6">
-                <span>Item 6</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item7">
-                <span>Item 7</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item8">
-                <span>Item 8</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-            <div class="item9">
-                <span>Item 9</span>
-                <hr id="popular">
-                <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-            </div>
-        </div>
 
+
+        <div class="container">
+            <?php
+            $productClass = new Product();
+            $randomProducts = $productClass->getRandomProducts(12);
+            for ($i = 0; $i < 12 / 4; $i++) {
+                echo "<div class='row'>";
+                for ($j = 0; $j < 4; $j++) {
+                    $index = $i + $j;
+                    $name = $randomProducts[$index]->getName();
+                    $id = $randomProducts[$index]->getID();
+                    $imagePath = $randomProducts[$index]->getImagePath();
+                    echo "<div class='col-md'>
+                            <a class='link-product' href='productsite.php?id=$id'>
+                             <div class='product-item'>
+                                 <span>$name</span>
+                                <hr id='popular'>
+                                 <img id='productpicture' src='$imagePath' title='$name' alt='$name'>
+                            </div>
+                             </a>
+                    </div>";
+                }
+                echo "</div>";
+            }
+
+
+            ?>
+
+        </div>
     </main>
 
     <?php
