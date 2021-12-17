@@ -147,7 +147,7 @@
 
 
 footer {
-    background: #3c3c3c;
+    background: #dddddd;
     color: #fff;
     line-height: 1.5
 }
@@ -189,6 +189,11 @@ footer .box-1_inner_wrap span {
 footer .box-1_inner_wrap a {
     position: relative;
     padding-left: 23px
+}
+
+footer .box-1_inner_wrap a:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 footer .box-1_inner_wrap a:hover::after {
@@ -244,7 +249,9 @@ footer ul.box-3_inner_wrap li a {
 }
 
 footer ul.box-3_inner_wrap li a:hover {
-    padding-left: 30px
+    padding-left: 30px;
+    text-decoration: none;
+    color: #fff;
 }
 
 footer ul.box-3_inner_wrap li a::before {

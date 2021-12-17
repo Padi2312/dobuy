@@ -15,6 +15,8 @@
     <div class="container-fluid">
         <div>
             <div class="row ml-5">
+                <div class="col">
+                </div>
                 <div class="col-md-4 mb-4">
                     <h2>Kontaktinfos</h2>
                     <div class="box-1_inner_wrap">
@@ -26,20 +28,7 @@
                         <a href="mailto:max@musterman.com" class="footer_mail" title="Fenster zum schreiben der E-mail öffnen">E-Mail schreiben</a>
                     </div>
                 </div>
-                <div class="col-md-5 mb-4">
-                    <h2>Geschäftszeiten</h2>
-                    <div class="box-2_inner-wrap">
-                        <b class="day">Mo-Do:</b>
-                        <span class="times">8 - 16 Uhr</span>
-                    </div>
-                    <div class="box-2_inner-wrap">
-                        <b class="day">Fr:</b>
-                        <span class="times">10 - 14 Uhr</span>
-                    </div>
-                    <div class="box-2_inner-wrap">
-                        <b class="day">Sa:</b>
-                        <span class="times">10 - 12 Uhr</span>
-                    </div>
+                <div class="col">
                 </div>
                 <div class="col-md-3 mb-4">
                     <h2>Weitere Links</h2>
@@ -54,6 +43,8 @@
                             <a href="../../php/pages/contact.php" class="footer-link"><span id="link">Kontakt</span></a>
                         </li>
                     </ul>
+                </div>
+                <div class="col">
                 </div>
             </div>
         </div>
