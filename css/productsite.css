@@ -15,55 +15,44 @@
 }
 
 .productpicture {
-    grid-area: picture;
     text-align: center;
     padding: 20px 0;
-    width: 100%;
 }
 
-#productpicture {
-    width: 100%;
-    height: auto;
-}
-
-.productdescription {
-    grid-area: description;
+#productdescription {
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-#productpicture{  
-    max-width: 30%;
+#productpicture{ 
+    margin-left: 20%; 
+    max-width: 60%;
     height: auto;
 }
 
-.price {
-    grid-area: price;
+#price {
     text-align: right;
     padding: 20px 0;
     font-size: 30px;
 }
 
 .tags {
-    grid-area: tags;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-.retailer {
-    grid-area: retailer;
+#retailer {
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-.rating {
+#rating {
     padding: 12px 0;
     font-size: 30px;
-    grid-area: rating;
-    text-align: center;
+    text-align: left;
 }
 
 #product {
@@ -73,21 +62,9 @@
     margin-right: auto;
 }
 
-.grid-master {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-areas:
-        'picture picture description description'
-        'picture picture description description'
-        'picture picture description description'
-        'picture picture description description'
-        'retailer rating tags price';
-}
-
 .rating {
     padding: 12px 0;
     font-size: 30px;
-    grid-area: rating;
     text-align: center;
 }
 

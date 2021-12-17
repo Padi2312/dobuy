@@ -32,26 +32,32 @@
             </p>
         </div>
 
-        <div id="product" class="grid-master">
-            <div class="productpicture">
-                <img id="productpicture" src="<?php echo $product->getImagePath(); ?>" title="Placeholder" alt="Placeholder">
+        <div id="product" class="grid-master container">
+            <div class="row">
+                <div class="col">
+                    <img id="productpicture" src="<?php echo $product->getImagePath(); ?>" title="Placeholder" alt="Placeholder">
+                </div>
             </div>
-            <div class="productdescription">
-                <p id="productdescription">
-                    <?php echo $product->getDescription(); ?>
-                </p>
+            <div class="row">
+                <div class="col">
+                    <p id="productdescription">
+                        <?php echo $product->getDescription(); ?>
+                    </p>
+                </div>
             </div>
-            <div class="price">
-                <p id="price"><?php echo $product->getPrice(); ?> €</p>
-            </div>
+            <div class="row">
             <!-- <div class="tags">
                 <p id="tags">Placeholder,Placeholder,Placeholder</p>
             </div> -->
-            <div class="retailer">
-                <p id="retailer"><?php echo $product->getProvider(); ?></p>
-            </div>
-            <div class="rating">
-                Rating: 4/5
+                <div class="col">
+                    <p id="rating">Rating: 4/5</p>
+                </div>
+                <div class="col">
+                    <p id="retailer"><?php echo $product->getProvider(); ?></p>
+                </div>
+                <div class="col">
+                    <p id="price"><?php echo $product->getPrice(); ?> €</p>
+                </div>
             </div>
         </div>
         <?php
