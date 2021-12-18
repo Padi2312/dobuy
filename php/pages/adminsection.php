@@ -6,7 +6,7 @@ include_once "../common/user.php";
 ?>
 
 <details>
-    <summary class="h2">
+    <summary class="h4">
         Produktangebote von Benutzern
     </summary>
     <table id="table">
@@ -18,7 +18,7 @@ include_once "../common/user.php";
         </tr>
         <?php
         $product1 = new Product();
-        $products = $product1->getAllUserProducts();
+        $products = $product1->getAllUserOffers();
         foreach ($products as $product) {
             $id = $product->getID();
             echo '<tr>
@@ -33,7 +33,7 @@ include_once "../common/user.php";
 </details>
 <hr />
 <details>
-    <summary class="h2">
+    <summary class="h4">
         Verkaufte Produkte
     </summary>
     <table id="table">
@@ -57,7 +57,7 @@ include_once "../common/user.php";
 </details>
 <hr />
 <details>
-    <summary class="h2">
+    <summary class="h4">
         Übersicht aller Produkte
     </summary>
     <a href="addproduct.php">
@@ -87,7 +87,7 @@ include_once "../common/user.php";
 </details>
 <hr />
 <details class="mb-5">
-    <summary class="h2">
+    <summary class="h4">
         Übersicht aller Benutzer
     </summary>
 

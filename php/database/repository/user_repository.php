@@ -70,15 +70,12 @@ class UserRepository extends Database
         return $this->mysqli->query("SELECT * FROM user")->fetch_all();
     }
 
+    /**
+     * Checks if a user does exist, if user exists it returns true otherwise false
+     */
     public function checkIfUserExists(string $user): bool
     {
         $userlist = $this->mysqli->query("SELECT username FROM user")->fetch_all();
         return array_search($user, $userlist);
-    }
-
-    public function checkIfUserMatchesPw(string $user, string $pw): bool
-    {
-        $pwlist = $this->mysqli->query("SELECT password FROM user WHERE username = $user")->fetch_all();
-        return array_search($pw, $pwlist);
     }
 }

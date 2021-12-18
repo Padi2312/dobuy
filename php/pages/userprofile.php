@@ -24,6 +24,7 @@ include_once "../common/session.php";
 
     <main>
         <div class="container">
+            <p class="h3">Ihr Benutzerdaten:</p>
             <div id="userdata">
                 <?php
                 $user = new User();
@@ -33,9 +34,10 @@ include_once "../common/session.php";
                 echo '<span class="kind">E-Mail</span>: ' . $userData->getEmail() . '<br>';
                 ?>
             </div>
-            <hr />
+            <hr class="seperator" />
             <?php
             if ($session->isAdmin()) {
+                echo "<p class='h3'>Verwalten sie ihren Shop:</p><br>";
                 include 'adminsection.php';
             } else {
                 include 'usersection.php';

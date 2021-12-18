@@ -28,12 +28,19 @@ class FileHandler
         }
     }
 
+    /**
+     * Checks if the given filename is an image
+     * returns true if an image otherwise false
+     */
     private function checkIfFileIsImage($file)
     {
         $ext = $this->getExtension($file);
         return $ext === "jpg" || $ext === "png" || $ext === "jpeg";
     }
 
+    /**
+     * Returns the extension from a given filename
+     */
     private function getExtension($file): string
     {
         return strtolower(pathinfo($file, PATHINFO_EXTENSION));

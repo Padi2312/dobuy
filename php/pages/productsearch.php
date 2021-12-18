@@ -22,7 +22,7 @@
         <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm" onchange="<?php echo "test" ?>">
         <details id="filters">
           <summary>Filters</summary>
-          <div  class="filterbar container">
+          <div class="filterbar container">
             <div class="row">
               <div class="col">
                 <select class="form-select" aria-label="Default select example">
@@ -34,11 +34,11 @@
               </div>
               <div class="col">
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>Kategorie wählen</option>
-                    <option value=1>Elektronik</option>
-                    <option value=2>Bücher</option>
-                    <option value=3>Kleidung</option>
-                  </select>
+                  <option selected>Kategorie wählen</option>
+                  <option value=1>Elektronik</option>
+                  <option value=2>Bücher</option>
+                  <option value=3>Kleidung</option>
+                </select>
               </div>
               <div class="col">
                 <div class="form-check">
@@ -56,13 +56,13 @@
                     <label class="form-check-label" for="pricerangeactivate">aktivieren</label>
                   </div>
                 </div>
-              </br>
+                </br>
                 <div class="input-group">
                   <span id="basic-addon1" class="input-group-text">Mindestpreis</span>
-                  <input type="number" id="pricerangelow" class="form-control"> 
+                  <input type="number" id="pricerangelow" class="form-control">
                   <div class="col-md"></div>
                   <span id="basic-addon2" class="input-group-text">Mindestpreis</span>
-                  <input type="number" id="pricerangelow" class="form-control"> 
+                  <input type="number" id="pricerangelow" class="form-control">
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
     </div>
 
     <div id="response" class="response container">
-      <div class="productname">
+      <div class="productname h2">
         <a id="productname" href="productsite.php">Samsung Galaxy A12</a>
       </div>
       <div class="content row">
@@ -103,7 +103,7 @@
     <hr id="split" />
 
     <div id="response" class="response container">
-      <div class="productname">
+      <div class="productname h2">
         <a id="productname" href="productsite.php">Samsung Galaxy A12</a>
       </div>
       <div class="content row">

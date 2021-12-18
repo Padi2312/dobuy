@@ -60,9 +60,9 @@ class Product
         return $this->productRepo->getAllVisibleProducts();
     }
 
-    function getAllUserProducts()
+    function getAllUserOffers()
     {
-        return $this->productRepo->getAllUserProducts();
+        return $this->productRepo->getAllUserOffers();
     }
 
     function deleteProduct($id)

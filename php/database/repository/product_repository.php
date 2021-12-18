@@ -12,6 +12,9 @@ class ProductRepository extends Database
         parent::__construct();
     }
 
+    /**
+     * Returns a single product based on product id
+     */
     function getProductById($productid): ProductModel|null
     {
         $result = $this->mysqli->query("SELECT * FROM product WHERE id ='$productid'")->fetch_assoc();
@@ -22,6 +25,9 @@ class ProductRepository extends Database
         }
     }
 
+    /**
+     * Inserts a product with all properties for a product
+     */
     function addProduct($name, $description, $price, $quantity, $imagepath, $provider, $category, $visible = true)
     {
         $stmt = $this->mysqli->prepare("INSERT INTO product (name, description, price, quantity, imagepath, provider, category_id,visible) VALUES (?, ?, ?, ?, ?, ?, ?,?)");
@@ -35,11 +41,17 @@ class ProductRepository extends Database
         return $insertedId;
     }
 
+    /**
+     * Can change the visibility of a product in the shop
+     */
     function changeVisibilityOfProduct($id, $visible)
     {
         $this->mysqli->query("UPDATE product SET visible = '$visible' WHERE id = '$id'");
     }
 
+    /**
+     * Updates a product row. For updating you have to specifiy all attributes for a product
+     */
     function updateProduct($productid, $name, $description, $price, $imagepath, $category, $quantity)
     {
         $catRepo = new CategoryRepository();
@@ -48,14 +60,20 @@ class ProductRepository extends Database
         $this->mysqli->query("UPDATE product SET name = '$name', description = '$description', price = '$price', imagepath = '$imagepath', quantity = '$quantity', category_id = '$categoryId' WHERE id = '$productid'");
     }
 
+    /**
+     * Deltes a product with the passed product id
+     */
     function deleteProduct($productid)
     {
         $this->mysqli->query("DELETE FROM product WHERE id = '$productid'");
     }
 
+
+    /**
+     * Returns all products being in the database
+     */
     function getAllProducts(): array
     {
-
         $resultMySql = $this->mysqli->query("SELECT * FROM product");
         if ($resultMySql->num_rows === 0) {
             return array();
@@ -69,7 +87,12 @@ class ProductRepository extends Database
         };
     }
 
-    function getAllUserProducts()
+
+    /**
+     * Returns all products being inserted by a registrated user 
+     * and not visible in shop yet
+     */
+    function getAllUserOffers()
     {
         $resultMySql = $this->mysqli->query("SELECT product.* FROM product INNER JOIN user ON user.username = product.provider WHERE user.role = 2 AND product.visible =false");
         if ($resultMySql->num_rows === 0) {
@@ -84,6 +107,9 @@ class ProductRepository extends Database
         };
     }
 
+    /**
+     * Returns a list with products being visible in the shop
+     */
     function getAllVisibleProducts(): array
     {
 
@@ -100,28 +126,19 @@ class ProductRepository extends Database
         };
     }
 
-
+    /**
+     * Returns the average rating of a product
+     */
     function getProductRating($productid)
     {
         $result = $this->mysqli->query("SELECT AVG(rating) FROM rating WHERE product_id = '$productid'")->fetch_field();
         return floor($result);
     }
 
-    function getProducts($amount)
-    {
-        $resultMySql = $this->mysqli->query("SELECT * FROM product LIMIT $amount");
-        if ($resultMySql->num_rows === 0) {
-            return array();
-        } else {
-            $products = array();
-            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
-            foreach ($result as $item) {
-                array_push($products, new ProductModel($item));
-            }
-            return $products;
-        };
-    }
-
+    /**
+     * Returns a specific amount of random products from the database
+     * Amount can be specified in function parameter
+     */
     function getRandomProducts($amount = 10)
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM product WHERE visible = true ORDER BY RAND() LIMIT $amount");

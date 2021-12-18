@@ -11,6 +11,9 @@ class ShoppingCardRepository extends Database
         parent::__construct();
     }
 
+    /**
+     * Returns a list of products being in the shoppingcart based on the given username
+     */
     function getUsersShoppingCardProducts($username)
     {
         $resultMySql = $this->mysqli->query("SELECT product.* FROM shopping_card INNER JOIN product ON product.id = shopping_card.product_id WHERE user='$username'");
@@ -27,11 +30,17 @@ class ShoppingCardRepository extends Database
         }
     }
 
+    /**
+     * Removes a product from the users shoppingcart
+     */
     function removeFromShoppingCard($username, $productid)
     {
         $this->mysqli->query("DELETE FROM shopping_card WHERE user='$username' AND product_id=$productid");
     }
 
+    /**
+     * Adds a product with product id to the users shoppingcart
+     */
     function addProductToShoppingCard($username, $productid)
     {
         $stmt = $this->mysqli->prepare("INSERT INTO shopping_card (product_id,user) VALUES (?,?)");
@@ -45,6 +54,9 @@ class ShoppingCardRepository extends Database
         return true;
     }
 
+    /**
+     * Returns the amount of products being in the shoppingcart of the given user
+     */
     function getAmountOfUsersShoppingCard($username): int
     {
         $resultMySql = $this->mysqli->query("SELECT COUNT(*) FROM shopping_card WHERE user='$username'");
@@ -56,7 +68,10 @@ class ShoppingCardRepository extends Database
         }
     }
 
-
+    /**
+     * Checks whether a prodcut is already in the shoppingcart or not
+     * If product is in shoppingcard return true otherwise false
+     */
     function isProductInShoppingCard($username, $productId): bool
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM shopping_card WHERE user='$username' AND product_id='$productId'");

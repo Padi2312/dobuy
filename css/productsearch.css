@@ -1,4 +1,4 @@
-.searchbar{
+.searchbar {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -13,46 +13,51 @@
     box-sizing: border-box;
 }
 
-#response{
+#response {
     width: 80%;
     padding: 12px 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.productname{ 
+.productname {
     text-align: center;
     padding: 20px 0;
-    font-size: 40px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-#productname:hover{
+#productname:hover {
     color: #FFE600;
     text-decoration: underline;
     text-decoration-color: #FFE600;
 }
 
-.tags{ 
+#productpicture {
+    margin-left: 20%;
+    max-width: 60%;
+    height: auto;
+}
+
+.tags {
     text-align: center;
     padding: 20px 0;
     font-size: 20px;
 }
 
-.description{ 
+.description {
     text-align: center;
     padding: 20px 0;
 }
 
-.price{ 
+.price {
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
 
-#split{
+#split {
     width: 85%;
     background-color: #FFE600;
     margin-left: auto;
@@ -61,29 +66,29 @@
     border: 0 none;
 }
 
-#filters{
+#filters {
     margin-top: 30px;
 }
 
-#productname{
+#productname {
     color: black;
     text-decoration: none;
 }
 
-#formatline{
+#formatline {
     display: inline-block;
     margin-top: 30px;
 }
 
-.filterbar{
+.filterbar {
     font-weight: 600;
     margin-top: 20px;
 }
 
-#pricerange{
+#pricerange {
     width: 100%;
 }
 
-.rangeindicator{
+.rangeindicator {
     display: flex;
 }
