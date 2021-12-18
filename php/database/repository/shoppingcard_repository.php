@@ -55,4 +55,11 @@ class ShoppingCardRepository extends Database
             return 0;
         }
     }
+
+
+    function isProductInShoppingCard($username, $productId): bool
+    {
+        $resultMySql = $this->mysqli->query("SELECT * FROM shopping_card WHERE user='$username' AND product_id='$productId'");
+        return $resultMySql && $resultMySql->num_rows > 0;
+    }
 }

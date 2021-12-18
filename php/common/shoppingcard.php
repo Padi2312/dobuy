@@ -54,4 +54,10 @@ class ShoppingCard
             }
         }
     }
+
+    function isProductInShoppingCard($productId)
+    {
+        $username = Session::getUsername();
+        return $this->shoppingCardRepo->isProductInShoppingCard($username, $productId);
+    }
 }

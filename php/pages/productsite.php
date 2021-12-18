@@ -1,3 +1,16 @@
+<?php
+include_once "../common/session.php";
+include_once "../common/product.php";
+include_once "../common/shoppingcard.php";
+$productId = $_GET["id"];
+
+$productHandler = new Product();
+$product = $productHandler->getProductById($productId);
+if ($product === null) {
+    header("Location: notfound.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="">
 
@@ -10,19 +23,7 @@
 
 <body>
 
-    <?php
-    include_once "../common/session.php";
-    include_once "../common/product.php";
-    include "../templates/header.php";
-    $productId = $_GET["id"];
-
-    $productHandler = new Product();
-    $product = $productHandler->getProductById($productId);
-    if ($product === null) {
-        header("Location: notfound.php");
-    }
-    ?>
-
+    <?php include "../templates/header.php"; ?>
     <main>
         <p>
         </p>
@@ -37,10 +38,10 @@
             if ($product->getImagePath() !== "") {
                 $imagePath = $product->getImagePath();
                 echo "<div class='row'>
-                        <div class='col'>
-                            <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder'>
-                        </div>
-                    </div>";
+                    <div class='col'>
+                        <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder'>
+                    </div>
+                </div>";
             }
             ?>
             <div class="row">
@@ -63,9 +64,8 @@
             </div>
         </div>
         <?php
-        include_once '../common/session.php';
         $session = new Session();
-
+        $shoppingCard = new ShoppingCard();
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
             $action = "./shoppingcardaction.php?id=$id";
@@ -73,12 +73,12 @@
             $action = "./notfound.php";
         }
 
-        if ($session->isLoggedIn()) {
+        if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id)) {
             echo "<form action='$action' method='post'>
-                    <div class='shoppingcart-buttonline'>
-                        <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
-                    </div>
-                </form>";
+                <div class='shoppingcart-buttonline'>
+                    <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
+                </div>
+            </form>";
         }
         ?>
 

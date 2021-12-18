@@ -45,5 +45,4 @@
 
             ?>
         </table>
-        <button type="submit" class="btn" id="dealer" action="">Produkte anbieten</button>
     </details>
