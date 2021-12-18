@@ -25,21 +25,19 @@
           <div  class="filterbar container">
             <div class="row">
               <div class="col">
-                <lable for="sorting">Sortierung</span></br>
-                <select class="form-select" aria-label="Default select example" id="sorting">
+                <select class="form-select" aria-label="Default select example">
                   <option selected>Sortierung wählen</option>
-                  <option >Preis</option>
-                  <option >Name</option>
-                  <option >Beliebtheit</option>
+                  <option value=1>Preis</option>
+                  <option value=2>Name</option>
+                  <option value=3>Beliebtheit</option>
                 </select>
               </div>
               <div class="col">
-                <lable for="category">Kategorie</span></br>
-                <select class="form-select" aria-label="Default select example" id="category">
+                <select class="form-select" aria-label="Default select example">
                     <option selected>Kategorie wählen</option>
-                    <option >Elektronik</option>
-                    <option >Bücher</option>
-                    <option >Kleidung</option>
+                    <option value=1>Elektronik</option>
+                    <option value=2>Bücher</option>
+                    <option value=3>Kleidung</option>
                   </select>
               </div>
               <div class="col">
@@ -59,9 +57,12 @@
                   </div>
                 </div>
               </br>
-                <input type="range" class="form-range" min="0" max="500" id="pricerange"> 
-                <div class="rangeindicator">
-                  <div id="left">0</div><div id="right">500</div>
+                <div class="input-group">
+                  <span id="basic-addon1" class="input-group-text">Mindestpreis</span>
+                  <input type="number" id="pricerangelow" class="form-control"> 
+                  <div class="col-md"></div>
+                  <span id="basic-addon2" class="input-group-text">Mindestpreis</span>
+                  <input type="number" id="pricerangelow" class="form-control"> 
                 </div>
               </div>
             </div>
