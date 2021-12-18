@@ -34,6 +34,13 @@ include_once '../common/notloggedin.php';
                 <input type="number" step=".01" name="price" id="price" class="bar"></br>
                 <label for="description">Beschreiben Sie Ihr Produkt</label></br>
                 <textarea name="description" id="description" class="bar"></textarea></br>
+                <label for="dropdown">Wählen Sie eine Kategorie</label><br/>
+                <select class="form-select" aria-label="category" id="dropdown">
+                  <option selected>Kategorie wählen</option>
+                  <option value=1>Bsp</option>
+                  <option value=2>Bsp</option>
+                  <option value=3>Bsp</option>
+                </select>
                 <button id="addproduct1">Produkt hinzufügen</button>
             </form>
         </div>
