@@ -75,7 +75,7 @@ class ProductRepository extends Database
 
     function getAllUserProducts()
     {
-        $resultMySql = $this->mysqli->query("SELECT product.* FROM product INNER JOIN user ON user.username = product.provider WHERE user.role = 2");
+        $resultMySql = $this->mysqli->query("SELECT product.* FROM product INNER JOIN user ON user.username = product.provider WHERE user.role = 2 AND product.visible =false");
         if ($resultMySql->num_rows === 0) {
             return array();
         } else {
