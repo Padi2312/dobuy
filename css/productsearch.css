@@ -87,13 +87,3 @@
 .rangeindicator{
     display: flex;
 }
-
-#left{
-    margin-left: 0;
-    margin-right: auto;
-}
-
-#right{
-    margin-right: 0;
-    margin-left: auto;
-}
