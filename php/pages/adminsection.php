@@ -1,8 +1,33 @@
 <?php
 include_once '../common/notloggedin.php';
 include_once "../common/product.php";
+include_once "../common/ordering.php";
 include_once "../common/user.php";
 ?>
+<details>
+    <summary class="h2">
+        Verkaufte Produkte
+    </summary>
+    <table id="table">
+        <tr>
+            <th id="pictureadm">Bild</th>
+            <th id="nameadm">Name</th>
+            <th id="priceadm">Preis</th>
+        </tr>
+        <?php
+        $ordering = new Ordering();
+        $products = $ordering->getAllSoldProducts();
+        foreach ($products as $product) {
+            $id = $product->getID();
+            echo '<tr>
+            <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
+            <td id="nameadm">' . $product->getName() . '</td>
+            <td id="priceadm" class="outer">' . $product->getPrice() . '</td>';
+        }
+        ?>
+    </table>
+</details>
+<hr />
 <details>
     <summary class="h2">
         Übersicht aller Produkte

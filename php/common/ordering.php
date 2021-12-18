@@ -13,13 +13,13 @@ class Ordering
         $this->orderRepo = new OrderRepository();
     }
 
-    function addOrderForUser($productId, $quantity, $username)
+    function addOrderForUser($username, $productId)
     {
         $prodRepo = new ProductRepository();
         $product = $prodRepo->getProductById($productId);
         $productPrice = $product->getPrice();
 
-        $this->orderRepo->addOrder($productId, $quantity, $productPrice, $username);
+        $this->orderRepo->addOrder($productId, 1, $productPrice, $username);
     }
 
 
@@ -28,6 +28,19 @@ class Ordering
         $prodRepo = new ProductRepository();
 
         $orders = $this->orderRepo->getOrdersByUsername($username);
+        $products = array();
+        foreach ($orders as $item) {
+            $product = $prodRepo->getProductById($item->getProductId());
+            array_push($products, $product);
+        }
+        return $products;
+    }
+
+    function getAllSoldProducts()
+    {
+        $prodRepo = new ProductRepository();
+
+        $orders = $this->orderRepo->getAllOrders();
         $products = array();
         foreach ($orders as $item) {
             $product = $prodRepo->getProductById($item->getProductId());

@@ -1,16 +1,19 @@
 <?php
 
 include_once 'session.php';
-include '../database/repository/shoppingcard_repository.php';
+include_once '../database/repository/shoppingcard_repository.php';
+include_once 'ordering.php';
 
 class ShoppingCard
 {
 
     private $session;
     private $shoppingCardRepo;
+    private $ordering;
 
     function __construct()
     {
+        $this->ordering = new Ordering();
         $this->session = new Session();
         $this->shoppingCardRepo = new ShoppingCardRepository();
     }
@@ -37,5 +40,18 @@ class ShoppingCard
     {
         $username = Session::getUsername();
         $this->shoppingCardRepo->removeFromShoppingCard($username, $productId);
+    }
+
+    function buyProductsFromShoppingCard()
+    {
+        $username = $this->session->getUsername();
+        if ($this->getAmountOfShoppingCard() > 0) {
+            $shoppingCardList = $this->getShoppingCardByUser();
+            foreach ($shoppingCardList as $item) {
+                $productId = $item->getID();
+                $this->ordering->addOrderForUser($username, $productId);
+                $this->deleteProductFromShoppingCard($productId);
+            }
+        }
     }
 }

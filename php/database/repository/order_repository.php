@@ -39,7 +39,7 @@ class OrderRepository extends Database
         $stmt = $this->mysqli->prepare("INSERT INTO ordering (product_id,quantity, price, user,timestamp) VALUES (?, ?, ?, ?,NOW())");
         $stmt->bind_param('iids', $productid, $quantity, $price, $user);
         if (!$stmt->execute()) {
-            echo "SQL Statement Failed!";
+            var_dump("SQL Statement Failed!");
         }
         $stmt->close();
     }
@@ -51,6 +51,17 @@ class OrderRepository extends Database
 
     function getAllOrders()
     {
-        return $this->mysqli->query("SELECT * FROM order");
+        $resultMySql = $this->mysqli->query("SELECT * FROM ordering");
+
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $orders = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($orders, new OrderModel($item));
+            }
+            return $orders;
+        }
     }
 }

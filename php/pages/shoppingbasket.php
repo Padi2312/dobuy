@@ -14,6 +14,7 @@
     include_once "../common/session.php";
     include_once "../common/shoppingcard.php";
     include "../templates/header.php";
+    $shoppingCard = new ShoppingCard();
     ?>
 
     <main>
@@ -28,7 +29,6 @@
                 <th id="delete">Löschen</th>
             </tr>
             <?php
-            $shoppingCard = new ShoppingCard();
             $shoppingCardList = $shoppingCard->getShoppingCardByUser();
             foreach ($shoppingCardList as $product) {
                 $id = $product->getID();
@@ -48,7 +48,13 @@
             ?>
         </table>
         <div class="buttonline">
-            <button type="submit" class="btn" id="buy">Kaufen</button>
+            <?php
+            if ($shoppingCard->getAmountOfShoppingCard() > 0) {
+                echo " <form action='shoppingbasketaction.php?type=buy'  method='post'>
+                        <button type='submit' class='btn' id='buy'>Kaufen</button>
+                        </form>";
+            }
+            ?>
         </div>
 
     </main>
