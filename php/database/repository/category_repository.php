@@ -51,6 +51,17 @@ class CategoryRepository extends Database
 
     function getAllCategories()
     {
-        return $this->mysqli->query("SELECT * FROM category");
+        $resultMySql = $this->mysqli->query("SELECT * FROM category");
+
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $categories = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($categories, new CategoryModel($item));
+            }
+            return $categories;
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?php
 include_once '../common/notloggedin.php';
 include_once '../common/session.php';
+include_once '../common/category.php';
 include_once '../common/user.php';
 ?>
 <!DOCTYPE html>
@@ -47,17 +48,27 @@ include_once '../common/user.php';
             <label for="fileToUpload">Bild auswählen:</label></br>
             <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"></br>
             <label for="productname">Wie soll das Produkt heißen?</label></br>
-            <input type="text" name="productname" id="productname" class="bar"></br>
+            <input type="text" name="productname" id="productname" class="bar" required></br>
             <label for="price">Wie viel soll Ihr Produkt kosten?</label></br>
-            <input type="number" step=".01" name="price" id="price" class="bar"></br>
+            <input type="number" step=".01" name="price" id="price" class="bar" required></br>
             <label for="description">Beschreiben Sie Ihr Produkt</label></br>
-            <textarea name="description" id="description" class="bar"></textarea></br>
+            <textarea name="description" id="description" class="bar" required></textarea></br>
             <label for="dropdown">Wählen Sie eine Kategorie</label><br />
-            <select class="form-select" aria-label="category" id="dropdown">
-                <option selected>Kategorie wählen</option>
-                <option value=1>Bsp</option>
-                <option value=2>Bsp</option>
-                <option value=3>Bsp</option>
+            <select class="form-select" aria-label="category" id="dropdown" name="category" required>
+                <option selected></option>
+                <?php
+                $category  = new Category();
+
+                $categoryList = $category->getAllCategories();
+
+                foreach ($categoryList as $item) {
+                    $id = $item->getID();
+                    $name = $item->getName();
+                    echo "<option value=$id>$name</option>";
+                }
+
+                ?>
+
             </select>
             <button id="addproduct1">Produkt hinzufügen</button>
             </form>

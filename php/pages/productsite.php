@@ -81,41 +81,21 @@ if ($product === null) {
             </form>";
         }
         ?>
-
-
         <hr id="seperator" />
-        <div id="comments">
-            <div class="grid-container">
-                <div class="username">
-                    <p>Jesus Christus</p>
-                </div>
-                <div class="commenttext">
-                    <p>This is a very serious and important text, please think about what it says</p>
-                </div>
-                <div class="rating">
-                    <p>4,5/5</p>
-                </div>
-            </div>
-        </div>
-        <div id="comments">
-            <div class="grid-container">
-                <div class="username">
-                    <p>Jesus Christus</p>
-                </div>
-                <div class="commenttext">
-                    <p>This is a very serious and important text, please think about what it says</p>
-                </div>
-                <div class="rating">
-                    <p>4,5/5</p>
-                </div>
-            </div>
-        </div>
-        <hr id="seperator" />
+
         <div id="rating-infobox">
-            <span class="rating-info">Geben Sie eine Bewertung zum Produkt ab</span>
+            <span class="h4">Geben Sie eine Bewertung zum Produkt ab</span>
         </div>
         <div class="rating-form container">
             <form class="postrating" method="post" action="postRating" id="rating-comment">
+                <div id="comment-wrapper container">
+                    <div class="row">
+                        <div class="col">
+                            <label class="h6" for="comment">Schreibe einen Kommentar</label></br>
+                            <textarea name="comment" id="comment" class="bar"></textarea>
+                        </div>
+                    </div>
+                </div>
                 <div class="star-rating container">
                     <div class="row">
                         <div class="starrating col">
@@ -140,16 +120,40 @@ if ($product === null) {
                         </div>
                     </div>
                 </div>
-                <div id="comment-wrapper container">
-                    <div class="row">
-                        <div class="col">
-                            <label for="comment">Schreibe einen Kommentar</label></br>
-                            <textarea name="comment" id="comment" class="bar"></textarea>
-                        </div>
-                    </div>
-                </div>
                 <button type="submit" class="btn"><span id="ratingbutton">Bewertung abgeben</span></button>
             </form>
+        </div>
+
+        <hr id="seperator" />
+        <div id="comment-heading">
+            <p class="h2 text-center">Bewertungen</p>
+        </div>
+
+        <div id="comments">
+            <div class="grid-container">
+                <div class="username">
+                    <p>Jesus Christus</p>
+                </div>
+                <div class="commenttext">
+                    <p>This is a very serious and important text, please think about what it says</p>
+                </div>
+                <div class="rating">
+                    <p>4,5/5</p>
+                </div>
+            </div>
+        </div>
+        <div id="comments">
+            <div class="grid-container">
+                <div class="username">
+                    <p>Jesus Christus</p>
+                </div>
+                <div class="commenttext">
+                    <p>This is a very serious and important text, please think about what it says</p>
+                </div>
+                <div class="rating">
+                    <p>4,5/5</p>
+                </div>
+            </div>
         </div>
 
     </main>

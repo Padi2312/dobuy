@@ -24,12 +24,8 @@ class ProductRepository extends Database
 
     function addProduct($name, $description, $price, $quantity, $imagepath, $provider, $category, $visible = true)
     {
-        $catRepo = new CategoryRepository();
-        $categoryModel = $catRepo->getCategoryIdByName($category);
-        $categoryId = $categoryModel->getID();
-
         $stmt = $this->mysqli->prepare("INSERT INTO product (name, description, price, quantity, imagepath, provider, category_id,visible) VALUES (?, ?, ?, ?, ?, ?, ?,?)");
-        $stmt->bind_param('ssdissdi', $name, $description, $price, $quantity, $imagepath, $provider, $categoryId, $visible);
+        $stmt->bind_param('ssdissdi', $name, $description, $price, $quantity, $imagepath, $provider, $category, $visible);
         if (!$stmt->execute()) {
             error_log(print_r($this->mysqli->errno, TRUE));
             return null;
