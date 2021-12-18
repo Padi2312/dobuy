@@ -12,10 +12,15 @@
 
     <main>
         <div class="container h-100">
-            <div class="row h-100 justify-content-center align-items-center">
-                <p class="h1 text-center">
-                    Danke, dass sie sich Entschieden haben ein Produkt bei uns anzubieten.
-                </p>
+            <div class="row h-100 justify-content-center align-items-center m-3">
+                <div>
+                    <p class="h1 text-center">
+                        Danke für ihr Angebot an <b><span style="color: #FFE600;">DO</span>BUY!</b>
+                    </p>
+                    <p class="h4 text-center">
+                        Wir werden ihr Produkt in kürze evaluieren und je nach Ergebnis freischalten.
+                    </p>
+                </div>
             </div>
         </div>
     </main>

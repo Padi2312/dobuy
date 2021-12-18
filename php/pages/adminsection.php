@@ -24,7 +24,7 @@ include_once "../common/user.php";
             echo '<tr>
             <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
             <td id="nameadm">' . $product->getName() . '</td>
-            <td id="priceadm">' . $product->getPrice() . '</td>';
+            <td id="priceadm">' . $product->getPrice() . '€</td>';
             echo "<td id='edit' class='outer'><a href='adminsectionaction.php?id=$id'>Bestätigen</a></td>
                 </tr>";
         }
@@ -50,7 +50,7 @@ include_once "../common/user.php";
             echo '<tr>
             <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
             <td id="nameadm">' . $product->getName() . '</td>
-            <td id="priceadm" class="outer">' . $product->getPrice() . '</td>';
+            <td id="priceadm" class="outer">' . $product->getPrice() . '€</td>';
         }
         ?>
     </table>
@@ -61,7 +61,7 @@ include_once "../common/user.php";
         Übersicht aller Produkte
     </summary>
     <a href="addproduct.php">
-        <button type="submit" class="btn" id="addproduct" action="">Produkte hinzufügen</button>
+        <button type="submit" class="btn" id="addproduct" action="">Produkt hinzufügen</button>
     </a>
     <table id="table">
         <tr>
@@ -78,7 +78,7 @@ include_once "../common/user.php";
             echo '<tr>
             <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
             <td id="nameadm">' . $product->getName() . '</td>
-            <td id="priceadm">' . $product->getPrice() . '</td>';
+            <td id="priceadm">' . $product->getPrice() . '€</td>';
             echo "<td id='edit' class='outer'><a href='editproduct.php?id=$id'><img src='../../assets/images/edit.svg'></a></td>
                 </tr>";
         }
