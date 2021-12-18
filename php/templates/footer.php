@@ -1,17 +1,4 @@
 <footer class="container-footer-wrapper">
-    <!-- <div class="container">
-        <div class="row">
-            <div id="footer-link-div" class="col-sm">
-                <a href="../../php/pages/imprint.php" class="footer-link"><span id="link">Impressum</span></a>
-            </div>
-            <div id="footer-link-div" class="col-sm">
-                <a href="../../php/pages/datasecurity.php" class="footer-link"><span id="link">Datenschutz</span></a>
-            </div>
-            <div id="footer-link-div" class="col-sm">
-                <a href="../../php/pages/contact.php" class="footer-link"><span id="link">Kontakt</span></a>
-            </div>
-        </div>
-    </div> -->
     <div class="container-fluid">
         <div>
             <div class="row ml-5">
@@ -34,10 +21,10 @@
                     <h2>Weitere Links</h2>
                     <ul class="box-3_inner_wrap">
                         <li>
-                            <a href="../../php/pages/imprint.php" class="footer-link"><span id="link">Impressum</span></a>
+                            <a href="../pages/imprint.php" class="footer-link"><span id="link">Impressum</span></a>
                         </li>
                         <li>
-                            <a href="../../php/pages/datasecurity.php" class="footer-link"><span id="link">Datenschutz</span></a>
+                            <a href="../pages/privacy.php" class="footer-link"><span id="link">Datenschutz</span></a>
                         </li>
                     </ul>
                 </div>
