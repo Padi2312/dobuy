@@ -107,17 +107,12 @@ td {
     padding-left: 3px;
 }
 
-#nameatm {
+#nameadm {
     width: 15%;
     padding-left: 3px;
 }
 
-#descriptionatm {
-    width: auto;
-    padding-left: 3px;
-}
-
-#priceatm {
+#priceadm {
     width: 15%;
     padding-left: 3px;
 }
@@ -130,12 +125,17 @@ td {
 #usernamenadm {
     width: 30%;
     padding-left: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #emailadm {
     width: 30%;
     padding-left: 3px;
-    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #edit {

@@ -36,7 +36,6 @@ include_once "../common/session.php";
                 <tr>
                     <th id="picture">Bild</th>
                     <th id="name">Name</th>
-                    <th id="description">Beschreibung</th>
                     <th id="price">Preis</th>
                 </tr>
                 <?php
@@ -46,7 +45,6 @@ include_once "../common/session.php";
                     echo '<tr>
                         <td id="picture">' . $product->getImagePath() . '</td>
                         <td>' . $product->getName() . '</td>
-                        <td>' . $product->getDescription() . '</td>
                         <td class="outer">' . $product->getPrice() . '</td>
                     </tr>';
                 }
@@ -57,28 +55,24 @@ include_once "../common/session.php";
                 <tr>
                     <th id="picture">Bild</th>
                     <th id="name">Name</th>
-                    <th id="descriptionexpanded">Beschreibung</th>
                     <th id="price">Preis</th>
                     <th id="profit">Profit</th>
                 </tr>
                 <tr>
                     <td><img src="../../assets/images/logo.svg"></td>
                     <td>Schuhe</td>
-                    <td>Schuhe halt</td>
                     <td>187.69</td>
                     <td class="outer">2 / 1 </td>
                 </tr>
                 <tr>
                     <td><img src="../../assets/images/logo.svg"></td>
                     <td>Schuhe</td>
-                    <td>Schuhe halt</td>
                     <td>187.69</td>
                     <td class="outer">2 / 1 </td>
                 </tr>
                 <tr>
                     <td><img src="../../assets/images/logo.svg"></td>
                     <td>Schuhe</td>
-                    <td>Schuhe halt</td>
                     <td>187.69</td>
                     <td class="outer">2 / 1 </td>
                 </tr>
