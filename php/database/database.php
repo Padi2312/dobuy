@@ -35,6 +35,9 @@ class Database
             if (!$this->mysqli->multi_query($initScript)) {
                 throw new Exception("Failed to create database dobuy.");
             }
+            else{
+                while (mysqli_next_result($this->mysqli));
+            }
         }
     }
 
