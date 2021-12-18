@@ -51,6 +51,13 @@
     position: relative;
 }
 
+@media screen and (max-width:766px) {
+    .part{
+        position: relative;
+        padding-top: 110%;
+    }
+}
+
 .product-item {
     text-align: center;
     padding: 20px 0;
