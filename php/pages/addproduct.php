@@ -19,9 +19,12 @@ include_once '../common/notloggedin.php';
 
     <main>
 
-
-
         <div class="submit-form container">
+            <div class="textbox">
+                <span id="text">Sie wollen ein Produkt auf unserer Seite anbieten? Dann geben Sie uns mit diesem Formular die relevanten Informationen. Falls wir den Artikel für geeignet halten, nehmen wir ihn in das Sdortiment auf und Sie werden natürlich am Gewinn beteiligt!</span>
+            </div>
+
+            <hr id="seperator"/>
             <form action="addproductaction.php" method="post" enctype="multipart/form-data">
                 <label for="fileToUpload">Bild auswählen:</label></br>
                 <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"></br>
