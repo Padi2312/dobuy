@@ -54,7 +54,7 @@
                 <div id="formatline">
                   <label for="pricerange" class="form-label">Preisspanne:</label>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="pricerangeactivate">
+                    <input class="form-check-input" type="checkbox" value="" id="pricerangeactivate" min="0" max="500" steps="10">
                     <label class="form-check-label" for="pricerangeactivate">aktivieren</label>
                   </div>
                 </div>
