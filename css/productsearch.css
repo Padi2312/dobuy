@@ -12,6 +12,7 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 #response{
     width: 80%;
     padding: 12px 20px;
@@ -19,19 +20,13 @@
     margin-right: auto;
 }
 
-.productpicture{ 
-    grid-area: picture;
-    align-content: center;
-    padding: 20px 0;
-    width: 80px;
-    height: auto;
-}
-
 .productname{ 
-    grid-area: productname; 
     text-align: center;
     padding: 20px 0;
     font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #productname:hover{
@@ -41,32 +36,20 @@
 }
 
 .tags{ 
-    grid-area: tags;
     text-align: center;
     padding: 20px 0;
     font-size: 20px;
 }
 
 .description{ 
-    grid-area: description;
     text-align: center;
     padding: 20px 0;
 }
 
 .price{ 
-    grid-area: price;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
-}
-
-.grid-container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-areas: 
-        'productname productname productname productname'
-        'picture description description price'
-        'picture description description tags';
 }
 
 #split{

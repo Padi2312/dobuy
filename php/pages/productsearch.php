@@ -70,47 +70,63 @@
       </form>
     </div>
 
-    <div id="response" class="grid-container">
-      <div class="productpicture">
-        <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
-      </div>
+    <div id="response" class="response container">
       <div class="productname">
         <a id="productname" href="productsite.php">Samsung Galaxy A12</a>
       </div>
-      <div class="description">
-        <p id="description">
-          Batterien : 1 Lithium-Polymer Batterien erforderlich (enthalten).
-          Auslaufartikel (Produktion durch Hersteller eingestellt) : Nein
-        </p>
-      </div>
-      <div class="tags">
-        <p id="tags">Elektronik, Smartphone, Samsung</p>
-      </div>
-      <div class="price">
-        <p id="price">198,00€</p>
+      <div class="content row">
+        <div class="col-md">
+          <div class="productpicture">
+            <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="description">
+            <p id="description">
+              Batterien : 1 Lithium-Polymer Batterien erforderlich (enthalten).
+              Auslaufartikel (Produktion durch Hersteller eingestellt) : Nein
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="price">
+            <p id="price">198,00€</p>
+          </div>
+          <div class="tags">
+            <p id="tags">Elektronik, Smartphone, Samsung</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <hr id="split" />
 
-    <div id="response" class="grid-container">
-      <div class="productpicture">
-        <img id="productpicture" src="../../assets/images/icon_cart.svg" title="Placeholder" alt="Placeholder">
-      </div>
+    <div id="response" class="response container">
       <div class="productname">
         <a id="productname" href="productsite.php">Samsung Galaxy A12</a>
       </div>
-      <div class="description">
-        <p id="description">
-          Batterien : 1 Lithium-Polymer Batterien erforderlich (enthalten).
-          Auslaufartikel (Produktion durch Hersteller eingestellt) : Nein
-        </p>
-      </div>
-      <div class="tags">
-        <p id="tags">Elektronik, Smartphone, Samsung</p>
-      </div>
-      <div class="price">
-        <p id="price">198,00€</p>
+      <div class="content row">
+        <div class="col-md">
+          <div class="productpicture">
+            <img id="productpicture" src="../../assets/images/icon_user.svg" title="Placeholder" alt="Placeholder">
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="description">
+            <p id="description">
+              Batterien : 1 Lithium-Polymer Batterien erforderlich (enthalten).
+              Auslaufartikel (Produktion durch Hersteller eingestellt) : Nein
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="price">
+            <p id="price">198,00€</p>
+          </div>
+          <div class="tags">
+            <p id="tags">Elektronik, Smartphone, Samsung</p>
+          </div>
+        </div>
       </div>
     </div>
 
