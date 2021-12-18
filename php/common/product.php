@@ -28,6 +28,23 @@ class Product
         }
     }
 
+    function addProductOfUser($name, $description, $price,  $category, $quantity = 1)
+    {
+        $session = new Session();
+        $uploadResult = $this->fileHandler->uploadImage();
+        if ($uploadResult !== null) {
+            return $this->productRepo->addProduct($name, $description, $price, $quantity, $uploadResult, $session->getUsername(), $category, false);
+        } else {
+            return $this->productRepo->addProduct($name, $description, $price, $quantity, "", $session->getUsername(), $category, false);
+        }
+    }
+
+    function makeProductVisible($id)
+    {
+        $this->productRepo->changeVisibilityOfProduct($id, true);
+    }
+
+
     function getProductById($productId)
     {
         return $this->productRepo->getProductById($productId);
@@ -36,6 +53,16 @@ class Product
     function getAllProducts(): array
     {
         return $this->productRepo->getAllProducts();
+    }
+
+    function getAllVisibleProducts()
+    {
+        return $this->productRepo->getAllVisibleProducts();
+    }
+
+    function getAllUserProducts()
+    {
+        return $this->productRepo->getAllUserProducts();
     }
 
     function deleteProduct($id)

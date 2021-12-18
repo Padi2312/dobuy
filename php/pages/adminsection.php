@@ -4,6 +4,34 @@ include_once "../common/product.php";
 include_once "../common/ordering.php";
 include_once "../common/user.php";
 ?>
+
+<details>
+    <summary class="h2">
+        Produktangebote von Benutzern
+    </summary>
+    <table id="table">
+        <tr>
+            <th id="pictureadm">Bild</th>
+            <th id="nameadm">Name</th>
+            <th id="priceadm">Preis</th>
+            <th id="priceadm">Aktzeptieren</th>
+        </tr>
+        <?php
+        $product1 = new Product();
+        $products = $product1->getAllUserProducts();
+        foreach ($products as $product) {
+            $id = $product->getID();
+            echo '<tr>
+            <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
+            <td id="nameadm">' . $product->getName() . '</td>
+            <td id="priceadm">' . $product->getPrice() . '</td>';
+            echo "<td id='edit' class='outer'><a href='adminsectionaction.php?id=$id'>Bestätigen</a></td>
+                </tr>";
+        }
+        ?>
+    </table>
+</details>
+<hr />
 <details>
     <summary class="h2">
         Verkaufte Produkte
