@@ -48,4 +48,17 @@ class Ordering
         }
         return $products;
     }
+
+    function usersSoldProducts()
+    {
+        $prodRepo = new ProductRepository();
+        $username = Session::getUsername();
+        $orders = $this->orderRepo->getUserSoldProducts($username);
+        $products = array();
+        foreach ($orders as $item) {
+            $product = $prodRepo->getProductById($item->getProductId());
+            array_push($products, $product);
+        }
+        return $products;
+    }
 }
