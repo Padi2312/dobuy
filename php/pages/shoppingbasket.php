@@ -24,7 +24,6 @@
             <tr>
                 <th id="picture">Bild</th>
                 <th id="name">Name</th>
-                <th id="description">Beschreibung</th>
                 <th id="price">Preis</th>
                 <th id="delete">Löschen</th>
             </tr>
@@ -35,7 +34,6 @@
                 echo '<tr>
                         <td ><img src=' . $product->getImagePath() . '></td>
                         <td>' . $product->getName() . '</td>
-                        <td>' . $product->getDescription() . '</td>
                         <td>' . $product->getPrice() . '</td>
                     </tr>';
             }
