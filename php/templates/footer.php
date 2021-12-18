@@ -39,9 +39,6 @@
                         <li>
                             <a href="../../php/pages/datasecurity.php" class="footer-link"><span id="link">Datenschutz</span></a>
                         </li>
-                        <li>
-                            <a href="../../php/pages/contact.php" class="footer-link"><span id="link">Kontakt</span></a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col">
