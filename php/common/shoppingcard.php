@@ -32,4 +32,10 @@ class ShoppingCard
         $username = $this->session->getUsername();
         return $this->shoppingCardRepo->getAmountOfUsersShoppingCard($username);
     }
+
+    function deleteProductFromShoppingCard($productId)
+    {
+        $username = Session::getUsername();
+        $this->shoppingCardRepo->removeFromShoppingCard($username, $productId);
+    }
 }

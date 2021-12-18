@@ -2,9 +2,9 @@
     width: 100%;
     margin-top: 30px;
     font-weight: bold;
-    font-size: 50px;
     text-align: center;
 }
+
 
 .test {
     font-size: 50px;
@@ -32,7 +32,7 @@
     word-wrap: break-word;
 }
 
-#table td{
+#table td {
     word-wrap: break-word;
 }
 

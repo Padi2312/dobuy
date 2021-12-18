@@ -42,4 +42,15 @@ class User
     {
         return password_verify($password, $hashedPassword);
     }
+
+    function getAllUsers()
+    {
+        return $this->userRepo->getAllUsers();
+    }
+
+    function getCurrentUserData()
+    {
+        $username = Session::getUsername();
+        return $this->userRepo->getUserByName($username);
+    }
 }

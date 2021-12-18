@@ -39,9 +39,12 @@ class ProductRepository extends Database
         return $insertedId;
     }
 
-    function updateProduct($productid, $name, $description, $price, $imagepath, $quantity, $provider, $category)
+    function updateProduct($productid, $name, $description, $price, $imagepath, $category, $quantity)
     {
-        $this->mysqli->query("UPDATE product SET name = '$name', description = '$description', price = '$price', imagepath = '$imagepath', quantity = '$quantity', provider = '$provider', category_id = '$category' WHERE id = '$productid'");
+        $catRepo = new CategoryRepository();
+        $categoryModel = $catRepo->getCategoryIdByName($category);
+        $categoryId = $categoryModel->getID();
+        $this->mysqli->query("UPDATE product SET name = '$name', description = '$description', price = '$price', imagepath = '$imagepath', quantity = '$quantity', category_id = '$categoryId' WHERE id = '$productid'");
     }
 
     function deleteProduct($productid)

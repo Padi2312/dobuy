@@ -27,6 +27,11 @@ class ShoppingCardRepository extends Database
         }
     }
 
+    function removeFromShoppingCard($username, $productid)
+    {
+        $this->mysqli->query("DELETE FROM shopping_card WHERE user='$username' AND product_id=$productid");
+    }
+
     function addProductToShoppingCard($username, $productid)
     {
         $stmt = $this->mysqli->prepare("INSERT INTO shopping_card (product_id,user) VALUES (?,?)");

@@ -54,6 +54,19 @@ class UserRepository extends Database
      */
     function getAllUsers()
     {
+
+        $resultMySql = $this->mysqli->query("SELECT * FROM user");
+
+        if ($resultMySql->num_rows === 0) {
+            return array();
+        } else {
+            $users = array();
+            $result = $resultMySql->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $item) {
+                array_push($users, new UserModel($item));
+            }
+            return $users;
+        }
         return $this->mysqli->query("SELECT * FROM user")->fetch_all();
     }
 

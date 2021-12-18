@@ -31,16 +31,24 @@
             $shoppingCard = new ShoppingCard();
             $shoppingCardList = $shoppingCard->getShoppingCardByUser();
             foreach ($shoppingCardList as $product) {
+                $id = $product->getID();
                 echo '<tr>
                         <td ><img src=' . $product->getImagePath() . '></td>
                         <td>' . $product->getName() . '</td>
                         <td>' . $product->getPrice() . '</td>
+                        <td>';
+                echo "<form action='shoppingbasketaction.php?id=$id' method='post'>";
+                echo '<button class="btn">
+                                Entfernen
+                            </button>   
+                            </form>
+                        </td>
                     </tr>';
             }
             ?>
         </table>
         <div class="buttonline">
-            <button type="submit" id="buy">Kaufen</button>
+            <button type="submit" class="btn" id="buy">Kaufen</button>
         </div>
 
     </main>

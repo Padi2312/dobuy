@@ -92,3 +92,17 @@ img {
     display: flex;
     align-items: center;
 }
+
+.btn {
+    font-size: 1.3em;
+    padding: 5px 12px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    border: 1px solid #FFE600;
+    background-color: #FFE600;
+    border-radius: 20px;
+    display: table;
+    margin: auto;
+    margin-top: 10px;
+    color: #000 !important;
+}

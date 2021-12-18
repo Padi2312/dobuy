@@ -24,7 +24,7 @@ class Product
         if ($uploadResult !== null) {
             return $this->productRepo->addProduct($name, $description, $price, $quantity, $uploadResult, $session->getUsername(), $category);
         } else {
-            return null;
+            return $this->productRepo->addProduct($name, $description, $price, $quantity, "", $session->getUsername(), $category);
         }
     }
 
@@ -38,7 +38,21 @@ class Product
         return $this->productRepo->getAllProducts();
     }
 
-    function getRandomProducts($amount): array 
+    function deleteProduct($id)
+    {
+        $this->productRepo->deleteProduct($id);
+    }
+
+    function updateProduct($productId, $name, $description, $price, $imagePath, $category, $quantity)
+    {
+        $product = $this->productRepo->getProductById($productId);
+        if ($imagePath === "") {
+            $imagePath = $product->getImagePath();
+        }
+        $this->productRepo->updateProduct($productId, $name, $description, $price, $imagePath,  $category, $quantity);
+    }
+
+    function getRandomProducts($amount): array
     {
         return $this->productRepo->getRandomProducts($amount);
     }

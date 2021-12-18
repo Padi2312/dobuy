@@ -33,11 +33,16 @@
         </div>
 
         <div id="product" class="grid-master container">
-            <div class="row">
-                <div class="col">
-                    <img id="productpicture" src="<?php echo $product->getImagePath(); ?>" title="Placeholder" alt="Placeholder">
-                </div>
-            </div>
+            <?php
+            if ($product->getImagePath() !== "") {
+                $imagePath = $product->getImagePath();
+                echo "<div class='row'>
+                        <div class='col'>
+                            <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder'>
+                        </div>
+                    </div>";
+            }
+            ?>
             <div class="row">
                 <div class="col">
                     <p id="productdescription">
@@ -46,9 +51,6 @@
                 </div>
             </div>
             <div class="row">
-            <!-- <div class="tags">
-                <p id="tags">Placeholder,Placeholder,Placeholder</p>
-            </div> -->
                 <div class="col">
                     <p id="rating">Rating: 4/5</p>
                 </div>
@@ -81,7 +83,7 @@
         ?>
 
 
-        <hr id="seperator"/>
+        <hr id="seperator" />
         <div id="comments">
             <div class="grid-container">
                 <div class="username">
@@ -108,7 +110,7 @@
                 </div>
             </div>
         </div>
-        <hr id="seperator"/>
+        <hr id="seperator" />
         <div id="rating-infobox">
             <span class="rating-info">Geben Sie eine Bewertung zum Produkt ab</span>
         </div>
@@ -117,24 +119,24 @@
                 <div class="star-rating container">
                     <div class="row">
                         <div class="starrating col">
-                        <input type="radio" id="one" name="ratingpoints" value=1>
-                        <label for="one" class="star-option-label">1 Stern</label>
+                            <input type="radio" id="one" name="ratingpoints" value=1>
+                            <label for="one" class="star-option-label">1 Stern</label>
                         </div>
                         <div class="starrating col">
-                        <input type="radio" id="two" name="ratingpoints" value=2>
-                        <label for="two" class="star-option-label">2 Sterne</label>
+                            <input type="radio" id="two" name="ratingpoints" value=2>
+                            <label for="two" class="star-option-label">2 Sterne</label>
                         </div>
                         <div class="starrating col">
-                        <input type="radio" id="three" name="ratingpoints" value=3>
-                        <label for="three" class="star-option-label">3 Sterne</label>
+                            <input type="radio" id="three" name="ratingpoints" value=3>
+                            <label for="three" class="star-option-label">3 Sterne</label>
                         </div>
                         <div class="starrating col">
-                        <input type="radio" id="four" name="ratingpoints" value=4>
-                        <label for="four" class="star-option-label">4 Sterne</label>
+                            <input type="radio" id="four" name="ratingpoints" value=4>
+                            <label for="four" class="star-option-label">4 Sterne</label>
                         </div>
                         <div class="starrating col">
-                        <input type="radio" id="five" name="ratingpoints" value=5>
-                        <label for="five" class="star-option-label">5 Sterne</label>
+                            <input type="radio" id="five" name="ratingpoints" value=5>
+                            <label for="five" class="star-option-label">5 Sterne</label>
                         </div>
                     </div>
                 </div>
@@ -142,7 +144,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="comment">Schreibe einen Kommentar</label></br>
-                            <textarea name="comment" id="comment"class="bar"></textarea>
+                            <textarea name="comment" id="comment" class="bar"></textarea>
                         </div>
                     </div>
                 </div>

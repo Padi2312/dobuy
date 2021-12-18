@@ -25,7 +25,7 @@ class UserModel
 
     function getFullname()
     {
-        return $this->firstname + $this->lastname;
+        return $this->firstname . " " . $this->lastname;
     }
 
     function getEmail()

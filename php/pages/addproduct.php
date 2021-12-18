@@ -1,12 +1,13 @@
 <?php
 include_once '../common/notloggedin.php';
+include_once '../common/session.php';
+include_once '../common/user.php';
 ?>
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
-    <?php include_once '../common/session.php' ?>
-    <?php include_once '../templates/head.php' ?>
+    <?php include_once '../templates/head.php'; ?>
     <link rel="stylesheet" href="../../css/addproduct.css">
 </head>
 
@@ -20,11 +21,21 @@ include_once '../common/notloggedin.php';
     <main>
 
         <div class="submit-form container">
-            <div class="textbox">
-                <span id="text">Sie wollen ein Produkt auf unserer Seite anbieten? Dann geben Sie uns mit diesem Formular die relevanten Informationen. Falls wir den Artikel für geeignet halten, nehmen wir ihn in das Sdortiment auf und Sie werden natürlich am Gewinn beteiligt!</span>
-            </div>
+            <?php
+            $user = new User();
+            $userdata = $user->getCurrentUserData();
+            if ($userdata->getRole() === 2) {
+                echo '<div class="textbox">
+                <span id="text">Sie wollen ein Produkt auf unserer Seite anbieten? Dann geben Sie uns mit diesem Formular die relevanten Informationen. Falls wir den Artikel für geeignet halten, nehmen wir ihn in das Sortiment auf und Sie werden natürlich am Gewinn beteiligt!</span>
+            </div>';
+            } else {
+                echo '<div class="textbox">
+                        <span id="text">Fügen sie ihrem Shop weitere tolle Produkte hinzu.</span>
+                    </div>';
+            }
+            ?>
 
-            <hr id="seperator"/>
+            <hr id="seperator" />
             <form action="addproductaction.php" method="post" enctype="multipart/form-data">
                 <label for="fileToUpload">Bild auswählen:</label></br>
                 <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"></br>
