@@ -135,7 +135,7 @@ if ($product === null) {
                 <div id="comment-wrapper container">
                     <div class="row">
                         <div class="col">
-                            <label class="h6" for="comment">Schreibe einen Kommentar</label></br>
+                            <label class="h6" for="comment">Schreibe einen Kommentar</label><br>
                             <textarea name="comment" id="comment" class="bar"></textarea>
                         </div>
                     </div>

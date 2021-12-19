@@ -18,7 +18,7 @@
                 <form class="login-form " method="post" action="loginaction.php">
                     <div id="logintext">
                         <img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY">
-                        </br>
+                        <br>
                         Melden Sie sich an, um zu Ihrer Kontoübersicht zu gelangen.
                     </div>
                     <hr id="seperator" />
@@ -47,9 +47,7 @@
                     </div>
                     <div id="buttonline">
                         <a href="./register.php">
-                            <button type="button" class="btn btn-link">
-                                Registrieren
-                            </button>
+                            Registrieren
                         </a>
                         <button name="login" type="submit" class="btn" id="loginbutton">Anmelden</button>
                     </div>

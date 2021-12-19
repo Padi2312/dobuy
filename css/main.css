@@ -293,7 +293,7 @@ footer ul.box-3_inner_wrap li a::before {
     width: 100%;
 }
 
-#footer-link-div {
+.footer-link-div {
     text-align: center;
     font-weight: 600;
     color: #000000;
@@ -301,13 +301,13 @@ footer ul.box-3_inner_wrap li a::before {
     font-size: 24px;
 }
 
-#footer-link-div a:hover {
+.footer-link-div a:hover {
     text-decoration: none;
     color: #000000;
 }
 
 
-#footer-link-div a {
+.footer-link-div a {
     display: inline-block;
     position: relative;
     color: #000000;
@@ -316,7 +316,7 @@ footer ul.box-3_inner_wrap li a::before {
     font-weight: 600;
 }
 
-#footer-link-div a:after {
+.footer-link-div a:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -329,7 +329,7 @@ footer ul.box-3_inner_wrap li a::before {
     transition: transform 0.25s ease-out;
 }
 
-#footer-link-div a:hover:after {
+.footer-link-div a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }

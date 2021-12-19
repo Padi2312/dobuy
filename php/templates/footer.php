@@ -22,10 +22,10 @@
                     <h2>Weitere Links</h2>
                     <ul class="box-3_inner_wrap">
                         <li>
-                            <a href="../pages/imprint.php" class="footer-link"><span id="link">Impressum</span></a>
+                            <a href="../pages/imprint.php" class="footer-link"><span>Impressum</span></a>
                         </li>
                         <li>
-                            <a href="../pages/privacy.php" class="footer-link"><span id="link">Datenschutz</span></a>
+                            <a href="../pages/privacy.php" class="footer-link"><span>Datenschutz</span></a>
                         </li>
                     </ul>
                 </div>

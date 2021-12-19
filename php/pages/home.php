@@ -11,7 +11,6 @@ new Database();
 
 <head>
     <meta charset="utf-8">
-    <title>DOBUY - Ihr Onlineshop</title>
     <?php include '../templates/head.php' ?>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/home.css">
