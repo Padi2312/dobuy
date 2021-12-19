@@ -141,7 +141,7 @@ class ProductRepository extends Database
      */
     function getRandomProducts($amount = 10)
     {
-        $resultMySql = $this->mysqli->query("SELECT * FROM product WHERE visible = true ORDER BY RAND() LIMIT $amount");
+        $resultMySql = $this->mysqli->query("SELECT DISTINCT * FROM product WHERE visible = true ORDER BY RAND() LIMIT $amount");
         if ($resultMySql->num_rows === 0) {
             return array();
         } else {

@@ -40,33 +40,36 @@ new Database();
         </div>
 
 
-
         <div class="container">
             <?php
             $productClass = new Product();
             $randomProducts = $productClass->getRandomProducts(12);
-            for ($i = 0; $i < 12 / 4; $i++) {
-                echo "<div class='row'>";
-                for ($j = 0; $j < 4; $j++) {
-                    $index = $i + $j;
-                    $name = $randomProducts[$index]->getName();
-                    $id = $randomProducts[$index]->getID();
-                    $imagePath = $randomProducts[$index]->getImagePath();
-                    echo "<div class='part col-md-3'>
-                            <a class='link-product' href='productsite.php?id=$id'>
-                             <div class='product-item'>
-                                 <span id='title'>$name</span>
-                                <hr id='popular'>
-                                 <img id='productpicture' src='$imagePath' title='$name' alt='$name'>
-                            </div>
-                             </a>
-                    </div>";
+
+            $numOfCols = 4;
+            $rowCount = 0;
+
+            foreach ($randomProducts as $product) {
+                if ($rowCount % $numOfCols === 0) {
+                    echo "<div class='row'>";
                 }
-                echo "</div>";
-            }
+                $rowCount++;
+                $id = $product->getID();
+                $name = $product->getName();
+                $imagePath = $product->getImagePath();
+                echo    "<div class='part col-md-3'>
+                            <a class='link-product' href='productsite.php?id=$id'>
+                                <div class='product-item'>
+                                    <span id='title'>$name</span>
+                                    <hr id='popular'>
+                                    <img id='productpicture' src='$imagePath' title='$name' alt='$name'>
+                                </div>
+                            </a>
+                        </div>";
 
-
-            ?>
+                if ($rowCount % $numOfCols === 0) {
+                    echo "</div>";
+                }
+            }?>
 
         </div>
     </main>
