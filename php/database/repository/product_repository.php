@@ -154,6 +154,13 @@ class ProductRepository extends Database
         };
     }
 
+    /** 
+     * SQL Query, returns result
+     */ 
+    function query($text) 
+    {
+        return $this->mysqli->query($text);
+    }
 
     /**
      * Lowers the quantity by one of product with the given id  
