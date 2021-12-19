@@ -18,7 +18,19 @@ class Category
         return $this->categoryRepo->getAllCategories();
     }
 
-    function getCategoryByName($name) {
+    /**
+     * Returns a category model based on the given name
+     */
+    function getCategoryByName($name)
+    {
         return $this->categoryRepo->getCategoryIdByName($name);
+    }
+
+    /**
+     * Returns the category model based on the given category id
+     */
+    function getCategoryById($categoryId)
+    {
+        return $this->categoryRepo->getCategoryById($categoryId);
     }
 }

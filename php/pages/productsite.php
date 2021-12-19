@@ -2,10 +2,12 @@
 <?php
 include_once "../common/session.php";
 include_once "../common/product.php";
+include_once "../common/category.php";
 include_once "../common/shoppingcard.php";
 $productId = $_GET["id"];
 
 $productHandler = new Product();
+$category = new Category();
 $product = $productHandler->getProductById($productId);
 if ($product === null) {
     header("Location: notfound.php");
@@ -64,19 +66,46 @@ if ($product === null) {
                     <p id="retailer">
                         <?php
                         if ($product->getProvider() == "admin") {
-                            echo  "<b><span style='color:#FFE600;'>DO</span>BUY!</b>";
+                            echo  "<b>Von: <span style='color:#FFE600;'>DO</span>BUY!</b>";
                         } else {
-                            echo $product->getProvider();
+                            echo "Händler: " . $product->getProvider();
                         }
                         ?>
                     </p>
                 </div>
                 <div class="col">
-                    <p id="price"><?php echo $product->getPrice(); ?> €</p>
+                    <div>
+                        <p id="price"><?php echo $product->getPrice(); ?> €</p>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col"></div>
+            <div class="row justify-content-center mb-2">
+                <?php
+                $session = new Session();
+                $shoppingCard = new ShoppingCard();
+                if (isset($_GET["id"])) {
+                    $id = $_GET["id"];
+                    $action = "./shoppingcardaction.php?id=$id";
+                } else {
+                    $action = "./notfound.php";
+                }
+
+                if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id) && $product->getQuantity() > 0) {
+                    echo "<form action='$action' method='post'>
+                    <div class='shoppingcart-buttonline'>
+                        <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
+                    </div>
+                    </form>";
+                }
+
+                if ($session->isLoggedIn() && $shoppingCard->isProductInShoppingCard($id)) {
+                    echo "<div class='alert alert-info text-center' role='alert'>
+                                    Bereits im Warenkorb!
+                                </div>";
+                }
+                ?>
+            </div>
+            <div class="row justify-content-center">
                 <div class="col">
                     <p class="h6 text-center">
                         <?php
@@ -92,27 +121,10 @@ if ($product === null) {
 
                     </p>
                 </div>
-                <div class="col"></div>
             </div>
-        </div>
-        <?php
-        $session = new Session();
-        $shoppingCard = new ShoppingCard();
-        if (isset($_GET["id"])) {
-            $id = $_GET["id"];
-            $action = "./shoppingcardaction.php?id=$id";
-        } else {
-            $action = "./notfound.php";
-        }
 
-        if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id) && $product->getQuantity() > 0) {
-            echo "<form action='$action' method='post'>
-                <div class='shoppingcart-buttonline'>
-                    <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>
-                </div>
-            </form>";
-        }
-        ?>
+        </div>
+
         <hr id="seperator" />
 
         <div id="rating-infobox">

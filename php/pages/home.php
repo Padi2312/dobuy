@@ -26,10 +26,10 @@ new Database();
     <main>
 
         <div class="searchbar">
-            <form action="search.php" method="post">
+            <form action="productsearch.php?keyword=searchterm" method="get">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm" onchange="<?php echo "test" ?>">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Suchen</button>
+                    <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm">
+                    <input class="btn btn-outline-secondary" type="submit" id="button-addon2" value="Suchen">
                 </div>
             </form>
         </div>
@@ -70,7 +70,7 @@ new Database();
                 if ($rowCount % $numOfCols === 0) {
                     echo "</div>";
                 }
-            }?>
+            } ?>
 
         </div>
     </main>

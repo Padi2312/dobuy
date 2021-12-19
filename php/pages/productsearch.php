@@ -1,7 +1,12 @@
 <!-- Durch diese Datei wird die Suchseite angezeigt auf der man auch Sortierung und Filter einstellen kann -->
+<?php
+include_once "../common/product.php";
+include_once "../common/category.php";
+include_once "../common/session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="">
-
 
 <head>
   <?php
@@ -13,13 +18,8 @@
 <body>
 
   <?php
-  include_once "../common/product.php";
-  include_once "../common/category.php";
-  include_once "../common/session.php";
   include "../templates/header.php";
   ?>
-
-
 
   <main>
 
@@ -35,23 +35,32 @@
           <div class="filterbar container">
             <div class="row">
               <div class="col">
-                <select class="form-select" aria-label="Default select example" name="sort">
-
-                  <option value=0 selected>Sortierung wählen</option>
-                  <option value=1>Preis</option>
-                  <option value=2>Name</option>
-
+                <select class="form-select" aria-label="Default select example" name="sort" onchange="this.form.submit()">
+                  <?php
+                  $options = array("Sortierung wählen", "Preis", "Name");
+                  foreach ($options as $index => $item) {
+                    if (isset($_GET["sort"]) && $index == $_GET["sort"]) {
+                      echo "<option value=$index selected>$item</option>";
+                    } else {
+                      echo "<option value=$index>$item</option>";
+                    }
+                  }
+                  ?>
                 </select>
               </div>
               <div class="col">
-                <select class="form-select" aria-label="Default select example" name="category">
+                <select class="form-select" aria-label="Default select example" name="category" onchange="this.form.submit()">
                   <option selected>Kategorie wählen</option>
 
                   <?php
                   $categoryRepo = new Category();
                   $categoryList = $categoryRepo->getAllCategories();
                   foreach ($categoryList as $category) {
-                    echo '<option value =' . $category->getID() . '>' . $category->getName() . '</option>';
+                    if (isset($_GET["category"]) && $category->getID() == $_GET["category"]) {
+                      echo '<option value =' . $category->getID() . ' selected>' . $category->getName() . '</option>';
+                    } else {
+                      echo '<option value =' . $category->getID() . '>' . $category->getName() . '</option>';
+                    }
                   }
                   ?>
 
@@ -59,7 +68,7 @@
               </div>
               <div class="col">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="availablecheck" name="available" onchange="">
+                  <input class="form-check-input" type="checkbox" value="" id="availablecheck" name="available" onchange="this.form.submit()">
                   <label class="form-check-label" for="availablecheck">Nur Verfügbare anzeigen</label>
                 </div>
               </div>
@@ -102,12 +111,14 @@
     function loadProducts($parameters)
     {
       $repo = new Product();
+      $category = new Category();
       $productList = $repo->filterProducts($parameters[0], $parameters[1], $parameters[2], $parameters[3], $parameters[4], $parameters[5]);
 
       foreach ($productList as $product) {
+        $categoryModel = $category->getCategoryById($product->getCategory());
         echo
         '<div id="response" class="response container">
-                    <div class="productname">
+                    <div class="productname h3">
                       <a id="productname" href="productsite.php?id=' . $product->getID() . '">' . $product->getName() . '</a>
                     </div>
                     <div class="content row">
@@ -123,10 +134,10 @@
                       </div>
                       <div class="col">
                         <div class="price">
-                          <p id="price">' . $product->getPrice() . '</p>
+                          <p id="price">' . $product->getPrice() . '€</p>
                         </div>
                         <div class="tags">
-                          <p id="tags">' . $product->getCategory() . '</p>
+                          <p id="tags">' . $categoryModel->getName() . '</p>
                         </div>
                       </div>
                     </div>

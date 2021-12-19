@@ -12,7 +12,7 @@ class CategoryRepository extends Database
         parent::__construct();
     }
 
-    function getCategory($categoryid)
+    function getCategoryById($categoryid)
     {
         $result = $this->mysqli->query("SELECT * FROM category WHERE id ='$categoryid'")->fetch_assoc();
         return new CategoryModel($result);
