@@ -1,3 +1,4 @@
+<!-- Diese Datei führt die Änderung der Produkte aus -->
 <?php
 include_once '../common/filehandler.php';
 include_once '../common/product.php';

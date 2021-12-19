@@ -1,3 +1,4 @@
+<!-- Diese Datei verarbeitet die Registrierungsanfrage -->
 <?php
 include_once '../common/user.php';
 

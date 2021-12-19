@@ -1,3 +1,4 @@
+<!-- Diese Datei enthält den Footer der auf jeder Seite angezeigt werden soll -->
 <footer class="container-footer-wrapper">
     <div class="container-fluid">
         <div>

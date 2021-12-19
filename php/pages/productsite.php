@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt die Produktseite der einzelnen Produkte an mit den Bewertungen für das Produkt -->
 <?php
 include_once "../common/session.php";
 include_once "../common/product.php";

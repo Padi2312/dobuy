@@ -1,3 +1,4 @@
+<!-- Durch diese Datei wird die Homepage angezeigt, sie ist die Landingpage -->
 <?php
 include_once '../common/session.php';
 include_once '../database/database.php';

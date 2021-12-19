@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt die Warenkorbseite an -->
 <!DOCTYPE html>
 <html lang="de">
 

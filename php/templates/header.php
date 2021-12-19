@@ -1,3 +1,4 @@
+<!-- Diese Datei enthält den Header der auf jeder Seite angezeigt werden soll -->
 <?php
 include_once '../common/shoppingcard.php';
 include_once '../common/session.php';

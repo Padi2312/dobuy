@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt die Seite an, auf die man nach der bestellung weitergeleitet wird -->
 <!DOCTYPE html>
 <html lang="">
 

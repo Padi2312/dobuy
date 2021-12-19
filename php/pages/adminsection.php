@@ -1,3 +1,4 @@
+<!-- Diese Datei baut das Userprofil für den Admin und somit die Adminpage auf -->
 <?php
 include_once '../common/notloggedin.php';
 include_once "../common/product.php";

@@ -1,3 +1,4 @@
+<!-- Durch diese Datei wird die Suchseite angezeigt auf der man auch Sortierung und Filter einstellen kann -->
 <!DOCTYPE html>
 <html lang="">
 

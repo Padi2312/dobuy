@@ -1,3 +1,4 @@
+<!-- Diese Datei ermöglicht es dem Admin die Produkte zu bearbeiten -->
 <?php
 include_once '../common/notloggedin.php';
 include_once "../common/ordering.php";

@@ -1,3 +1,5 @@
+<!-- Diese Datei enthält die Links und Informationen die in jedem HTML-Head vorhanden sein müssen -->
+
 <meta charset="utf-8">
 <title>DOBUY - Ihr Onlineshop</title>
 <link rel="stylesheet" href="../../css/main.css">

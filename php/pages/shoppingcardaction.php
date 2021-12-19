@@ -1,3 +1,4 @@
+<!-- Diese Datei legt Produkte in den Warenkorb -->
 <?php
 
 include_once '../common/shoppingcard.php';

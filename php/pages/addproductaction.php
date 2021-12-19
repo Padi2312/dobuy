@@ -1,3 +1,4 @@
+<!-- Diese Datei verarbeitet die Dateien, die die Kunden zu Ihren Produkten angeben, um speißt sie in die Datenbank ein -->
 <?php
 include_once '../common/filehandler.php';
 include_once '../common/product.php';

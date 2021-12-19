@@ -1,3 +1,4 @@
+<!-- Auf dieser Seite können User Produkt für den Verkauf auf DoBuy vorschlagen -->
 <?php
 include_once '../common/notloggedin.php';
 include_once '../common/session.php';
