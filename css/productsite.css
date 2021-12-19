@@ -8,7 +8,6 @@
     margin-left: 5%;
     margin-right: 5%;
     width: auto;
-    font-size: 70px;
     font-weight: 600;
     padding-top: 25px;
     word-wrap: break-word;
@@ -22,7 +21,7 @@
 #productdescription {
     text-align: center;
     padding: 20px 0;
-    font-size: 30px;
+    font-size: larger;
 }
 
 #productpicture {

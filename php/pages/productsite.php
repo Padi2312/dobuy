@@ -29,9 +29,9 @@ if ($product === null) {
         <p>
         </p>
         <div class="producttitel">
-            <p>
+            <h1>
                 <?php echo $product->getName(); ?>
-            </p>
+            </h1>
         </div>
 
         <div id="product" class="grid-master container">
@@ -75,6 +75,23 @@ if ($product === null) {
                     <p id="price"><?php echo $product->getPrice(); ?> €</p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <p class="h6 text-center">
+                        <?php
+                        $quantity = $product->getQuantity();
+                        if ($quantity > 0) {
+                            echo "Noch $quantity Stück auf Lager.";
+                        } else {
+                            echo "Ausverkauft!";
+                        }
+                        ?>
+
+                    </p>
+                </div>
+                <div class="col"></div>
+            </div>
         </div>
         <?php
         $session = new Session();
@@ -86,7 +103,7 @@ if ($product === null) {
             $action = "./notfound.php";
         }
 
-        if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id)) {
+        if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id) && $product->getQuantity() > 0) {
             echo "<form action='$action' method='post'>
                 <div class='shoppingcart-buttonline'>
                     <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>

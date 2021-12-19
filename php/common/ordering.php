@@ -24,6 +24,7 @@ class Ordering
         $productPrice = $product->getPrice();
 
         $this->orderRepo->addOrder($productId, 1, $productPrice, $username);
+        $prodRepo->decrementQuantityByOne($productId);
     }
 
     /**

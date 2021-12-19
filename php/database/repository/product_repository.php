@@ -153,4 +153,18 @@ class ProductRepository extends Database
             return $products;
         };
     }
+
+
+    /**
+     * Lowers the quantity by one of product with the given id  
+     */
+    function decrementQuantityByOne($productid)
+    {
+        $resultMySql = $this->mysqli->query("UPDATE product SET quantity = quantity -1 WHERE id = '$productid' AND quantity > 0");
+        if (!$resultMySql->num_rows) {
+            return false;
+        } else {
+            return true;
+        };
+    }
 }
