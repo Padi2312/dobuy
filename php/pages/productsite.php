@@ -84,7 +84,9 @@ if ($product === null) {
                         if ($quantity > 0) {
                             echo "Noch $quantity Stück auf Lager.";
                         } else {
-                            echo "Ausverkauft!";
+                            echo "<div class='alert alert-warning text-center' role='alert'>
+                                    Ausverkauft!
+                                </div>";
                         }
                         ?>
 

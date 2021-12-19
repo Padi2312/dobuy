@@ -38,7 +38,7 @@ $session = new Session();
                         $amount = $shoppingCard->getAmountOfShoppingCard();
                         echo "<li class='nav-item'>
                             <a href='../../php/pages/shoppingbasket.php'  class='nav-item' title='Zum Warenkorb'>
-                                Zum Warenkorb ($amount)
+                                Zum Warenkorb  <span class='badge badge-dark'>$amount</span>
                             </a>
                             </li>
                             <li class='nav-item'>
