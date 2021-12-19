@@ -7,7 +7,12 @@
     <div class="container">
         <?php
         $orders = new Ordering();
-        $orderList = $orders->getOrdersOfUser('user');
+        $username = Session::getUsername();
+        $orderList = $orders->getOrdersOfUser($username);
+        if (count($orderList) == 0) {
+            echo "<p class='m-4 h3 text-center'>Noch keine Produkte gekauft</p>";
+        }
+
         foreach ($orderList as $product) {
             $imagePath = $product->getImagePath();
             $name = $product->getName();
@@ -44,7 +49,12 @@
         </tr>
         <?php
         $orders = new Ordering();
-        $orderList = $orders->usersSoldProducts('user');
+        $username = Session::getUsername();
+        $orderList = $orders->usersSoldProducts($username);
+
+        if (count($orderList) == 0) {
+            echo "<p class='m-4 h3 text-center'>Noch keine Produkte verkauft</p>";
+        }
         foreach ($orderList as $product) {
             echo '<tr>
                     <td id="picture"><img class="img" src=' . $product->getImagePath() . '></td>
