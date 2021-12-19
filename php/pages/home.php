@@ -7,7 +7,7 @@ include_once '../common/product.php';
 new Database();
 ?>
 <!DOCTYPE html>
-<html lang="">
+<html lang="de">
 
 <head>
     <meta charset="utf-8">

@@ -15,7 +15,7 @@ if ($product === null) {
 ?>
 
 <!DOCTYPE html>
-<html lang="">
+<html lang="de">
 
 <head>
     <?php

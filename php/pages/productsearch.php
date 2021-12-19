@@ -6,7 +6,7 @@ include_once "../common/session.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="">
+<html lang="de">
 
 <head>
   <?php
@@ -109,7 +109,7 @@ include_once "../common/session.php";
 
     /**
      * Returns Products as ProductModels which match the filters and searches. Also sorting is included.
-     */ 
+     */
     function loadProducts($parameters)
     {
       $repo = new Product();
@@ -151,7 +151,7 @@ include_once "../common/session.php";
 
     /**
      * Returns Parameters needed for Filter Function
-     */ 
+     */
     function getParameters()
     {
 
