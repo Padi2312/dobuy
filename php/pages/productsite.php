@@ -39,7 +39,11 @@ if ($product === null) {
                 $imagePath = $product->getImagePath();
                 echo "<div class='row'>
                     <div class='col'>
-                        <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder'>
+                    </div>
+                    <div class='col-md-12'>
+                        <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder' class='mx-auto d-block'>
+                    </div>
+                    <div class='col'>
                     </div>
                 </div>";
             }
