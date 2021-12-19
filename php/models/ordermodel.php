@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Database model for Order Table
+ * Provides getter for all table columns
+ */
 class OrderModel
 {
 

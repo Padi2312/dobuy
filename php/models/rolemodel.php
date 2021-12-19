@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Database model for Role Table
+ * Provides getter for all table columns
+ */
 class RoleModel
 {
 

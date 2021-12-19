@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Database model for Rating Table
+ * Provides getter for all table columns
+ */
 class RatingModel
 {
 
