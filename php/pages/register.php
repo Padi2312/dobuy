@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt das Registrierungsformular an -->
 <!DOCTYPE html>
 <html lang="de">
 

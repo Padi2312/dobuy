@@ -1,3 +1,4 @@
+<!-- Diese Datei bietet das Grundgerüst für User- und Adminseite und Lädt, je nach Berechtigung die jeweilige Seite -->
 <?php
 include_once '../common/notloggedin.php';
 include_once "../common/ordering.php";

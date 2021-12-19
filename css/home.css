@@ -7,14 +7,6 @@
     margin-bottom: 50px;
 }
 
-#searchterm {
-    padding: 12px 20px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
 .current {
     width: 80%;
     margin-top: 10px;
@@ -54,7 +46,7 @@
 @media screen and (max-width:766px) {
     .part{
         position: relative;
-        padding-top: 110%;
+        padding-top: 130%;
     }
 }
 

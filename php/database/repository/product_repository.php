@@ -141,7 +141,7 @@ class ProductRepository extends Database
      */
     function getRandomProducts($amount = 10)
     {
-        $resultMySql = $this->mysqli->query("SELECT * FROM product WHERE visible = true ORDER BY RAND() LIMIT $amount");
+        $resultMySql = $this->mysqli->query("SELECT DISTINCT * FROM product WHERE visible = true ORDER BY RAND() LIMIT $amount");
         if ($resultMySql->num_rows === 0) {
             return array();
         } else {
@@ -154,7 +154,24 @@ class ProductRepository extends Database
         };
     }
 
-    function query($text) {
+    /** 
+     * SQL Query, returns result
+     */ 
+    function query($text) 
+    {
         return $this->mysqli->query($text);
+    }
+
+    /**
+     * Lowers the quantity by one of product with the given id  
+     */
+    function decrementQuantityByOne($productid)
+    {
+        $resultMySql = $this->mysqli->query("UPDATE product SET quantity = quantity -1 WHERE id = '$productid' AND quantity > 0");
+        if (!$resultMySql->num_rows) {
+            return false;
+        } else {
+            return true;
+        };
     }
 }

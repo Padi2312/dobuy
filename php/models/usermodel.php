@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Database model for User Table
+ * Provides getter for all table columns
+ */
 class UserModel
 {
     private $username;

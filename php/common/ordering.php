@@ -13,6 +13,10 @@ class Ordering
         $this->orderRepo = new OrderRepository();
     }
 
+    /**
+     * Adds an order with the given product id to
+     * the user with the given username
+     */
     function addOrderForUser($username, $productId)
     {
         $prodRepo = new ProductRepository();
@@ -20,9 +24,12 @@ class Ordering
         $productPrice = $product->getPrice();
 
         $this->orderRepo->addOrder($productId, 1, $productPrice, $username);
+        $prodRepo->decrementQuantityByOne($productId);
     }
 
-
+    /**
+     * Returns a list of orders from a user given by the username
+     */
     function getOrdersOfUser($username)
     {
         $prodRepo = new ProductRepository();
@@ -36,6 +43,9 @@ class Ordering
         return $products;
     }
 
+    /**
+     * Returns a list with all products being sold on the shop
+     */
     function getAllSoldProducts()
     {
         $prodRepo = new ProductRepository();
@@ -49,6 +59,10 @@ class Ordering
         return $products;
     }
 
+    /**
+     * Returns a list of all sold products which have been
+     * offered by a user of the shop
+     */
     function usersSoldProducts()
     {
         $prodRepo = new ProductRepository();

@@ -1,3 +1,4 @@
+<!-- Durch diese Datei wird die Suchseite angezeigt auf der man auch Sortierung und Filter einstellen kann -->
 <!DOCTYPE html>
 <html lang="">
 
@@ -23,10 +24,12 @@
   <main>
 
     <div class="searchbar">
-      <form action="productsearch.php" method="get">
 
-        <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm">
-        
+      <form action="productsearch.php" method="get">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm">
+          <input class="btn btn-outline-secondary" type="submit" id="button-addon2" value="Suchen">
+        </div>
         <details id="filters">
           <summary>Filters</summary>
           <div class="filterbar container">
@@ -83,9 +86,7 @@
             <hr />
           </div>
         </details>
-        <div>
-          <button onchange="<?php header('Location: productsearch.php') ?>">Suchen</button>
-        </div>
+
       </form>
     </div>
 
@@ -107,7 +108,7 @@
         echo
         '<div id="response" class="response container">
                     <div class="productname">
-                      <a id="productname" href="productsite.php">' . $product->getName() . '</a>
+                      <a id="productname" href="productsite.php?id=' . $product->getID() . '">' . $product->getName() . '</a>
                     </div>
                     <div class="content row">
                       <div class="col-md">

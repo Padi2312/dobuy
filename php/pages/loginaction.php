@@ -1,3 +1,4 @@
+<!-- Diese Datei verarbeitet die LogIn-Anfrage -->
 <?php
 
 include_once '../common/user.php';

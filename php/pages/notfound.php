@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt eine Fehlerseite an, für den Fall, dass ein Produkt nicht gefunden wurde -->
 <!DOCTYPE html>
 <html lang="de">
 

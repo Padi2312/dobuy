@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt die Seite an, auf die man weitergeleitet wird, wenn man ein Produkt hochgeladen hat -->
 <!DOCTYPE html>
 <html lang="">
 

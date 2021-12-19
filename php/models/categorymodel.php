@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Database model for Category Table
+ * Provides getter for all table columns
+ */
 class CategoryModel
 {
     

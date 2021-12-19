@@ -1,3 +1,4 @@
+<!-- Diese Datei verarbeitet die LogOut-Anfrage -->
 <?php
 include_once '../common/session.php';
 $session = new Session();

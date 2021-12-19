@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Database model for Product Table
+ * Provides getter for all table columns
+ */
 class ProductModel
 {
 

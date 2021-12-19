@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt die Produktseite der einzelnen Produkte an mit den Bewertungen für das Produkt -->
 <?php
 include_once "../common/session.php";
 include_once "../common/product.php";
@@ -28,9 +29,9 @@ if ($product === null) {
         <p>
         </p>
         <div class="producttitel">
-            <p>
+            <h1>
                 <?php echo $product->getName(); ?>
-            </p>
+            </h1>
         </div>
 
         <div id="product" class="grid-master container">
@@ -39,7 +40,11 @@ if ($product === null) {
                 $imagePath = $product->getImagePath();
                 echo "<div class='row'>
                     <div class='col'>
-                        <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder'>
+                    </div>
+                    <div class='col-md-12'>
+                        <img id='productpicture' src='$imagePath' title='Placeholder' alt='Placeholder' class='mx-auto d-block'>
+                    </div>
+                    <div class='col'>
                     </div>
                 </div>";
             }
@@ -56,11 +61,38 @@ if ($product === null) {
                     <p id="rating">Rating: 4/5</p>
                 </div>
                 <div class="col">
-                    <p id="retailer"><?php echo $product->getProvider(); ?></p>
+                    <p id="retailer">
+                        <?php
+                        if ($product->getProvider() == "admin") {
+                            echo  "<b><span style='color:#FFE600;'>DO</span>BUY!</b>";
+                        } else {
+                            echo $product->getProvider();
+                        }
+                        ?>
+                    </p>
                 </div>
                 <div class="col">
                     <p id="price"><?php echo $product->getPrice(); ?> €</p>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <p class="h6 text-center">
+                        <?php
+                        $quantity = $product->getQuantity();
+                        if ($quantity > 0) {
+                            echo "Noch $quantity Stück auf Lager.";
+                        } else {
+                            echo "<div class='alert alert-warning text-center' role='alert'>
+                                    Ausverkauft!
+                                </div>";
+                        }
+                        ?>
+
+                    </p>
+                </div>
+                <div class="col"></div>
             </div>
         </div>
         <?php
@@ -73,7 +105,7 @@ if ($product === null) {
             $action = "./notfound.php";
         }
 
-        if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id)) {
+        if ($session->isLoggedIn() && !$shoppingCard->isProductInShoppingCard($id) && $product->getQuantity() > 0) {
             echo "<form action='$action' method='post'>
                 <div class='shoppingcart-buttonline'>
                     <button type='submit' id='cartbutton'><span id='buttontext'>Zum Warenkorb hinzufügen</span></button>

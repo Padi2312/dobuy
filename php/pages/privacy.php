@@ -1,3 +1,4 @@
+<!-- Diese Datei zeigt die Datenschutzerklärung an -->
 <!DOCTYPE html>
 <html lang="de">
 

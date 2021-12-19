@@ -1,3 +1,4 @@
+<!-- Diese Datei kauft alle Produkte aus dem Warenkorb oder löscht einzelen Prodkute aus diesem -->
 <?php
 
 include_once '../common/shoppingcard.php';
