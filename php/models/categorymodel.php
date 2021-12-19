@@ -16,11 +16,17 @@ class CategoryModel
         $this->name = $categoryRow["name"];
     }
 
+    /**
+     * Returns Category ID
+     */
     function getID()
     {
         return $this->id;
     }
 
+    /**
+     * Returns Category Name
+     */
     function getName()
     {
         return $this->name;

@@ -55,7 +55,7 @@ class ProductRepository extends Database
     function updateProduct($productid, $name, $description, $price, $imagepath, $category, $quantity)
     {
         $catRepo = new CategoryRepository();
-        $categoryModel = $catRepo->getCategoryIdByName($category);
+        $categoryModel = $catRepo->getCategoryByName($category);
         $categoryId = $categoryModel->getID();
         $this->mysqli->query("UPDATE product SET name = '$name', description = '$description', price = '$price', imagepath = '$imagepath', quantity = '$quantity', category_id = '$categoryId' WHERE id = '$productid'");
     }

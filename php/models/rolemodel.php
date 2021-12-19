@@ -16,11 +16,17 @@ class RoleModel
         $this->name = $roleRow["name"];
     }
 
+    /**
+     * Returns Role ID
+     */
     function getID()
     {
         return $this->id;
     }
 
+    /**
+     * Returns Role Name
+     */
     function getName()
     {
         return $this->name;

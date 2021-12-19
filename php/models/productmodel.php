@@ -28,41 +28,65 @@ class ProductModel
         $this->category = $productRow["category_id"];
     }
 
+    /**
+     * Returns Product ID
+     */
     function getID(): int
     {
         return $this->id;
     }
 
+    /**
+     * Returns Product Name
+     */
     function getName(): string
     {
         return $this->name;
     }
 
+    /**
+     * Returns Product Description
+     */
     function getDescription(): string
     {
         return $this->description;
     }
 
+    /**
+     * Returns Product Price
+     */
     function getPrice()
     {
         return $this->price;
     }
 
+    /**
+     * Returns Product ImagePath
+     */
     function getImagePath(): string
     {
         return $this->imagepath;
     }
 
+    /**
+     * Returns Product Quantity
+     */
     function getQuantity(): int
     {
         return $this->quantity;
     }
 
+    /**
+     * Returns Product Provider
+     */
     function getProvider(): string
     {
         return $this->provider;
     }
 
+    /**
+     * Returns Product Category
+     */
     function getCategory(): int
     {
         return $this->category;

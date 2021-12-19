@@ -58,8 +58,8 @@ include_once '../common/user.php';
             <select class="form-select" aria-label="category" id="dropdown" name="category" required>
                 <option selected></option>
                 <?php
-                $category  = new Category();
 
+                $category  = new Category();
                 $categoryList = $category->getAllCategories();
 
                 foreach ($categoryList as $item) {

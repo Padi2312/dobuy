@@ -11,12 +11,18 @@ class RatingRepository extends Database
         parent::__construct();
     }
 
+    /**
+     * Returns Rating as RatingModel by id given
+     */
     function getRating($ratingid)
     {
         $result = $this->mysqli->query("SELECT * FROM rating WHERE id ='$ratingid'")->fetch_assoc();
         return new RatingModel($result);
     }
 
+    /**
+     * Add new Rating to Database
+     */
     function addRating($title, $description, $rating, $user, $productid)
     {
         $stmt = $this->mysqli->prepare("INSERT INTO rating (title, description, rating, user, product_id) VALUES (?, ?, ?, ?, ?)");
@@ -27,16 +33,25 @@ class RatingRepository extends Database
         $stmt->close();
     }
 
+    /**
+     * Update one Rating in Database
+     */
     function updateRating($id, $title, $description, $rating, $user, $productid)
     {
         $this->mysqli->query("UPDATE rating SET title = '$title', description = '$description', rating = '$rating', user = '$user', product_id = '$productid' WHERE id = '$id'");
     }
 
+    /**
+     * Delete one Rating from Database
+     */
     function deleteRating($id)
     {
         $this->mysqli->query("DELETE FROM rating WHERE id = '$id'");
     }
 
+    /**
+     * Returns all Ratings as RatingModel from Database in an array
+     */
     function getAllRatings()
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM rating");
@@ -52,6 +67,9 @@ class RatingRepository extends Database
         }
     }
 
+    /**
+     * Return all Ratings as RatingModel to one Product ID
+     */
     function getRatingsByProductId($productId)
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM rating WHERE product_id = $productId");

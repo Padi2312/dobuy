@@ -98,10 +98,13 @@
 
     loadProducts(getParameters());
 
-    // Holt mit jeweils angepasster SQL Abfrage Produkte aus der Datenbank, abhängig von den eingegebenen Parametern
+    /**
+     * Returns Products as ProductModels which match the filters and searches. Also sorting is included.
+     */ 
     function loadProducts($parameters)
     {
       $repo = new Product();
+      $category = new Category();
       $productList = $repo->filterProducts($parameters[0], $parameters[1], $parameters[2], $parameters[3], $parameters[4], $parameters[5]);
 
       foreach ($productList as $product) {
@@ -123,10 +126,10 @@
                       </div>
                       <div class="col">
                         <div class="price">
-                          <p id="price">' . $product->getPrice() . '</p>
+                          <p id="price">' . $product->getPrice() . '€</p>
                         </div>
                         <div class="tags">
-                          <p id="tags">' . $product->getCategory() . '</p>
+                          <p id="tags">' . $category->getCategoryNameByID($product->getCategory()) . '</p>
                         </div>
                       </div>
                     </div>
@@ -136,7 +139,9 @@
       }
     }
 
-    // Holt die Parameter die bei dem Filter angehakt oder gesetzt wurden
+    /**
+     * Returns Parameters needed for Filter Function
+     */ 
     function getParameters()
     {
 

@@ -18,7 +18,10 @@ class CategoryRepository extends Database
         return new CategoryModel($result);
     }
 
-    function getCategoryIdByName($name)
+    /**
+     * Returns the Category as new Instance of CategoryModel
+     */
+    function getCategoryByName($name)
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM category WHERE name ='$name'");
         if ($resultMySql->num_rows == 0) {
@@ -29,6 +32,9 @@ class CategoryRepository extends Database
         return new CategoryModel($result);
     }
 
+    /**
+     * Adds new Category to Database Table, Index (ID) is auto incremented
+     */
     function addCategory($name)
     {
         $stmt = $this->mysqli->prepare("INSERT INTO category (name) VALUES (?)");
@@ -39,16 +45,25 @@ class CategoryRepository extends Database
         $stmt->close();
     }
 
+    /**
+     * Updates Categoryname by unique id
+     */
     function updateCategory($categoryid, $name)
     {
         $this->mysqli->query("UPDATE category SET name = '$name' WHERE id = '$categoryid'");
     }
 
+    /**
+     * Deletes Category by unique id
+     */
     function deleteCategory($categoryid)
     {
         $this->mysqli->query("DELETE FROM category WHERE id = '$categoryid'");
     }
 
+    /**
+     * Returns all Categories as CategoryModels in an array
+     */
     function getAllCategories()
     {
         $resultMySql = $this->mysqli->query("SELECT * FROM category");
