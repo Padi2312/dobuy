@@ -26,8 +26,10 @@ new Database();
 
         <div class="searchbar">
             <form action="search.php" method="post">
-                <lable for="productsearch" class="form-lable">
-                    <input type="text" class="form-control" id="searchterm" placeholder="Suchbegriff eingeben" name="searchterm">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm" onchange="<?php echo "test" ?>">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Suchen</button>
+                </div>
             </form>
         </div>
 
