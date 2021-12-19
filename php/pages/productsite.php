@@ -60,7 +60,15 @@ if ($product === null) {
                     <p id="rating">Rating: 4/5</p>
                 </div>
                 <div class="col">
-                    <p id="retailer"><?php echo $product->getProvider(); ?></p>
+                    <p id="retailer">
+                        <?php
+                        if ($product->getProvider() == "admin") {
+                            echo  "<b><span style='color:#FFE600;'>DO</span>BUY!</b>";
+                        } else {
+                            echo $product->getProvider();
+                        }
+                        ?>
+                    </p>
                 </div>
                 <div class="col">
                     <p id="price"><?php echo $product->getPrice(); ?> €</p>
