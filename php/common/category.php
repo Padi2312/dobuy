@@ -10,6 +10,9 @@ class Category
         $this->categoryRepo = new CategoryRepository();
     }
 
+    /**
+     * Returns a list with all categories
+     */
     function getAllCategories()
     {
         return $this->categoryRepo->getAllCategories();
