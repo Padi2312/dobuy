@@ -24,31 +24,49 @@ class OrderModel
         $this->user = $orderRow["user"];
     }
 
+    /**
+     * Returns Order ID
+     */
     function getID()
     {
         return $this->id;
     }
 
+    /**
+     * Returns Product ID to this Order
+     */
     function getProductId()
     {
         return $this->productid;
     }
 
+    /**
+     * Returns Order Timestamp
+     */
     function getTimestamp()
     {
         return $this->timestamp;
     }
 
+    /**
+     * Returns Order Quantity
+     */
     function getQuantity()
     {
         return $this->quantity;
     }
 
+    /**
+     * Returns Order Price
+     */
     function getPrice()
     {
         return $this->price;
     }
 
+    /**
+     * Returns Order User
+     */
     function getUser()
     {
         return $this->user;

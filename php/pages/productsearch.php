@@ -107,7 +107,9 @@ include_once "../common/session.php";
 
     loadProducts(getParameters());
 
-    // Holt mit jeweils angepasster SQL Abfrage Produkte aus der Datenbank, abhängig von den eingegebenen Parametern
+    /**
+     * Returns Products as ProductModels which match the filters and searches. Also sorting is included.
+     */ 
     function loadProducts($parameters)
     {
       $repo = new Product();
@@ -147,7 +149,9 @@ include_once "../common/session.php";
       }
     }
 
-    // Holt die Parameter die bei dem Filter angehakt oder gesetzt wurden
+    /**
+     * Returns Parameters needed for Filter Function
+     */ 
     function getParameters()
     {
 

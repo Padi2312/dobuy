@@ -120,14 +120,10 @@ class Product
         return $this->productRepo->getRandomProducts($amount);
     }
 
-    function searchProducts($keyword) 
-    {
-        return $this->productRepo->query("SELECT * FROM product WHERE name LIKE %$keyword%")->fetch_all();
-    }
-
-    // Filtern und sortieren der Produkte, Return Value sind die Ergebnis Spalten
+    /**
+     * Filtern und sortieren der Produkte, sowieso Filtern durch Produktsuche, Return Value sind die Ergebnis Spalten
+     */ 
     function filterProducts($sortparam, $available, $category, $pricerangebool, $pricerange, $keyword) {
-
 
         if ($sortparam === 1) {
             $sort = " ORDER BY price";
@@ -144,11 +140,9 @@ class Product
         $filterPrice = null;
         $filterKeyword = null;
 
-
         if ($available === true || $category !== null || $pricerangebool === true || $keyword !== null) {
             $where = " WHERE";
         }
-
 
         if ($available === true) {
             $start = " product.quantity <> 0";
@@ -164,7 +158,6 @@ class Product
             $filterKeyword = -1;
         }
 
-        
         if ($filterAvailable === -1) {
             $filterAvailable = null;
         } elseif ($available === true) {
@@ -194,7 +187,6 @@ class Product
             $filterKeyword = null;
         }
 
-
         if ($where === null) {
             $where = '';
         }
@@ -214,11 +206,9 @@ class Product
             $filterKeyword = '';
         }
         
-
         $base = "SELECT * FROM product";
         $statement = sprintf("%s %s %s %s %s %s %s %s", $base, $where, $start, $filterAvailable, $filterCategory, $filterKeyword, $filterPrice, $sort);
         
-
         $resultMySql = $this->productRepo->query($statement);
         if ($resultMySql->num_rows === 0) {
             return array();

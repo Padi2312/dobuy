@@ -23,26 +23,41 @@ class UserModel
         $this->password = $userRow["password"];
     }
 
+    /**
+     * Returns Username
+     */
     function getUsername()
     {
         return $this->username;
     }
 
+    /**
+     * Returns Users Fullname
+     */
     function getFullname()
     {
         return $this->firstname . " " . $this->lastname;
     }
 
+    /**
+     * Returns User Email
+     */
     function getEmail()
     {
         return $this->email;
     }
 
+    /**
+     * Returns User Role
+     */
     function getRole()
     {
         return $this->role;
     }
 
+    /**
+     * Returns User Password
+     */
     function getPassword()
     {
         return $this->password;
