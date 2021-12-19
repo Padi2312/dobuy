@@ -153,4 +153,8 @@ class ProductRepository extends Database
             return $products;
         };
     }
+
+    function query($text) {
+        return $this->mysqli->query($text);
+    }
 }

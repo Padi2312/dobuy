@@ -14,4 +14,8 @@ class Category
     {
         return $this->categoryRepo->getAllCategories();
     }
+
+    function getCategoryByName($name) {
+        return $this->categoryRepo->getCategoryIdByName($name);
+    }
 }

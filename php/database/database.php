@@ -84,7 +84,7 @@ class Database
         ENGINE = InnoDB;
 
         INSERT INTO category (name) VALUES ('Bücher');
-        INSERT INTO category (name) VALUES ('Filme,Serien,Musik & Games');
+        INSERT INTO category (name) VALUES ('Filme, Serien, Musik & Games');
         INSERT INTO category (name) VALUES ('Elektronik & Computer');
         INSERT INTO category (name) VALUES ('Haushalt, Garten, Tier & Baumarkt');
         INSERT INTO category (name) VALUES ('Spielzeug & Baby');
