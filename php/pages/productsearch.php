@@ -19,7 +19,10 @@
 
     <div class="searchbar">
       <form action="search.php" method="post">
-        <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm" onchange="<?php echo "test" ?>">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchterm" placeholder="Suchen Sie hier" name="searchterm" onchange="<?php echo "test" ?>">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Suchen</button>
+        </div>
         <details id="filters">
           <summary>Filters</summary>
           <div class="filterbar container">
