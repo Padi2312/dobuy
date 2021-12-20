@@ -10,7 +10,6 @@ new Database();
 <html lang="de">
 
 <head>
-    <meta charset="utf-8">
     <?php include '../templates/head.php' ?>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/home.css">
@@ -59,9 +58,9 @@ new Database();
                 echo    "<div class='part col-md-3'>
                             <a class='link-product' href='productsite.php?id=$id'>
                                 <div class='product-item'>
-                                    <span id='title'>$name</span>
-                                    <hr id='popular'>
-                                    <img id='productpicture' src='$imagePath' title='$name' alt='$name'>
+                                    <span>$name</span>
+                                    <hr class='popular'>
+                                    <img class='productpicture' src='$imagePath' title='$name' alt='$name'>
                                 </div>
                             </a>
                         </div>";

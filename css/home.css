@@ -25,7 +25,7 @@
     font-weight: bold;
 }
 
-#popular {
+.popular {
     width: 80%;
     background-color: #FFE600;
     margin-left: auto;
@@ -34,7 +34,7 @@
     border: 0 none;
 }
 
-#productpicture{
+.productpicture{
     width: 100%;
 }
 
