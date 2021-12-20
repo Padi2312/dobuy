@@ -76,7 +76,7 @@ include_once "../common/session.php";
             <div class="row">
               <div class="col">
                 <div id="formatline">
-                  <label for="pricerange" class="form-label">Preisspanne:</label>
+                  <label class="form-label">Preisspanne:</label>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="pricerangeactivate" name="activated">
                     <label class="form-check-label" for="pricerangeactivate">Preisspanne aktivieren</label>
