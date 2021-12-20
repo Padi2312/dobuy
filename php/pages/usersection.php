@@ -43,7 +43,7 @@
     </summary>
     <table id="table">
         <tr>
-            <th id="picture">Bild</th>
+            <th class="picture">Bild</th>
             <th id="name">Name</th>
             <th id="price">Preis</th>
         </tr>
@@ -57,7 +57,7 @@
         }
         foreach ($orderList as $product) {
             echo '<tr>
-                    <td id="picture"><img class="img" src=' . $product->getImagePath() . '></td>
+                    <td class="picture"><img class="img" src=' . $product->getImagePath() . ' alt="Produktfoto"></td>
                     <td>' . $product->getName() . '</td>
                     <td class="outer">' . $product->getPrice() . '</td>
                 </tr>';

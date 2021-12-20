@@ -46,16 +46,10 @@ td {
     border-right: none;
 }
 
-#picture {
+.picture {
     max-width: 20%;
     padding-left: 3px;
 }
-
-.picture {
-    max-height: 150px;
-    padding-left: 3px;
-}
-
 #name {
     width: 15%;
     padding-left: 3px;
