@@ -31,7 +31,7 @@
             <strong>Kontaktdaten des Verantwortlichen für Datenschutz</strong>
             <br />Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br />DoBuy<br />
             Schloss 10, 97980 Bad Mergentheim<br />E-Mail-Adresse: <a href="mailto:info@dobuy.de">info@dobuy.de</a>
-            <br />Telefon: +49 187 25736169<br />Impressum: <a href="localhost/php/imprint.php" target="_self" rel="noopener">localhost/php/imprint.php</a>
+            <br />Telefon: +49-187-25736169<br />Impressum: <a href="localhost/php/imprint.php" target="_self" rel="noopener">localhost/php/imprint.php</a>
         </p>
         <h2 id="eu-streitschlichtung" class="adsimple-121901803">EU-Streitschlichtung</h2>
         <p>Gemäß Verordnung über Online-Streitbeilegung in Verbraucherangelegenheiten (ODR-Verordnung) möchten wir Sie über die Online-Streitbeilegungsplattform (OS-Plattform) informieren.<br />
@@ -104,7 +104,7 @@
         </p>
         <p>E-Mail: <a href="mailto:info@dobuy.de">info@dobuy.de</a>
             <br />
-            Telefon: <a href="tel:+49 187 25736169">+49 187 25736169</a>
+            Telefon: <a href="tel:+49-187-25736169">+49 187 25736169</a>
             <br />
             Impressum: <a href="localhost/php/imprint.php">localhost/php/imprint.php</a>
         </p>
@@ -145,7 +145,7 @@
         </p>
         <p>Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche in sonst einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren. Diese ist für Österreich die Datenschutzbehörde, deren Website Sie unter <a class="adsimple-121901803" href="https://www.dsb.gv.at/?tid=121901803" target="_blank" rel="noopener">https://www.dsb.gv.at/</a> finden. In Deutschland gibt es für jedes Bundesland einen Datenschutzbeauftragten. Für nähere Informationen können Sie sich an die <a class="adsimple-121901803" href="https://www.bfdi.bund.de" target="_blank" rel="noopener">Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</a> wenden. Für unser Unternehmen ist die folgende lokale Datenschutzbehörde zuständig:</p>
         <h2 id="webhosting-einleitung" class="adsimple-121901803">Webhosting Einleitung</h2>
-        <table border="1" cellpadding="15">
+        <table>
             <tbody>
                 <tr>
                     <td>
@@ -167,7 +167,7 @@
         <p>Bei der Verbindungsaufnahme des Browsers auf Ihrem Computer (Desktop, Laptop, Smartphone) und während der Datenübertragung zu und vom Webserver kann es zu einer Verarbeitung personenbezogener Daten kommen. Einerseits speichert Ihr Computer Daten, andererseits muss auch der Webserver Daten eine Zeit lang speichern, um einen ordentlichen Betrieb zu gewährleisten.</p>
         <p>Zur Veranschaulichung:</p>
         <p>
-            <img role="img" src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver" width="100%" />
+            <img src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver" />
         </p>
         <h3 class="adsimple-121901803">Warum verarbeiten wir personenbezogene Daten?</h3>
         <p>Die Zwecke der Datenverarbeitung sind:</p>
@@ -196,7 +196,7 @@
         <p>Die Rechtmäßigkeit der Verarbeitung personenbezogener Daten im Rahmen des Webhosting ergibt sich aus Art. 6 Abs. 1 lit. f DSGVO (Wahrung der berechtigten Interessen), denn die Nutzung von professionellem Hosting bei einem Provider ist notwendig, um das Unternehmen im Internet sicher und nutzerfreundlich präsentieren und Angriffe und Forderungen hieraus gegebenenfalls verfolgen zu können.</p>
         <p>Zwischen uns und dem Hostingprovider besteht in der Regel ein Vertrag über die Auftragsverarbeitung gemäß Art. 28 f. DSGVO, der die Einhaltung von Datenschutz gewährleistet und Datensicherheit garantiert.</p>
         <h2 id="zahlungsanbieter-einleitung" class="adsimple-121901803">Zahlungsanbieter Einleitung</h2>
-        <table border="1" cellpadding="15">
+        <table>
             <tbody>
                 <tr>
                     <td>
