@@ -1,6 +1,4 @@
 <!-- Diese Datei zeigt das Impressum an -->
-include_once "../common/session.php";
-
 
 <!DOCTYPE html>
 <html lang="de">
