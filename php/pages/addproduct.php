@@ -46,17 +46,17 @@ include_once '../common/user.php';
                 echo "<form action='addproductaction.php?type=1' method='post' enctype='multipart/form-data'>";
             }
             ?>
-            <label for="fileToUpload">Bild auswählen:</label></br>
+            <label for="fileToUpload">Bild auswählen:</label><br>
             <input type="file" name="fileToUpload" id="fileToUpload" class="restricted"><br>
-            <label for="productname">Wie soll das Produkt heißen?</label></br>
+            <label for="productname">Wie soll das Produkt heißen?</label><br>
             <input type="text" name="productname" id="productname" class="bar" required><br>
-            <label for="price">Wie viel soll Ihr Produkt kosten?</label></br>
+            <label for="price">Wie viel soll Ihr Produkt kosten?</label><br>
             <input type="number" step=".01" name="price" id="price" class="bar" required><br>
-            <label for="description">Beschreiben Sie Ihr Produkt</label></br>
+            <label for="description">Beschreiben Sie Ihr Produkt</label><br>
             <textarea name="description" id="description" class="bar" required></textarea><br>
-            <label for="dropdown">Wählen Sie eine Kategorie</label><br />
+            <label for="dropdown">Wählen Sie eine Kategorie</label><br>
             <select class="form-select" aria-label="category" id="dropdown" name="category" required>
-                <option selected></option>
+                <option selected value="" >Kategorie</option>
                 <?php
 
                 $category  = new Category();
