@@ -66,7 +66,7 @@
         </p>
         <p>E-Mail: <a href="mailto:info@dobuy.de">info@dobuy.de</a>
             <br />
-            Telefon: <a href="tel:+49 187 25736169">+49 187 25736169</a>
+            Telefon: <a href="tel:+49-187-25736169">+49 187 25736169</a>
             <br />
             Impressum: <a href="localhost/php/imprint.php">localhost/php/imprint.php</a>
         </p>
@@ -115,7 +115,7 @@
             <strong class="adsimple-311901799">Website:</strong> <a class="adsimple-311901799" href="https://www.baden-wuerttemberg.datenschutz.de/?tid=311901799" target="_blank" rel="noopener">https://www.baden-wuerttemberg.datenschutz.de/</a>
         </p>
         <h2 id="webhosting-einleitung" class="adsimple-311901799">Webhosting Einleitung</h2>
-        <table border="1" cellpadding="15">
+        <table>
             <tbody>
                 <tr>
                     <td>
@@ -137,7 +137,7 @@
         <p>Bei der Verbindungsaufnahme des Browsers auf Ihrem Computer (Desktop, Laptop, Smartphone) und während der Datenübertragung zu und vom Webserver kann es zu einer Verarbeitung personenbezogener Daten kommen. Einerseits speichert Ihr Computer Daten, andererseits muss auch der Webserver Daten eine Zeit lang speichern, um einen ordentlichen Betrieb zu gewährleisten.</p>
         <p>Zur Veranschaulichung:</p>
         <p>
-            <img role="img" src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver" width="100%" />
+            <img src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver"/>
         </p>
         <h3 class="adsimple-311901799">Warum verarbeiten wir personenbezogene Daten?</h3>
         <p>Die Zwecke der Datenverarbeitung sind:</p>
@@ -166,7 +166,7 @@
         <p>Die Rechtmäßigkeit der Verarbeitung personenbezogener Daten im Rahmen des Webhosting ergibt sich aus Art. 6 Abs. 1 lit. f DSGVO (Wahrung der berechtigten Interessen), denn die Nutzung von professionellem Hosting bei einem Provider ist notwendig, um das Unternehmen im Internet sicher und nutzerfreundlich präsentieren und Angriffe und Forderungen hieraus gegebenenfalls verfolgen zu können.</p>
         <p>Zwischen uns und dem Hostingprovider besteht in der Regel ein Vertrag über die Auftragsverarbeitung gemäß Art. 28 f. DSGVO, der die Einhaltung von Datenschutz gewährleistet und Datensicherheit garantiert.</p>
         <h2 id="online-marketing-einleitung" class="adsimple-311901799">Online-Marketing Einleitung</h2>
-        <table border="1" cellpadding="15">
+        <table>
             <tbody>
                 <tr>
                     <td>
@@ -201,7 +201,7 @@
         <p>Von unserer Seite besteht zudem ein berechtigtes Interesse, Online-Marketing-Maßnahmen in anonymisierter Form zu messen, um mithilfe der gewonnenen Daten unser Angebot und unsere Maßnahmen zu optimieren. Die dafür entsprechende Rechtsgrundlage ist <strong class="adsimple-311901799">Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</strong>. Wir setzen die Tools gleichwohl nur ein, soweit Sie eine Einwilligung erteilt haben.</p>
         <p>Informationen zu speziellen Online-Marketing-Tools erhalten Sie &#8211; sofern vorhanden &#8211; in den folgenden Abschnitten.</p>
         <h2 id="zahlungsanbieter-einleitung" class="adsimple-311901799">Zahlungsanbieter Einleitung</h2>
-        <table border="1" cellpadding="15">
+        <table>
             <tbody>
                 <tr>
                     <td>
