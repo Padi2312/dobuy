@@ -77,8 +77,6 @@ new Database();
     include "../templates/scripts.php";
     include "../templates/footer.php";
     ?>
-
-    <script type="text/javascript" src=""></script>
 </body>
 
 </html>
