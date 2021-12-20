@@ -8,7 +8,6 @@ class RatingModel
 {
 
     private $id;
-    private $title;
     private $description;
     private $rating;
     private $user;
@@ -17,7 +16,6 @@ class RatingModel
     function __construct($ratingRow)
     {
         $this->id = $ratingRow["id"];
-        $this->title = $ratingRow["title"];
         $this->description = $ratingRow["description"];
         $this->rating = $ratingRow["rating"];
         $this->user = $ratingRow["user"];
@@ -30,14 +28,6 @@ class RatingModel
     function getID()
     {
         return $this->id;
-    }
-
-    /**
-     * Returns Rating Title
-     */
-    function getTitle()
-    {
-        return $this->title;
     }
 
     /**

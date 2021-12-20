@@ -114,7 +114,6 @@ class Database
 
         CREATE TABLE IF NOT EXISTS rating (
         id INT NOT NULL AUTO_INCREMENT,
-        title VARCHAR(45) NULL,
         description TEXT NULL,
         rating INT NULL,
         user VARCHAR(45) NOT NULL,

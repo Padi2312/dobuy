@@ -23,10 +23,10 @@ class RatingRepository extends Database
     /**
      * Add new Rating to Database
      */
-    function addRating($title, $description, $rating, $user, $productid)
+    function addRating($description, $rating, $user, $productid)
     {
-        $stmt = $this->mysqli->prepare("INSERT INTO rating (title, description, rating, user, product_id) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param('ssisi', $title, $description, $rating, $user, $productid);
+        $stmt = $this->mysqli->prepare("INSERT INTO rating (description, rating, user, product_id) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param('sisi', $description, $rating, $user, $productid);
         if (!$stmt->execute()) {
             error_log(print_r($this->mysqli->errno, TRUE));
         }
@@ -36,9 +36,9 @@ class RatingRepository extends Database
     /**
      * Update one Rating in Database
      */
-    function updateRating($id, $title, $description, $rating, $user, $productid)
+    function updateRating($id, $description, $rating, $user, $productid)
     {
-        $this->mysqli->query("UPDATE rating SET title = '$title', description = '$description', rating = '$rating', user = '$user', product_id = '$productid' WHERE id = '$id'");
+        $this->mysqli->query("UPDATE rating SET description = '$description', rating = '$rating', user = '$user', product_id = '$productid' WHERE id = '$id'");
     }
 
     /**
@@ -83,5 +83,14 @@ class RatingRepository extends Database
             }
             return $ratings;
         }
+    }
+
+    /**
+     * Returns Overall Rating for one Product
+     */
+    function getRatingForProduct($productid) {
+        $result = $this->mysqli->query("SELECT AVG(rating) FROM rating WHERE product_id = '$productid'")->fetch_assoc();
+        return round(floatval($result["AVG(rating)"]),1);
+
     }
 }

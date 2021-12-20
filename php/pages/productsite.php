@@ -4,14 +4,43 @@ include_once "../common/session.php";
 include_once "../common/product.php";
 include_once "../common/category.php";
 include_once "../common/shoppingcard.php";
+include_once "../common/rating.php";
+include_once "../forms/addrating.php";
 $productId = $_GET["id"];
 
 $productHandler = new Product();
 $category = new Category();
+$session = new Session();
+$ratingRepo = new Rating();
 $product = $productHandler->getProductById($productId);
 if ($product === null) {
     header("Location: notfound.php");
 }
+?>
+
+<?php
+
+include_once "../common/rating.php";
+
+$starValue = null;
+
+if (isset($_POST['ratingpoints1'])) {
+    $starValue = 1;
+} elseif (isset($_POST['ratingpoints2'])) {
+    $starValue = 2;
+} elseif (isset($_POST['ratingpoints3'])) {
+    $starValue = 3;
+} elseif (isset($_POST['ratingpoints4'])) {
+    $starValue = 4;
+} elseif (isset($_POST['ratingpoints5'])) {
+    $starValue = 5;
+}
+
+if (isset($_POST['submit_rating']) && isset($_POST['comment']) && $starValue !== null) {
+    $ratingRepo->addRating($_POST['comment'], $starValue, $session->getUsername(), $productId);
+    header("Location: productsite.php?id=$productId");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -58,14 +87,15 @@ if ($product === null) {
                     </p>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col">
-                    <p id="rating">Rating: 4/5</p>
+                    <p id="rating">Rating: <?php echo $ratingRepo->getOverallRatingForProduct($_GET['id']) ?>/5</p>
                 </div>
                 <div class="col">
                     <p id="retailer">
                         <?php
-                        if ($product->getProvider() == "admin") {
+                        if ($product->getProvider() === "admin") {
                             echo  "<b>Von: <span style='color:#FFE600;'>DO</span>BUY!</b>";
                         } else {
                             echo "Händler: " . $product->getProvider();
@@ -75,13 +105,12 @@ if ($product === null) {
                 </div>
                 <div class="col">
                     <div>
-                        <p id="price"><?php echo $product->getPrice(); ?> €</p>
+                        <p id="price"><?php echo $product->getPrice(); ?>€</p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center mb-2">
                 <?php
-                $session = new Session();
                 $shoppingCard = new ShoppingCard();
                 if (isset($_GET["id"])) {
                     $id = $_GET["id"];
@@ -131,77 +160,76 @@ if ($product === null) {
             <span class="h4">Geben Sie eine Bewertung zum Produkt ab</span>
         </div>
         <div class="rating-form container">
-            <form class="postrating" method="post" action="postRating" id="rating-comment">
+            <form method="post" action="" id="rating-comment">
                 <div class="comment-wrapper container">
                     <div class="row">
                         <div class="col">
                             <label class="h6" for="comment">Schreibe einen Kommentar</label><br>
-                            <textarea name="comment" id="comment" class="bar"></textarea>
+                            <textarea name="comment" class="bar"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="star-rating container">
                     <div class="row">
                         <div class="starrating col">
-                            <input type="radio" id="one" name="ratingpoints" value=1>
+                            <input type="radio" id="one" name="ratingpoints1" value=1>
                             <label for="one" class="star-option-label">1 Stern</label>
                         </div>
                         <div class="starrating col">
-                            <input type="radio" id="two" name="ratingpoints" value=2>
+                            <input type="radio" id="two" name="ratingpoints2" value=2>
                             <label for="two" class="star-option-label">2 Sterne</label>
                         </div>
                         <div class="starrating col">
-                            <input type="radio" id="three" name="ratingpoints" value=3>
+                            <input type="radio" id="three" name="ratingpoints3" value=3>
                             <label for="three" class="star-option-label">3 Sterne</label>
                         </div>
                         <div class="starrating col">
-                            <input type="radio" id="four" name="ratingpoints" value=4>
+                            <input type="radio" id="four" name="ratingpoints4" value=4>
                             <label for="four" class="star-option-label">4 Sterne</label>
                         </div>
                         <div class="starrating col">
-                            <input type="radio" id="five" name="ratingpoints" value=5>
+                            <input type="radio" id="five" name="ratingpoints5" value=5>
                             <label for="five" class="star-option-label">5 Sterne</label>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn"><span id="ratingbutton">Bewertung abgeben</span></button>
+                <button type="submit" class="btn" name="submit_rating"><span id="ratingbutton">Bewertung abgeben</span></button>
             </form>
         </div>
+
+
+
 
         <hr class="seperator" />
         <div id="comment-heading">
             <p class="h2 text-center">Bewertungen</p>
         </div>
 
-        <div class="comments">
-            <div class="grid-container">
-                <div class="username">
-                    <p>Jesus Christus</p>
+
+        <?php
+
+        $ratingList = $ratingRepo->getRatingsForProduct($_GET['id']);
+
+        foreach ($ratingList as $rating) {
+            echo
+            '<div id="comments">
+                <div class="grid-container">
+                  <div class="username">
+                    <p>' . $rating->getUser() . '</p>
+                  </div>
+                  <div class="commenttext">
+                    <p>' . $rating->getDescription() . '</p>
+                  </div>
+                  <div class="rating">
+                    <p>' . $rating->getRating() . '/5</p>
+                  </div>
                 </div>
-                <div class="commenttext">
-                    <p>This is a very serious and important text, please think about what it says</p>
-                </div>
-                <div class="rating">
-                    <p>4,5/5</p>
-                </div>
-            </div>
-        </div>
-        <div class="comments">
-            <div class="grid-container">
-                <div class="username">
-                    <p>Jesus Christus</p>
-                </div>
-                <div class="commenttext">
-                    <p>This is a very serious and important text, please think about what it says</p>
-                </div>
-                <div class="rating">
-                    <p>4,5/5</p>
-                </div>
-            </div>
-        </div>
+             </div>';
+        }
+        
+        ?>
 
     </main>
-
 
     <?php
     include "../templates/footer.php";
