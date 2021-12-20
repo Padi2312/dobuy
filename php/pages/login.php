@@ -1,15 +1,15 @@
 <!-- Ducrh diese Datei wird das LogIn-Formular angezeigt -->
+<?php include_once '../common/session.php' ?>
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
-    <?php include_once '../common/session.php' ?>
     <?php include_once '../templates/head.php' ?>
+    <link rel="stylesheet" href="../../css/login.css">
 </head>
 
 <body>
     <?php include "../templates/header.php"; ?>
-    <link rel="stylesheet" href="../../css/login.css">
 
     <main>
         <div class="container-fluid h-100">

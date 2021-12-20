@@ -1,9 +1,10 @@
 <!-- Diese Datei zeigt eine Fehlerseite an, für den Fall, dass ein Produkt nicht gefunden wurde -->
+<?php include_once '../common/session.php' ?>
+
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
-    <?php include_once '../common/session.php' ?>
     <?php include_once '../templates/head.php' ?>
     <link rel="stylesheet" href="../../css/notfound.css">
 </head>
@@ -11,7 +12,6 @@
 <body>
 
     <?php
-    include_once "../common/session.php";
     include "../templates/header.php";
     ?>
 

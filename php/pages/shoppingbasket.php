@@ -1,4 +1,11 @@
 <!-- Diese Datei zeigt die Warenkorbseite an -->
+<?php
+include "../templates/head.php";
+include_once "../common/session.php";
+include_once "../common/shoppingcard.php";
+$shoppingCard = new ShoppingCard();
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -14,10 +21,7 @@
 <body>
 
     <?php
-    include_once "../common/session.php";
-    include_once "../common/shoppingcard.php";
     include "../templates/header.php";
-    $shoppingCard = new ShoppingCard();
     ?>
 
     <main>

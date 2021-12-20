@@ -1,9 +1,10 @@
 <!-- Diese Datei zeigt die Datenschutzerklärung an -->
+<?php include_once '../common/session.php' ?>
+
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
-    <?php include_once '../common/session.php' ?>
     <?php include_once '../templates/head.php' ?>
     <link rel="stylesheet" href="../css/privacy.css">
 </head>
@@ -11,7 +12,6 @@
 <body>
 
     <?php
-    include_once "../common/session.php";
     include "../templates/header.php";
     ?>
 
@@ -137,7 +137,7 @@
         <p>Bei der Verbindungsaufnahme des Browsers auf Ihrem Computer (Desktop, Laptop, Smartphone) und während der Datenübertragung zu und vom Webserver kann es zu einer Verarbeitung personenbezogener Daten kommen. Einerseits speichert Ihr Computer Daten, andererseits muss auch der Webserver Daten eine Zeit lang speichern, um einen ordentlichen Betrieb zu gewährleisten.</p>
         <p>Zur Veranschaulichung:</p>
         <p>
-            <img src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver"/>
+            <img src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver" />
         </p>
         <h3 class="adsimple-311901799">Warum verarbeiten wir personenbezogene Daten?</h3>
         <p>Die Zwecke der Datenverarbeitung sind:</p>

@@ -16,7 +16,6 @@ include_once '../common/user.php';
 <body>
 
     <?php
-    include_once "../common/session.php";
     include "../templates/header.php";
     ?>
 
