@@ -78,17 +78,17 @@ include_once "../common/session.php";
                 <div id="formatline">
                   <label for="pricerange" class="form-label">Preisspanne:</label>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="pricerangeactivate" min="0" max="500" steps="10" name="activated">
+                    <input class="form-check-input" type="checkbox" id="pricerangeactivate" name="activated">
                     <label class="form-check-label" for="pricerangeactivate">Preisspanne aktivieren</label>
                   </div>
                 </div>
-                </br>
+                <br>
                 <div class="input-group">
                   <span id="basic-addon1" class="input-group-text">Mindestpreis</span>
                   <input type="number" id="pricerangelow" class="form-control" name="price1">
                   <div class="col-md"></div>
                   <span id="basic-addon2" class="input-group-text">Maximalpreis</span>
-                  <input type="number" id="pricerangelow" class="form-control" name="price2">
+                  <input type="number" id="pricerangehigh" class="form-control" name="price2">
                 </div>
               </div>
             </div>
@@ -119,33 +119,33 @@ include_once "../common/session.php";
       foreach ($productList as $product) {
         $categoryModel = $category->getCategoryById($product->getCategory());
         echo
-        '<div id="response" class="response container">
+        '<div class="response container">
                     <div class="productname h3">
-                      <a id="productname" href="productsite.php?id=' . $product->getID() . '">' . $product->getName() . '</a>
+                      <a class="productnameresponse" href="productsite.php?id=' . $product->getID() . '">' . $product->getName() . '</a>
                     </div>
                     <div class="content row">
                       <div class="col-md">
                         <div class="productpicture">
-                          <img id="productpicture" src="' . $product->getImagePath() . '" title="Placeholder" alt="Placeholder">
+                          <img class="productpictureresponse" src="' . $product->getImagePath() . '" title="Placeholder" alt="Placeholder">
                         </div>
                       </div>
                       <div class="col-md">
                         <div class="description">
-                          <p id="description">' . $product->getDescription() . '</p>
+                          <p>' . $product->getDescription() . '</p>
                         </div>
                       </div>
                       <div class="col">
                         <div class="price">
-                          <p id="price">' . $product->getPrice() . '€</p>
+                          <p>' . $product->getPrice() . '€</p>
                         </div>
                         <div class="tags">
-                          <p id="tags">' . $categoryModel->getName() . '</p>
+                          <p>' . $categoryModel->getName() . '</p>
                         </div>
                       </div>
                     </div>
                   </div>
               
-                  <hr id="split" />';
+                  <hr class="split" />';
       }
     }
 
