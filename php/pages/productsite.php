@@ -18,31 +18,6 @@ if ($product === null) {
 }
 ?>
 
-<?php
-
-include_once "../common/rating.php";
-
-$starValue = null;
-
-if (isset($_POST['ratingpoints1'])) {
-    $starValue = 1;
-} elseif (isset($_POST['ratingpoints2'])) {
-    $starValue = 2;
-} elseif (isset($_POST['ratingpoints3'])) {
-    $starValue = 3;
-} elseif (isset($_POST['ratingpoints4'])) {
-    $starValue = 4;
-} elseif (isset($_POST['ratingpoints5'])) {
-    $starValue = 5;
-}
-
-if (isset($_POST['submit_rating']) && isset($_POST['comment']) && $starValue !== null) {
-    $ratingRepo->addRating($_POST['comment'], $starValue, $session->getUsername(), $productId);
-    header("Location: productsite.php?id=$productId");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="de">
 
@@ -160,45 +135,41 @@ if (isset($_POST['submit_rating']) && isset($_POST['comment']) && $starValue !==
             <span class="h4">Geben Sie eine Bewertung zum Produkt ab</span>
         </div>
         <div class="rating-form container">
-            <form method="post" action="" id="rating-comment">
+            <form method="get" action="productsiteaction.php?id=<?php echo $productId; ?>">
                 <div class="comment-wrapper container">
+                    <?php
+                    if (isset($_GET["error"]) && $_GET["error"] === "notloggedin" && !Session::isLoggedIn()) {
+                        echo "<div class='alert alert-info text-center' role='alert'>
+                                    Sie müssen angemeldet sein, um eine Bewertung zu einem Produkt abzugeben.
+                                </div>";
+                    }
+                    ?>
+
                     <div class="row">
                         <div class="col">
                             <label class="h6" for="comment">Schreibe einen Kommentar</label><br>
-                            <textarea name="comment" class="bar"></textarea>
+                            <textarea id="comment" name="comment" class="bar"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="star-rating container">
                     <div class="row">
-                        <div class="starrating col">
-                            <input type="radio" id="one" name="ratingpoints1" value=1>
-                            <label for="one" class="star-option-label">1 Stern</label>
-                        </div>
-                        <div class="starrating col">
-                            <input type="radio" id="two" name="ratingpoints2" value=2>
-                            <label for="two" class="star-option-label">2 Sterne</label>
-                        </div>
-                        <div class="starrating col">
-                            <input type="radio" id="three" name="ratingpoints3" value=3>
-                            <label for="three" class="star-option-label">3 Sterne</label>
-                        </div>
-                        <div class="starrating col">
-                            <input type="radio" id="four" name="ratingpoints4" value=4>
-                            <label for="four" class="star-option-label">4 Sterne</label>
-                        </div>
-                        <div class="starrating col">
-                            <input type="radio" id="five" name="ratingpoints5" value=5>
-                            <label for="five" class="star-option-label">5 Sterne</label>
-                        </div>
+                        <?php
+                        for ($i = 1; $i <= 5; $i++) {
+                        ?>
+                            <div class="starrating col">
+                                <input type="radio" id="<?php echo "option" . $i; ?>" name="optradio" value="<?php echo $i; ?>" required>
+                                <label for="<?php echo "option" . $i; ?>" class="star-option-label"><?php echo $i; ?> Stern</label>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
-                <button type="submit" class="btn" name="submit_rating"><span id="ratingbutton">Bewertung abgeben</span></button>
+                <input type='hidden' name="id" value="<?php echo $productId; ?>">
+                <button type="submit" class="btn"><span id="ratingbutton">Bewertung abgeben</span></button>
             </form>
         </div>
-
-
-
 
         <hr class="seperator" />
         <div id="comment-heading">
@@ -212,7 +183,7 @@ if (isset($_POST['submit_rating']) && isset($_POST['comment']) && $starValue !==
 
         foreach ($ratingList as $rating) {
             echo
-            '<div id="comments">
+            '<div class="comments">
                 <div class="grid-container">
                   <div class="username">
                     <p>' . $rating->getUser() . '</p>
@@ -226,7 +197,7 @@ if (isset($_POST['submit_rating']) && isset($_POST['comment']) && $starValue !==
                 </div>
              </div>';
         }
-        
+
         ?>
 
     </main>

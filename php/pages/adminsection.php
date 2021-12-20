@@ -61,7 +61,9 @@ include_once "../common/user.php";
     <summary class="h4">
         Übersicht aller Produkte
     </summary>
-        <a href="addproduct.php">Produkt hinzufügen</a>
+    <form action='addproduct.php' method='post'>
+        <button type='submit' class='btn'>Produkt hinzufügen</button>
+    </form>
     <table class="table">
         <tr>
             <th class="pictureadm">Bild</th>

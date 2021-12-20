@@ -72,7 +72,7 @@ class RatingRepository extends Database
      */
     function getRatingsByProductId($productId)
     {
-        $resultMySql = $this->mysqli->query("SELECT * FROM rating WHERE product_id = $productId");
+        $resultMySql = $this->mysqli->query("SELECT * FROM rating WHERE product_id = $productId ORDER BY id DESC");
         if ($resultMySql->num_rows === 0) {
             return array();
         } else {
@@ -88,9 +88,9 @@ class RatingRepository extends Database
     /**
      * Returns Overall Rating for one Product
      */
-    function getRatingForProduct($productid) {
+    function getRatingForProduct($productid)
+    {
         $result = $this->mysqli->query("SELECT AVG(rating) FROM rating WHERE product_id = '$productid'")->fetch_assoc();
-        return round(floatval($result["AVG(rating)"]),1);
-
+        return round(floatval($result["AVG(rating)"]), 1);
     }
 }
