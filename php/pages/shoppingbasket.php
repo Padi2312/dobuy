@@ -31,12 +31,21 @@ $shoppingCard = new ShoppingCard();
             <div>
                 <?php
                 $shoppingCardList = $shoppingCard->getShoppingCardByUser();
-                foreach ($shoppingCardList as $product) {
-                    $id = $product->getID();
-                    $imagePath = $product->getImagePath();
-                    $name = $product->getName();
-                    $price = $product->getPrice();
-                    echo "<div class='card mb-3 p-2' style='border: 2px solid #dddddd;'>
+                if (count($shoppingCardList) == 0) {
+                    echo '<div class="d-flex h-100 align-items-center justifiy-content-center">
+                            <div class="container">
+                                <div class="alert alert-info text-center" role="alert">
+                                <h4>Noch keine Produkte im Warenkorb</h4>
+                                </div>
+                            </div>
+                        </div>';
+                } else {
+                    foreach ($shoppingCardList as $product) {
+                        $id = $product->getID();
+                        $imagePath = $product->getImagePath();
+                        $name = $product->getName();
+                        $price = $product->getPrice();
+                        echo "<div class='card mb-3 p-2' style='border: 2px solid #dddddd;'>
             <div class='row g-0'>
                 <div class='col-sm-4'>
                     <img src='$imagePath' style='max-height:400px;' class='img-fluid' alt='...'>
@@ -57,7 +66,9 @@ $shoppingCard = new ShoppingCard();
                 </div>
             </div>
         </div>";
+                    }
                 }
+
                 ?>
             </div>
             <div class="buttonline">
