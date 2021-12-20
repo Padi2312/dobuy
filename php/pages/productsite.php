@@ -125,14 +125,14 @@ if ($product === null) {
 
         </div>
 
-        <hr id="seperator" />
+        <hr class="seperator" />
 
         <div id="rating-infobox">
             <span class="h4">Geben Sie eine Bewertung zum Produkt ab</span>
         </div>
         <div class="rating-form container">
             <form class="postrating" method="post" action="postRating" id="rating-comment">
-                <div id="comment-wrapper container">
+                <div class="comment-wrapper container">
                     <div class="row">
                         <div class="col">
                             <label class="h6" for="comment">Schreibe einen Kommentar</label><br>
@@ -168,12 +168,12 @@ if ($product === null) {
             </form>
         </div>
 
-        <hr id="seperator" />
+        <hr class="seperator" />
         <div id="comment-heading">
             <p class="h2 text-center">Bewertungen</p>
         </div>
 
-        <div id="comments">
+        <div class="comments">
             <div class="grid-container">
                 <div class="username">
                     <p>Jesus Christus</p>
@@ -186,7 +186,7 @@ if ($product === null) {
                 </div>
             </div>
         </div>
-        <div id="comments">
+        <div class="comments">
             <div class="grid-container">
                 <div class="username">
                     <p>Jesus Christus</p>
