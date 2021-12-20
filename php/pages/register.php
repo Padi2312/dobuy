@@ -14,7 +14,7 @@
     <main>
         <div id="border1" class="container-fluid ">
                 <form class="register-form" method="post" action="registeraction.php">
-                    <div id="logintext"><img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY"> </br>
+                    <div id="logintext"><img id="logo2" src="../../assets/images/logo.svg" title="Logo von DOBUY" alt="Logo von DOBUY"> <br>
                         Registrieren Sie sich um unsere Inhalte vollständig nutzen zu können.
                     </div>
                     <hr id="seperator"/>
