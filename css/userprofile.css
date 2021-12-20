@@ -10,7 +10,7 @@
     font-size: 50px;
 }
 
-#table {
+.table {
     width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -21,7 +21,7 @@
     height: auto;
 }
 
-#table th {
+.table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -32,7 +32,7 @@
     word-wrap: break-word;
 }
 
-#table td {
+.table td {
     word-wrap: break-word;
 }
 
@@ -102,27 +102,27 @@ td {
 
 }
 
-#pictureadm {
+.pictureadm {
     max-width: 50%;
     padding-left: 3px;
 }
 
-#nameadm {
+.nameadm {
     width: 15%;
     padding-left: 3px;
 }
 
-#priceadm {
+.priceadm {
     width: 15%;
     padding-left: 3px;
 }
 
-#useradm {
+.useradm {
     width: 30%;
     padding-left: 3px;
 }
 
-#usernamenadm {
+.usernamenadm {
     width: 30%;
     padding-left: 3px;
     white-space: nowrap;
@@ -130,7 +130,7 @@ td {
     text-overflow: ellipsis;
 }
 
-#emailadm {
+.emailadm {
     width: 30%;
     padding-left: 3px;
     white-space: nowrap;
@@ -138,9 +138,10 @@ td {
     text-overflow: ellipsis;
 }
 
-#edit {
+.edit {
     width: 5%;
     padding-left: 3px;
+    border-right: none;
 }
 
 .kind {
@@ -154,4 +155,10 @@ td {
 
 #display {
     padding: 3px;
+}
+
+.priceadmouter{
+    width: 5%;
+    padding-left: 3px;
+    border-right: none;
 }

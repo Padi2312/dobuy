@@ -10,12 +10,12 @@ include_once "../common/user.php";
     <summary class="h4">
         Produktangebote von Benutzern
     </summary>
-    <table id="table">
+    <table class="table">
         <tr>
-            <th id="pictureadm">Bild</th>
-            <th id="nameadm">Name</th>
-            <th id="priceadm">Preis</th>
-            <th id="priceadm">Aktzeptieren</th>
+            <th class="pictureadm">Bild</th>
+            <th class="nameadm">Name</th>
+            <th class="priceadm">Preis</th>
+            <th class="edit">Aktzeptieren</th>
         </tr>
         <?php
         $product1 = new Product();
@@ -23,10 +23,10 @@ include_once "../common/user.php";
         foreach ($products as $product) {
             $id = $product->getID();
             echo '<tr>
-            <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
-            <td id="nameadm">' . $product->getName() . '</td>
-            <td id="priceadm">' . $product->getPrice() . '€</td>';
-            echo "<td id='edit' class='outer'><a href='adminsectionaction.php?id=$id'>Bestätigen</a></td>
+            <td class="pictureadm"><img class="img" src=' . $product->getImagePath() . ' alt="Produktfoto"></td>
+            <td class="nameadm">' . $product->getName() . '</td>
+            <td class="priceadm">' . $product->getPrice() . '€</td>';
+            echo "<td class='edit'><a href='adminsectionaction.php?id=$id'>Bestätigen</a></td>
                 </tr>";
         }
         ?>
@@ -37,11 +37,11 @@ include_once "../common/user.php";
     <summary class="h4">
         Verkaufte Produkte
     </summary>
-    <table id="table">
+    <table class="table">
         <tr>
-            <th id="pictureadm">Bild</th>
-            <th id="nameadm">Name</th>
-            <th id="priceadm">Preis</th>
+            <th class="pictureadm">Bild</th>
+            <th class="nameadm">Name</th>
+            <th class="priceadmouter">Preis</th>
         </tr>
         <?php
         $ordering = new Ordering();
@@ -49,9 +49,9 @@ include_once "../common/user.php";
         foreach ($products as $product) {
             $id = $product->getID();
             echo '<tr>
-            <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
-            <td id="nameadm">' . $product->getName() . '</td>
-            <td id="priceadm" class="outer">' . $product->getPrice() . '€</td>';
+            <td class="pictureadm"><img class="img" src=' . $product->getImagePath() . ' alt="Produktfoto"></td>
+            <td class="nameadm">' . $product->getName() . '</td>
+            <td class="priceadmouter">' . $product->getPrice() . '€</td>';
         }
         ?>
     </table>
@@ -61,15 +61,13 @@ include_once "../common/user.php";
     <summary class="h4">
         Übersicht aller Produkte
     </summary>
-    <a href="addproduct.php">
-        <button type="submit" class="btn" id="addproduct" action="">Produkt hinzufügen</button>
-    </a>
-    <table id="table">
+        <a href="addproduct.php">Produkt hinzufügen</a>
+    <table class="table">
         <tr>
-            <th id="pictureadm">Bild</th>
-            <th id="nameadm">Name</th>
-            <th id="priceadm">Preis</th>
-            <th id="edit">Ändern</th>
+            <th class="pictureadm">Bild</th>
+            <th class="nameadm">Name</th>
+            <th class="priceadm">Preis</th>
+            <th class="edit">Ändern</th>
         </tr>
         <?php
         $product1 = new Product();
@@ -77,10 +75,10 @@ include_once "../common/user.php";
         foreach ($products as $product) {
             $id = $product->getID();
             echo '<tr>
-            <td id="pictureadm"><img class="img" src=' . $product->getImagePath() . '></td>
-            <td id="nameadm">' . $product->getName() . '</td>
-            <td id="priceadm">' . $product->getPrice() . '€</td>';
-            echo "<td id='edit' class='outer'><a href='editproduct.php?id=$id'><img src='../../assets/images/edit.svg'></a></td>
+            <td class="pictureadm"><img class="img" src=' . $product->getImagePath() . ' alt="Produktfoto"></td>
+            <td class="nameadm">' . $product->getName() . '</td>
+            <td class="priceadm">' . $product->getPrice() . '€</td>';
+            echo "<td class='edit'><a href='editproduct.php?id=$id'><img src='../../assets/images/edit.svg' alt='Müllkorb'></a></td>
                 </tr>";
         }
         ?>
@@ -92,11 +90,11 @@ include_once "../common/user.php";
         Übersicht aller Benutzer
     </summary>
 
-    <table id="table">
+    <table class="table">
         <tr>
-            <th id="useradm">Username</th>
-            <th id="usernameadm">Name</th>
-            <th id="emailadm">E-Mail</th>
+            <th class="useradm">Username</th>
+            <th class="usernameadm">Name</th>
+            <th class="emailadm">E-Mail</th>
         </tr>
         <?php
         $user = new User();
