@@ -1,3 +1,4 @@
+<!-- Diese Klasse enthält alle Informationen zu den Benutzern der Website->
 <?php
 
 include_once '../models/usermodel.php';

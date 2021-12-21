@@ -1,3 +1,4 @@
+<!-- Diese Klasse dient der Verarbeitung eines Uploads wenn ein Bild zu einemn Produkt hochgeladen wird -->
 <?php
 class FileHandler
 {

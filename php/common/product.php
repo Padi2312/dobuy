@@ -1,3 +1,4 @@
+<!-- Diese Klasse enthält alle Informationen und Daten zu den Produkten-->
 <?php
 
 include_once '../database/repository/product_repository.php';

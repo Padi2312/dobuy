@@ -1,3 +1,4 @@
+<!-- Diese Klasse enthält alle Informationen zu der Sitzung in der, der Benutzer sich befindet-->
 <?php
 session_start();
 class Session

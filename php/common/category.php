@@ -1,5 +1,5 @@
+<!-- Diese Klasse ist für die Daten der Kategorien verantwortlich -->
 <?php
-
 include_once '../database/repository/category_repository.php';
 
 class Category

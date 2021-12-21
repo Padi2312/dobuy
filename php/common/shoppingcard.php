@@ -1,3 +1,4 @@
+<!-- Diese Klasse enthält alle Informationen zum Warenkorb eines Benutzers-->
 <?php
 
 include_once 'session.php';

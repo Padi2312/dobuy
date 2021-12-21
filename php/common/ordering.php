@@ -1,3 +1,4 @@
+<!-- Diese Klasse enthält die Daten der Bestellungen und hat Funktionen um diese zu verarbeiten oder bearbeiten-->
 <?php
 
 include_once '../database/repository/product_repository.php';
