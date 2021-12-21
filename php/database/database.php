@@ -2,6 +2,9 @@
 class Database
 {
 
+    /**
+     * Class for database connection and initalization
+     */
     private array $config;
     protected $mysqli;
 

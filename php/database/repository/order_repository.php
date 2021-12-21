@@ -7,6 +7,9 @@ include_once '../database/repository/product_repository.php';
 class OrderRepository extends Database
 {
 
+    /**
+     * Handles all actions for the database in order table Context
+     */
     function __construct()
     {
         parent::__construct();

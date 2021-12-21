@@ -6,6 +6,9 @@ include_once '../models/ratingmodel.php';
 class RatingRepository extends Database
 {
 
+    /**
+     * Handles all actions for the database in rating table Context
+     */
     function __construct()
     {
         parent::__construct();

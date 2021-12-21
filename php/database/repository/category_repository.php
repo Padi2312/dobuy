@@ -6,7 +6,9 @@ include_once '../models/categorymodel.php';
 
 class CategoryRepository extends Database
 {
-
+    /**
+     * Handles all actions for the database in category table Context
+     */
     function __construct()
     {
         parent::__construct();

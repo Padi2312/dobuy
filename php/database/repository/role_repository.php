@@ -6,6 +6,9 @@ include_once '../models/rolemodel.php';
 class RoleRepository extends Database
 {
 
+    /**
+     * Handles all actions for the database in role table Context
+     */
     function __construct()
     {
         parent::__construct();

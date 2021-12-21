@@ -6,6 +6,9 @@ include_once '../models/usermodel.php';
 class UserRepository extends Database
 {
 
+    /**
+     * Handles all actions for the database in user table Context
+     */
     function __construct()
     {
         parent::__construct();

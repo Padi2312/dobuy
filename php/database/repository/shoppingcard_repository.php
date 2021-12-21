@@ -6,6 +6,9 @@ include_once '../models/productmodel.php';
 class ShoppingCardRepository extends Database
 {
 
+    /**
+     * Handles all actions for the database in shoppingcard table Context
+     */
     function __construct()
     {
         parent::__construct();

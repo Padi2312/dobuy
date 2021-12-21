@@ -7,6 +7,10 @@ include_once '../database/repository/category_repository.php';
 class ProductRepository extends Database
 {
 
+
+    /**
+     * Handles all actions for the database in product table Context
+     */
     function __construct()
     {
         parent::__construct();
@@ -156,8 +160,8 @@ class ProductRepository extends Database
 
     /** 
      * SQL Query, returns result
-     */ 
-    function query($text) 
+     */
+    function query($text)
     {
         return $this->mysqli->query($text);
     }
