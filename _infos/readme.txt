@@ -1,36 +1,35 @@
 ################################
 #                              #
-#          Sample App          #
+#            DoBuy             #
 #                              #
 ################################
 
 Team: 
-* Sampler
+* DoBuy
 
 Matrikelnummern: 
-* 1234567
-* 1234567
-* 1234567
+* 7414700
+* 6175790
+* 1165783
+* 4254990
 
 Programm starten:
-* http://localhost/dhbw/tinf20-sample-app
+* http://localhost/dhbw/dobuy
 
 Login:
 * Admin: admin / admin
 * User: user / user
 
 XAMPP-Version: 
-* XAMPP for Windows 7.3.26
+* XAMPP for Windows 8.0.13
 
 3rd Party Library: 
-* TCPDF (https://tcpdf.org): Ermöglicht Umgang mit PDF-Dateien
+* Keine Libraries benutzt
 
 Zusätzliche Funktionen
-* ...
-* ...
-* ...
-* ...
-* ...
+* Warenkorb
+    * Produkte hinzufügen /  entfernen
+    * Produkte aus Warenkorb kaufen
 
 Hinweise:
-* ..
+* Sortierung nach Beliebtheit wurde weggelassen
