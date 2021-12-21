@@ -32,4 +32,4 @@ Zusätzliche Funktionen
     * Produkte aus Warenkorb kaufen
 
 Hinweise:
-* Sortierung nach Beliebtheit wurde weggelassen
+* -
